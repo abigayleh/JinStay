@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :class="largeHeader ? 'h-64' : 'fixed h-22 py-2'" class="w-full z-50 transition-all duration-500 text-white bg-red flex flex-col justify-between items-center">
+    <div :class="largeHeader ? 'h-64' : 'fixed h-22 py-2'" class="w-full transition-all duration-500 text-white bg-red flex flex-col justify-between items-center" style="z-index: 5000;">
      <div class="flex w-full" :class="largeHeader ? '' : 'justify-between flex-row-reverse'">
         <div :class="largeHeader ? 'flex w-full justify-end' : ''">
           <q-btn flat color="white" icon="language" label="Language">
