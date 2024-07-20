@@ -5,7 +5,7 @@ module.exports = defineConfig({
     'quasar'
   ],
 
-  publicPath: process.env.NODE_ENV === 'production' ? '/JinStay/' : '/',
+  publicPath: '/',
 
   pluginOptions: {
     quasar: {
