@@ -2,7 +2,9 @@
 
 module.exports = function (/* ctx */) {
   return {
-    // ...
+    build: {
+      distDir: 'dist/spa'
+    },
     css: {
       loaderOptions: {
         postcss: {

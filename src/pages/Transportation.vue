@@ -1,6 +1,143 @@
 <template>
-  <div class="h-screen">
-    Transportation page
+  <div class="w-full flex flex-col py-4">
+    <span class="w-full text-center font-bold text-xl pb-2">Toronto Transportation 🚌</span>
+    <div class="w-full flex flex-col items-center">
+      <span class="text-lg">Quick jump:</span>
+      <div class="flex flex-col text-lg">
+        <span class="cursor-pointer">• Transportation:</span>
+        <span class="ml-4 text-base cursor-pointer">• From Pearson Airport</span>
+        <span class="ml-4 text-base cursor-pointer">• General transportation</span>
+        <span class="cursor-pointer">• Payment</span>
+        <span class="cursor-pointer">• Helpful apps</span>
+      </div>
+    </div>
+    <q-expansion-item
+        expand-separator
+        icon="flight_takeoff"
+        label="From Toronto Pearson Airport"
+        default-opened
+      >
+      <div class="px-4">
+        <div class="flex items-center justify-center flex-row no-wrap py-2">
+          <div class="flex flex-col">
+            <span class="font-bold">UP Express</span>
+            <div class="w-1/2">
+              <img class="rounded" src="https://upload.wikimedia.org/wikipedia/commons/a/aa/UPXatMimico.jpg" alt="Canada">
+            </div>
+          </div>
+          <span class="mx-4">This airport-dedicated train service connects Toronto Pearson International Airport with downtown, mainly used for airport access and departures.</span>
+        </div>
+      </div>
+    </q-expansion-item>
+    <q-expansion-item
+        expand-separator
+        icon="train"
+        label="General transportation"
+        default-opened
+      >
+      <div class="px-4">
+        <div class="flex items-center justify-center flex-row no-wrap py-2">
+          <div class="flex flex-col w-1/2">
+            <span class="font-bold">Subway</span>
+            <img class="rounded" src="https://d3d0lqu00lnqvz.cloudfront.net/media/media/a0103c46-7dc7-4df0-b488-fdc41e4de918.jpg" alt="Canada">
+          </div>
+          <span class="mx-4">Toronto's subway system is operated by the TTC (Toronto Transit Commission) and spans various routes across the city.</span>
+        </div>
+        <div class="flex items-center justify-center flex-row no-wrap py-2">
+          <div class="flex flex-col w-1/2">
+            <span class="font-bold">Bus</span>
+            <img class="rounded" src="https://arrivein.com/wp-content/uploads/2020/07/Blog-Image-Public-Transit-Toronto-bike-rack-scaled.jpg" alt="Canada">
+          </div>
+          <span class="mx-4">Toronto features numerous bus routes that connect major streets and neighborhoods throughout the city.</span>
+        </div>
+        <div class="flex items-center justify-center flex-row no-wrap py-2">
+          <div class="flex flex-col w-1/2">
+            <span class="font-bold">Streetcar</span>
+            <img class="rounded" src="https://www.railway-technology.com/wp-content/uploads/sites/13/2023/11/Shutterstock_1791383147.jpg" alt="Canada">
+          </div>
+          <span class="mx-4">Streetcars operate in downtown Toronto and some surrounding areas, serving as a key mode of public transportation alongside subways and buses.</span>
+        </div>
+        <div class="flex items-center justify-center flex-row no-wrap py-2">
+          <div class="flex flex-col w-1/2">
+            <span class="font-bold">GO Train</span>
+            <img class="rounded" src="https://d3d0lqu00lnqvz.cloudfront.net/media/media/a0103c46-7dc7-4df0-b488-fdc41e4de918.jpg" alt="Canada">
+          </div>
+          <span class="mx-4">Connecting Toronto with its suburban areas, GO Train lines are operated by GO Transit, primarily used for weekday commuting.</span>
+        </div>
+        <div class="flex items-center justify-center flex-row no-wrap py-2">
+          <div class="flex flex-col w-1/2">
+            <span class="font-bold">Bike share</span>
+            <img class="rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/BikeShareToronto_Temperance_St_at_Cloud_Gardens.JPG/260px-BikeShareToronto_Temperance_St_at_Cloud_Gardens.JPG" alt="Canada">
+          </div>
+          <span class="mx-4">Toronto operates a bike share program, ideal for short-distance travel within downtown areas.</span>
+        </div>
+      </div>
+    </q-expansion-item>
+    <q-expansion-item
+        expand-separator
+        icon="payments"
+        label="Payment"
+        default-opened
+      >
+      <div class="flex flex-col px-4 py-2">
+        <div class="flex items-center justify-center flex-row no-wrap">
+          <div class="flex flex-col w-1/2">
+            <span class="font-bold">PRESTO</span>
+            <img class="rounded" src="https://lh4.googleusercontent.com/nLJ_eIdJseHppJifU-jkk_2G7Rle_Yrw0QRpcRUmm7VsZ9DVG8e41u9LjeQGnh7yU5w5gg2NGFiJNTFVolizja8Yy6KH2eFeP8BZMhVoQa6p4EQYx-hKuPk87D0UnYIzeV_hAhL6YceoPYZ2UQNdmnOcLrb-pgmyq1UqLYym0NoWGwn8NplJ5p-OvE2ioOuKIbN_gDI9" alt="Canada">
+          </div>
+          <div class="flex items-center">
+            <span class="mx-4">The PRESTO card is free and allows you to board public transportation based on the loaded amount.</span>
+            <div class="flex flex-col pl-8">
+              <span class="font-bold">Where to buy:</span>
+              <span> • Large supermarkets</span>
+              <span> • Online</span>
+              <span> • Most historical sites</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </q-expansion-item>
+    <q-expansion-item
+        expand-separator
+        icon="phone_iphone"
+        label="Helpful apps"
+        default-opened
+      >
+      <div class="flex flex-col py-2 px-4">
+        <div class="flex items-center justify-center flex-row no-wrap py-2">
+          <div class="flex w-1/2 flex-col justify-center">
+            <span class="font-bold text-nowrap pb-2">Maps/Google Maps</span>
+            <div class="flex flex-row no-wrap items-center">
+              <img class="w-1/4 rounded" src="https://www.apple.com/v/maps/d/images/overview/intro_icon__dfyvjc1ohbcm_large.png" alt="Canada">
+              <img class="w-1/4 rounded" src="https://www.google.com/images/branding/product/2x/maps_96in128dp.png" alt="Canada">
+            </div>
+          </div>
+          <span class="mx-4 text-wrap">iPhone or Android users can use their installed maps app to create routes using Toronto transportation</span>
+        </div>
+        <div class="flex items-center justify-center flex-row no-wrap py-2">
+          <div class="w-1/2 flex flex-col">
+            <span class="font-bold pb-2">Citymapper</span>
+            <div class="flex flex-row no-wrap">
+              <img class="w-1/4 mr-3 rounded" src="https://w7.pngwing.com/pngs/421/750/png-transparent-citymapper-transit-android-bus-android-angle-grass-web-application-thumbnail.png" alt="Canada">
+              <img class="w-1/4 rounded" src="@/assets/cityMapper.png" alt="Canada">
+            </div>
+          </div>
+          <span class="mx-4">iPhone or Android users can use their installed maps app to create routes using Toronto transportation</span>
+        </div>
+        <div class="flex items-center justify-center no-wrap py-2">
+          <div class="w-1/2 flex flex-col">
+            <span class="font-bold pb-2">Transit</span>
+            <div class="flex flex-row justify-center no-wrap">
+              <img class="w-1/4 mr-3 rounded" src="https://img.masstransitmag.com/files/base/cygnus/mass/image/2021/01/icon.5ff36696179d1.png?auto=format%2Ccompress&w=640&width=640" alt="Canada">
+              <img class="w-1/4 rounded" src="@/assets/transit.png" alt="Canada">
+            </div>
+          </div>
+          <div>
+            <span class="mx-4">iPhone or Android users can use their installed maps app to create routes using Toronto transportation</span>
+          </div>
+        </div>
+      </div>
+    </q-expansion-item>
   </div>
 </template>
 
