@@ -30,6 +30,8 @@
           <q-btn class="cursor-pointer rounded-3xl mr-2 hover:underline" @click="$router.push('/activities')" flat text-color="white" label="Things to do"></q-btn>
           <span>|</span>
           <q-btn class="cursor-pointer rounded-3xl mr-2 hover:underline" @click="$router.push('/transportation')" flat text-color="white" label="Transportation"></q-btn>
+          <span>|</span>
+          <q-btn class="cursor-pointer rounded-3xl mr-2 hover:underline" @click="$router.push('/host')" flat text-color="white" label="About the host"></q-btn>
         </div>
       </div>
       <span v-if="largeHeader" class="font-bold text-3xl py-10">{{ language === 'eng' ? 'Welcome to Toronto' : '토론토에 오신것을 환영합니다' }} 👋</span>
