@@ -6,8 +6,8 @@
       <span>With prime access to Union station and plenty of locations in walking distance, this is the perfect location for your vacation!</span>
       <span>Have a nice stay, <b>JinStay</b> 🫰</span>
     </div>
-    <div class="py-4 w-full flex no-wrap justify-evenly">
-      <div class="flex flex-col items-center h-fit border border-4 rounded-2xl p-4 text-center" style="border-color: red; width: 400px">
+    <div class="py-4 w-full flex justify-evenly">
+      <div class="flex flex-col items-center h-fit border border-4 rounded-2xl p-4 text-center mb-4" style="border-color: red; width: 400px">
         <span class="text-bold pb-1 underline">Quick facts</span>
         <div class="pb-1 pr-4">
           <q-icon name="hotel" class="pr-2"></q-icon>
@@ -36,7 +36,7 @@
           <span>1 hour subway from Pearson Airport</span>
         </div>
       </div>
-      <div class="flex flex-col border border-4 rounded-2xl p-4 px-6 text-center" style="border-color: red; width: 600px;">
+      <div class="flex flex-col border border-4 rounded-2xl p-4 px-6 text-center mb-4" style="border-color: red; width: 600px;">
         <span class="text-bold pb-1 underline">Amenities</span>
         <div class="flex">
           <div class="w-1/2 flex">
@@ -77,7 +77,7 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col w-fit h-fit border border-4 rounded-2xl p-2 px-4 text-center" style="border-color: red;">
+      <div class="flex flex-col md:w-fit w-full h-fit border border-4 rounded-2xl p-2 px-4 text-center mb-4" style="border-color: red;">
         <span class="text-bold pb-1 underline">Cleaning procedure</span>
         <div class="flex flex-col">
           <span>-> Sanitization of all cutlery</span>
@@ -86,10 +86,10 @@
       </div>
     </div>
     <span class="w-full text-center text-3xl">Take a look 👉</span>
-    <div class="flex w-full no-wrap">
-      <div class="flex items-center flex-col w-full p-4">
+    <div class="flex w-full">
+      <div class="flex items-center flex-col w-full md:w-1/2 p-4">
         <span>Bedroom:</span>
-        <div class="w-full" style="min-width: 650px;">
+        <div class="w-full">
           <q-carousel
             class="rounded"
             swipeable
@@ -116,9 +116,9 @@
           </q-carousel>
         </div>
       </div>
-      <div class="flex items-center flex-col w-full p-4">
+      <div class="flex items-center flex-col w-full md:w-1/2 p-4">
         <span>Kitchen:</span>
-        <div class="w-full" style="min-width: 650px;">
+        <div class="w-full">
           <q-carousel
             class="rounded"
             swipeable
@@ -147,16 +147,16 @@
         </div>
       </div>
     </div>
-    <div class="flex w-full no-wrap">
-      <div class="flex items-center flex-col w-full p-4">
+    <div class="flex w-full">
+      <div class="flex items-center flex-col w-full md:w-1/2 p-4">
         <span>Living room:</span>
-        <div class="w-full" style="min-width: 650px;">
+        <div class="w-full">
           <q-carousel
             class="rounded"
             swipeable
             animated
             v-model="livingSlide"
-            v-model:fullscreen="kitchenFullscreen"
+            v-model:fullscreen="livingFullscreen"
             thumbnails
             infinite
           >
@@ -170,17 +170,17 @@
               >
                 <q-btn
                   push round dense color="white" text-color="black"
-                  :icon="bedroomFullscreen ? 'fullscreen_exit' : 'fullscreen'"
-                  @click="bedroomFullscreen = !bedroomFullscreen"
+                  :icon="livingFullscreen ? 'fullscreen_exit' : 'fullscreen'"
+                  @click="livingFullscreen = !livingFullscreen"
                 ></q-btn>
               </q-carousel-control>
             </template>
           </q-carousel>
         </div>
       </div>
-      <div class="flex items-center flex-col w-full p-4">
+      <div class="flex items-center flex-col w-full md:w-1/2 p-4">
         <span>Bathroom:</span>
-        <div class="w-full" style="min-width: 650px;">
+        <div class="w-full">
           <q-carousel
             class="rounded"
             swipeable
@@ -209,10 +209,10 @@
         </div>
       </div>
     </div>
-    <div class="flex w-full no-wrap">
-      <div class="flex items-center flex-col w-full p-4">
+    <div class="flex w-full">
+      <div class="flex items-center flex-col w-full md:w-1/2 p-4">
         <span>Interior:</span>
-        <div class="w-full" style="min-width: 650px;">
+        <div class="w-full">
           <q-carousel
             class="rounded"
             swipeable
@@ -241,9 +241,9 @@
           </q-carousel>
         </div>
       </div>
-      <div class="flex items-center flex-col w-full p-4">
+      <div class="flex items-center flex-col w-full md:w-1/2 p-4">
         <span>Exterior:</span>
-        <div class="w-full" style="min-width: 650px;">
+        <div class="w-full">
           <q-carousel
             class="rounded"
             swipeable

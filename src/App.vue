@@ -24,7 +24,7 @@
             <div>Toronto, ON</div>
           </div>
         </div>
-        <div v-if="!largeHeader" class="w-full flex items-center overflow-x-scroll no-wrap px-2">
+        <div v-if="!largeHeader" class="w-full flex items-center overflow-x-scroll px-2">
           <q-btn class="cursor-pointer rounded-3xl mr-2 hover:underline" @click="$router.push('/home')" flat text-color="white" label="Our home"></q-btn>
           <span>|</span>
           <q-btn class="cursor-pointer rounded-3xl mr-2 hover:underline" @click="$router.push('/activities')" flat text-color="white" label="Things to do"></q-btn>
