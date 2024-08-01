@@ -1,94 +1,94 @@
 <template>
   <div class="w-full items-center flex flex-col text-lg p-4">
     <div class="flex flex-col w-fit p-2 px-4 text-center">
-      <span class="text-bold pb-1">Welcome to your new home!</span>
-      <span>A beautiful Queen Bed Studio Apartment located in Downtown Toronto ✨</span>
-      <span>With prime access to Union station and plenty of locations in walking distance, this is the perfect location for your vacation!</span>
-      <span>Have a nice stay, <b>JinStay</b> 🫰</span>
+      <span class="text-bold pb-1">{{ $t('Welcome') }}</span>
+      <span>{{ $t('HomeInformation') }}</span>
+      <span>{{ $t('HomeLocation') }}</span>
+      <span>{{ $t('HaveANiceDay') }}<b>{{ $t('JinStay') }}</b> 🫰</span>
     </div>
     <div class="py-4 w-full flex justify-evenly">
       <div class="flex flex-col items-center h-fit border border-4 rounded-2xl p-4 text-center mb-4" style="border-color: red; width: 400px">
-        <span class="text-bold pb-1 underline">Quick facts</span>
+        <span class="text-bold pb-1 underline">{{ $t('QuickFacts') }}</span>
         <div class="pb-1 pr-4">
           <q-icon name="hotel" class="pr-2"></q-icon>
-          <span>Sleeps: 3 people</span>
+          <span>{{ $t('Sleeps3') }}</span>
         </div>
         <div class="flex">
           <div class="pb-1 pr-4">
             <q-icon name="login" class="pr-2"></q-icon>
-            <span>Check in: 3pm</span>
+            <span>{{ $t('CheckIn') }}</span>
           </div>
           <div>
             <q-icon name="logout" class="pr-2"></q-icon>
-            <span>Check out: 11am</span>
+            <span>{{ $t('CheckOut') }}</span>
           </div>
         </div>
         <div class="pr-4 pb-1">
           <q-icon name="directions_walk" class="pr-2"></q-icon>
-          <span>2 min walk from union station</span>
+          <span>{{ $t('WalkFromUnionStation') }}</span>
         </div>
         <div class="pr-4 pb-1">
           <q-icon name="local_taxi" class="pr-2"></q-icon>
-          <span>30 min drive from Pearson Airport</span>
+          <span>{{ $t('DriveFromAirport') }}</span>
         </div>
         <div class="pr-4 pb-1">
           <q-icon name="subway" class="pr-2"></q-icon>
-          <span>1 hour subway from Pearson Airport</span>
+          <span>{{ $t('SubwayFromAirport') }}</span>
         </div>
       </div>
       <div class="flex flex-col border border-4 rounded-2xl p-4 px-6 text-center mb-4" style="border-color: red; width: 600px;">
-        <span class="text-bold pb-1 underline">Amenities</span>
+        <span class="text-bold pb-1 underline">{{ $t('Amenities') }}</span>
         <div class="flex">
           <div class="w-1/2 flex">
             <div class="pb-1 pr-4">
               <q-icon name="bed" class="pr-2"></q-icon>
-              <span>Queen bed</span>
+              <span>{{ $t('QueenBed') }}</span>
             </div>
             <div class="pb-1 pr-4">
               <q-icon name="computer" class="pr-2"></q-icon>
-              <span>Designated workspace</span>
+              <span>{{ $t('DesignatedWorkspace') }}</span>
             </div>
             <div class="pb-1 pr-4">
               <q-icon name="wifi" class="pr-2"></q-icon>
-              <span>Fast speed Wi-Fi</span>
+              <span>{{ $t('WiFi') }}</span>
             </div>
             <div class="pb-1 pr-4">
               <q-icon name="bathtub" class="pr-2"></q-icon>
-              <span>Bathtub</span>
+              <span>{{ $t('Bathtub') }}</span>
             </div>
           </div>
           <div class="w-1/2 flex">
             <div class="pb-1 pr-4">
               <q-icon name="fitness_center" class="pr-2"></q-icon>
-              <span>Fitness centre</span>
+              <span>{{ $t('FitnessCenter') }}</span>
             </div>
             <div class="pb-1 pr-4">
               <q-icon name="help_center" class="pr-2"></q-icon>
-              <span>24/7 concierge service</span>
+              <span>{{ $t('Concierge') }}</span>
             </div>
             <div class="pb-1 pr-4">
               <q-icon name="wifi" class="pr-2"></q-icon>
-              <span>Fast speed Wi-Fi</span>
+              <span>{{ $t('WiFi') }}</span>
             </div>
             <div class="pb-1 pr-4">
               <q-icon name="soap" class="pr-2"></q-icon>
-              <span>Complimentary towletries</span>
+              <span>{{ $t('Towletries') }}</span>
             </div>
           </div>
         </div>
       </div>
       <div class="flex flex-col md:w-fit w-full h-fit border border-4 rounded-2xl p-2 px-4 text-center mb-4" style="border-color: red;">
-        <span class="text-bold pb-1 underline">Cleaning procedure</span>
+        <span class="text-bold pb-1 underline">{{ $t('CleaningProcedure') }}</span>
         <div class="flex flex-col">
-          <span>-> Sanitization of all cutlery</span>
-          <span>-> Bedding washed with bleach</span>
+          <span>{{ $t('Cutlery') }}</span>
+          <span>{{ $t('BeddingWashed') }}</span>
         </div>
       </div>
     </div>
-    <span class="w-full text-center text-3xl">Take a look 👉</span>
+    <span class="w-full text-center text-3xl">{{ $t('TakeALook') }}</span>
     <div class="flex w-full">
       <div class="flex items-center flex-col w-full md:w-1/2 p-4">
-        <span>Bedroom:</span>
+        <span>{{ $t('Bedroom') }}</span>
         <div class="w-full">
           <q-carousel
             class="rounded"
@@ -117,7 +117,7 @@
         </div>
       </div>
       <div class="flex items-center flex-col w-full md:w-1/2 p-4">
-        <span>Kitchen:</span>
+        <span>{{ $t('Kitchen') }}</span>
         <div class="w-full">
           <q-carousel
             class="rounded"
@@ -149,7 +149,7 @@
     </div>
     <div class="flex w-full">
       <div class="flex items-center flex-col w-full md:w-1/2 p-4">
-        <span>Living room:</span>
+        <span>{{ $t('LivingRoom') }}</span>
         <div class="w-full">
           <q-carousel
             class="rounded"
@@ -179,7 +179,7 @@
         </div>
       </div>
       <div class="flex items-center flex-col w-full md:w-1/2 p-4">
-        <span>Bathroom:</span>
+        <span>{{ $t('Bathroom') }}</span>
         <div class="w-full">
           <q-carousel
             class="rounded"
@@ -211,7 +211,7 @@
     </div>
     <div class="flex w-full">
       <div class="flex items-center flex-col w-full md:w-1/2 p-4">
-        <span>Interior:</span>
+        <span>{{ $t('Interior') }}</span>
         <div class="w-full">
           <q-carousel
             class="rounded"
@@ -242,7 +242,7 @@
         </div>
       </div>
       <div class="flex items-center flex-col w-full md:w-1/2 p-4">
-        <span>Exterior:</span>
+        <span>{{ $t('Exterior') }}</span>
         <div class="w-full">
           <q-carousel
             class="rounded"

@@ -11,37 +11,37 @@
       <q-btn class="rounded-3xl mr-2" color="red" text-color="white" label="Restaurants"></q-btn>
     </div>
     <div class="w-full py-4">
-      <span class="text-bold text-3xl flex justify-center text-red">Restaurants</span>
+      <span class="text-bold text-3xl flex justify-center text-red">{{ $t('Restaurants') }}</span>
       <div class="md:w-1/2 w-full flex flex-col items-center justify-center py-4 my-8 border border-4 rounded-xl" style="border-color: red;">
-        <span class="text-lg pb-2">Han Ba Tang</span>
+        <span class="text-lg pb-2">{{ $t('HanBaTang') }}</span>
         <div class="flex items-center justify-evenly w-full pb-2">
-          <span>🇰🇷 Korean Cuisine</span>
+          <span>{{ $t('KoreanCuisine') }}</span>
           <div class="flex items-center">
             <q-icon name="location_on" class="pr-2"></q-icon>
-            <span>4862 Yonge St</span>
+            <span>{{ $t('4862YongeSt') }}</span>
           </div>
           <div class="flex items-center">
             <q-icon name="event_seat" class="pr-2"></q-icon>
-            <span>Reservation required</span>
+            <span>{{ $t('ReservationRequired') }}</span>
           </div>
           <div class="flex items-center">
             <q-icon name="takeout_dining" class="pr-2"></q-icon>
-            <span>Takeout available</span>
+            <span>{{ $t('TakeoutAvailable') }}</span>
           </div>
         </div>
         <div class="flex items-center pb-2 justify-center">
           <q-icon name="train" class="pr-2"></q-icon>
-          <span>20 minutes by subway</span>
-          <span class="pl-1">(Yonge-University subway line)</span>
+          <span>{{ $t('20MinutesBySubway') }}</span>
+          <span class="pl-1">{{ $t('YongeUniversitySubwayLine') }}</span>
         </div>
-        <span>Recommendations:</span>
+        <span>{{ $t('Recommendations') }}</span>
         <div class="flex pb-4">
-          <span class="pr-2">⭐️ Pork Bone Soup - $15</span>
-          <span>⭐️ Bulgogi Bibimbap - $14</span>
+          <span class="pr-2">{{ $t('PorkBoneSoup') }}</span>
+          <span>{{ $t('BulgogiBibimbap') }}</span>
         </div>
         <div class="flex items-center">
           <q-icon name="open_in_new" class="pr-2"></q-icon>
-          <a class="hover:underline" target="_blank" href="https://hanbatang.ca">Website</a>
+          <a class="hover:underline" target="_blank" href="https://hanbatang.ca">{{ $t('Website') }}</a>
         </div>
         <div class="flex items-center">
           <q-icon name="call" class="pr-2"></q-icon>

@@ -16,12 +16,12 @@
         </div>
         <div :class="largeHeader ? 'flex flex-col text-base w-full items-center justify-center' : ''">
           <div :class="largeHeader ? 'animated-text' : 'animated-text'" class="flex justify-center items-center">
-            <span class="font-bold text-2xl pl-6 pr-1">JinStay</span>
+            <span class="font-bold text-2xl pl-6 pr-1">{{ $t('JinStay') }}</span>
             <img class="w-6 h-6" src="@/assets/mapleLeaf.png" alt="Canada">
           </div>
           <div v-if="largeHeader" class="flex flex-col justify-center items-center">
-            <div>123 Main Street</div>
-            <div>Toronto, ON</div>
+            <div>{{ $t('Address') }}</div>
+            <div>{{ $t('CityAddress') }}</div>
           </div>
         </div>
         <div v-if="!largeHeader" class="w-full flex items-center overflow-x-scroll px-2">
@@ -56,9 +56,8 @@ export default {
       largeHeader: true,
       language: 'eng',
       languages: [
-        { name: 'English', key: 'eng' },
-        { name: 'Korean', key: 'kor' },
-        { name: 'French', key: 'fre' }
+        { name: 'English', key: 'en' },
+        { name: 'Korean', key: 'kr' }
       ]
     }
   },
@@ -80,6 +79,11 @@ export default {
       } else {
         this.largeHeader  =true
       }
+    }
+  },
+  watch: {
+    language () {
+      this.$i18n.locale = this.language
     }
   }
 }
