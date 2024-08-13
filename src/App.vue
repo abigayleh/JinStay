@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div :class="largeHeader ? 'h-64' : 'fixed h-22 py-2'" class="w-full transition-all duration-500 text-white bg-red flex flex-col justify-between items-center" style="z-index: 5000;">
+    <div :class="largeHeader ? 'header-large' : 'header-small'" class="header">
      <div class="flex w-full" :class="largeHeader ? '' : 'justify-between flex-row-reverse'">
-        <div :class="largeHeader ? 'flex w-full justify-end' : ''">
-          <q-btn flat color="white" icon="language" label="Language">
+        <div class="pr-4 font-bold" :class="largeHeader ? 'flex w-full justify-end' : 'pt-5'">
+          <q-btn flat color="white" icon="language" label="LANGUAGE">
             <q-menu>
               <q-list style="min-width: 100px">
                 <q-item v-for="lang in languages" :key="lang.key" clickable v-close-popup @click="language = lang.key">
@@ -14,8 +14,8 @@
             </q-menu>
           </q-btn>
         </div>
-        <div :class="largeHeader ? 'flex flex-col text-base w-full items-center justify-center' : ''">
-          <div :class="largeHeader ? 'animated-text' : 'animated-text'" class="flex justify-center items-center">
+        <div :class="largeHeader ? 'flex flex-col text-base w-full items-center justify-center' : 'mt-4'">
+          <div class="flex justify-center items-center">
             <span class="font-bold text-2xl pl-6 pr-1">{{ $t('JinStay') }}</span>
             <img class="w-6 h-6" src="@/assets/mapleLeaf.png" alt="Canada">
           </div>
@@ -24,14 +24,14 @@
             <div>{{ $t('CityAddress') }}</div>
           </div>
         </div>
-        <div v-if="!largeHeader" class="w-full flex items-center overflow-x-scroll px-2">
-          <q-btn class="cursor-pointer rounded-3xl mr-2 hover:underline" @click="$router.push('/home')" flat text-color="white" label="Our home"></q-btn>
-          <span>|</span>
-          <q-btn class="cursor-pointer rounded-3xl mr-2 hover:underline" @click="$router.push('/activities')" flat text-color="white" label="Things to do"></q-btn>
-          <span>|</span>
-          <q-btn class="cursor-pointer rounded-3xl mr-2 hover:underline" @click="$router.push('/transportation')" flat text-color="white" label="Transportation"></q-btn>
-          <span>|</span>
-          <q-btn class="cursor-pointer rounded-3xl mr-2 hover:underline" @click="$router.push('/host')" flat text-color="white" label="About the host"></q-btn>
+        <div v-if="!largeHeader" class="h-min w-full flex items-center overflow-x-scroll pl-5 mb-4 text-base font-bold">
+          <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">OUR HOME</span>
+          <span class="pl-2 pr-3">|</span>
+          <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">THINGS TO DO</span>
+          <span class="pl-2 pr-3">|</span>
+          <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/transportation')">TRANSPORTATION</span>
+          <span class="pl-2 pr-3">|</span>
+          <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/host')">ABOUT THE HOST</span>
         </div>
       </div>
       <span v-if="largeHeader" class="font-bold text-3xl py-10">{{ language === 'eng' ? 'Welcome to Toronto' : '토론토에 오신것을 환영합니다' }} 👋</span>
@@ -89,12 +89,33 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   @import "tailwindcss/base";
   @import "tailwindcss/components";
   @import "tailwindcss/utilities";
 
-  .animated-text {
-    animation: slideLeft 5s linear infinite;
+  .header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: height 0.5s ease;
+    background-color: red;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    overflow: hidden;
   }
+
+  .header-small {
+    height: 80px;
+  }
+
+  .header-large {
+    height: 256px;
+  }
+
 </style>

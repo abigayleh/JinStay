@@ -82,6 +82,15 @@
         <div class="flex flex-col">
           <span>{{ $t('Cutlery') }}</span>
           <span>{{ $t('BeddingWashed') }}</span>
+          <span>Ensured ventillation while cleaning</span>
+          <span>Empty trash cans</span>
+          <span>Thourough dusting</span>
+          <span>Sanitize all surfaces and devices (remotes, etc.)</span>
+          <span>Clean sink, toilet, shower, bathtub</span>
+          <span>Clean mirrors and glass</span>
+          <span>Wash all towels</span>
+          <span>Vaccum and mop floors</span>
+          <span>Ensure final inspection of room</span>
         </div>
       </div>
     </div>
