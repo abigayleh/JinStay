@@ -106,7 +106,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 5000;
+    z-index: 100;
     overflow: hidden;
   }
 

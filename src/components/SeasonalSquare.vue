@@ -20,25 +20,7 @@
             <div class="w-1/2 flex flex-col flex-nowrap items-center justify-center">
               <div class="flex items-center pb-2">
                 <q-icon name="location_on" class="pr-4"></q-icon>
-                <span>{{ location }}</span>
-              </div>
-              <div class="flex items-center pb-2">
-                <span>{{ cuisine }}</span>
-              </div>
-              <div class="flex items-center pb-2">
-                <q-icon name="lunch_dining" class="pr-4"></q-icon>
-                <div class="flex flex-col">
-                  <span>{{ recommendationOne }}</span>
-                  <span>{{ recommendationTwo }}</span>
-                </div>
-              </div>
-              <div class="flex items-center pb-2">
-                <q-icon name="event_seat" class="pr-4"></q-icon>
-                <span>{{ reservation }}</span>
-              </div>
-              <div class="flex items-center pb-2">
-                <q-icon name="takeout_dining" class="pr-4"></q-icon>
-                <span>{{ takeout }}</span>
+                <span>{{ address }}</span>
               </div>
               <div v-if="walk !== ''" class="flex items-center pb-2 justify-center">
                 <q-icon name="directions_walk" class="pr-2"></q-icon>
@@ -68,10 +50,6 @@
             <a class="hover:underline" target="_blank" :href="website">{{ $t('Website') }}</a>
           </div>
           <div class="flex items-center pb-1">
-            <q-icon name="call" class="pr-2"></q-icon>
-            <span>{{ phone }}</span>
-          </div>
-          <div class="flex items-center pb-1">
             <q-icon name="map" class="pr-2"></q-icon>
             <a class="hover:underline" target="_blank" :href="directions">Directions from Union Station</a>
           </div>
@@ -88,7 +66,12 @@
           <div class="flex flex-col pb-2">
             <div class="flex flex-nowrap justify-evenly w-full items-center pb-2">
               <div class="flex items-center pb-2 justify-center pr-4">
-                <span>{{ cuisine }}</span>
+                <q-icon :name="typeIcon" class="pr-2"></q-icon>
+                <span>{{ type }}</span>
+              </div>
+              <div class="flex items-center pb-2 justify-center pr-4">
+                <q-icon name="calendar_month" class="pr-2"></q-icon>
+                <span>{{ dates }}</span>
               </div>
             </div>
           </div>
@@ -114,10 +97,6 @@
               <a class="hover:underline" target="_blank" :href="website">{{ $t('Website') }}</a>
             </div>
             <div class="flex items-center">
-              <q-icon name="call" class="pr-2"></q-icon>
-              <span>{{ phone }}</span>
-            </div>
-            <div class="flex items-center">
               <q-icon name="map" class="pr-2"></q-icon>
               <a class="hover:underline" target="_blank" :href="directions">Directions from Union Station</a>
             </div>
@@ -134,7 +113,7 @@
 
 <script>
 export default {
-  name: 'RestaurantSquare',
+  name: 'SeasonalSquare',
   props: {
     likes: {
       type: Number,
@@ -160,19 +139,7 @@ export default {
       type: String,
       required: true
     },
-    cuisine: {
-      type: String,
-      required: true
-    },
-    location: {
-      type: String,
-      required: true
-    },
-    reservation: {
-      type: String,
-      required: true
-    },
-    takeout: {
+    address: {
       type: String,
       required: true
     },
@@ -188,23 +155,23 @@ export default {
       type: String,
       required: true
     },
-    recommendationOne: {
-      type: String,
-      required: true
-    },
-    recommendationTwo: {
-      type: String,
-      required: true
-    },
     website: {
       type: String,
       required: true
     },
-    phone: {
+    directions: {
       type: String,
       required: true
     },
-    directions: {
+    type: {
+      type: String,
+      required: true
+    },
+    typeIcon: {
+      type: String,
+      required: true
+    },
+    dates: {
       type: String,
       required: true
     }

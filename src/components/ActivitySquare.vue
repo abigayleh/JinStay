@@ -1,10 +1,10 @@
 <template>
   <div class="py-5 p-3 flex justify-center">
-    <div v-if="!largeView" class="flex flex-col flex-nowrap items-center pt-5 bg-white rounded-xl border border-2" style="width: 500px; height: 330px;">
+    <div v-if="!largeView" class="flex flex-col flex-nowrap items-center pt-5 bg-white rounded-xl shadow-md hover:shadow-lg cursor-pointer" style="width: 500px; height: 330px;">
       <span class="text-lg font-bold">{{ title }}</span>
       <div class="h-full w-full flex items-evenly px-4">
         <div class="flex justify-center items-center">
-          <img class="h-56 rounded" src="https://preview.redd.it/s6vthxvvuc851.jpg?width=1080&crop=smart&auto=webp&s=1f6119482beac6f73b684cb53fa45ec3de624496" alt="Canada">
+          <img class="h-56 rounded" :src="smallPhoto" alt="Canada">
         </div>
         <div class="flex-1 flex flex-col items-center justify-center">
           <div class="pb-5">
@@ -53,12 +53,21 @@
         </div>
       </div>
     </div>
-    <div v-else class="w-full flex flex-col items-center justify-center py-4 mx-3 my-8 border border-4 rounded-xl" style="border-color: red; max-width: 1000px;">
+    <div v-else class="w-full flex flex-col items-center bg-white justify-center py-4 mx-3 shadow-md hover:shadow-xl cursor-pointer rounded-xl" style="max-width: 1000px;">
       <span class="text-lg pb-2">{{ title }}</span>
       <div class="flex flex-nowrap py-4 pl-2">
-        <div>
-          <img class="rounded h-64" :src="photo" alt="Canada">
-        </div>
+        <q-carousel
+          class="rounded h-64 w-96"
+          swipeable
+          animated
+          arrows
+          v-model="slideIndex"
+          infinite
+        >
+          <q-carousel-slide :name="1" :img-src="photos[0]"></q-carousel-slide>
+          <q-carousel-slide :name="2" :img-src="photos[1]"></q-carousel-slide>
+          <q-carousel-slide :name="3" :img-src="photos[2]"></q-carousel-slide>
+        </q-carousel>
         <div style="width: 450px;" class="flex flex-col justify-center items-center">
           <div class="w-full flex">
             <div class="w-1/2 flex flex-col flex-nowrap items-center justify-center">
@@ -126,8 +135,12 @@ export default {
       type: Number,
       required: true
     },
-    photo: {
+    smallPhoto: {
       type: String,
+      required: true
+    },
+    photos: {
+      type: Array,
       required: true
     },
     largeView: {
@@ -186,7 +199,12 @@ export default {
       type: String,
       required: true
     }
-  }
+  },
+  data() {
+    return {
+      slideIndex: 1,
+    }
+  },
 }
 </script>
 

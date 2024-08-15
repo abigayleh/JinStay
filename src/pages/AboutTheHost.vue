@@ -1,27 +1,33 @@
 <template>
-  <div class="h-screen">
+  <div style="background-color: #f6f7f8;">
     <div class="w-full flex flex-col overflow-x-scroll no-wrap py-3 px-2">
       <div class="flex w-full items-center justify-center text-3xl py-10">
         <q-icon name="flight_takeoff" size="lg" class="pr-2"></q-icon>
         <span class="px-2">{{ $t('SeoulTorontoTitle') }}</span>
         <q-icon name="flight_land" size="lg" class="pr-2"></q-icon>
       </div>
-      <div class="flex items-center justify-evenly pb-4">
-        <img class="rounded md:h-96 h-48" src="@/assets/hanbokBoth.jpg" alt="Canada">
-        <img class="rounded md:h-72 h-28" src="@/assets/jinStayLogo.png" alt="Canada">
-        <img class="rounded md:h-96 h-48" src="@/assets/workJinnie.jpg" alt="Canada">
+      <div class="flex items-center justify-center pb-4">
+        <img class="rounded-xl md:h-96 h-48" src="@/assets/hanbokBoth.jpg" alt="Canada">
+        <img class="rounded md:h-72 h-28 px-28" src="@/assets/jinStayLogo.png" alt="Canada">
+        <img class="rounded-xl md:h-96 h-48" src="@/assets/workJinnie.jpg" alt="Canada">
       </div>
-      <div class="flex flex-col pl-6">
-        <span class="font-bold text-2xl">{{ $t('ExperiencedHotelier') }}</span>
-        <span class="pb-4">{{ $t('HotelierInfo') }}</span>
-        <span class="font-bold text-2xl">{{ $t('SeoulToToronto') }}</span>
-        <span class="pb-4">{{ $t('SeoulTorontoInfo') }}</span>
-        <span class="font-bold text-2xl">{{ $t('Foodie') }}</span>
-        <span class="pb-4">{{ $t('FoodieInfo') }}</span>
-        <div class="flex flex-nowrap items-center justify-evenly pb-4">
-          <img class="rounded w-1/4 mx-1 py-1" src="@/assets/pho.jpg" alt="Canada">
-          <img class="rounded w-1/2 mx-1 py-1" src="@/assets/steak.jpg" alt="Canada">
-          <img class="rounded w-1/4 mx-1 py-1" src="@/assets/hanshik.jpg" alt="Canada">
+      <div class="w-full flex flex-col items-center text-base">
+        <div class="w-9/12 mb-4 bg-white rounded-lg flex flex-col p-4 shadow-md hover:shadow-xl cursor-pointer">
+          <span class="font-bold text-2xl pb-2">{{ $t('ExperiencedHotelier') }}</span>
+          <span class="pb-4">{{ $t('HotelierInfo') }}</span>
+        </div>
+        <div class="w-9/12 mb-4 bg-white rounded-lg flex flex-col p-4 shadow-md hover:shadow-xl cursor-pointer">
+          <span class="font-bold text-2xl pb-2">{{ $t('SeoulToToronto') }}</span>
+          <span class="pb-4">{{ $t('SeoulTorontoInfo') }}</span>
+        </div>
+        <div class="w-9/12 mb-4 bg-white rounded-lg flex flex-col p-4 shadow-md hover:shadow-xl cursor-pointer">
+          <span class="font-bold text-2xl pb-2">{{ $t('Foodie') }}</span>
+          <span class="pb-4">{{ $t('FoodieInfo') }}</span>
+          <div class="flex flex-nowrap items-center justify-center pb-4">
+            <img style="width: 250px;" class="rounded-xl mx-1 py-1" src="@/assets/pho.jpg" alt="Canada">
+            <img style="width: 445px;" class="rounded-xl mx-1 py-1" src="@/assets/steak.jpg" alt="Canada">
+            <img style="width: 250px;" class="rounded-xl mx-1 py-1" src="@/assets/hanshik.jpg" alt="Canada">
+          </div>
         </div>
       </div>
     </div>

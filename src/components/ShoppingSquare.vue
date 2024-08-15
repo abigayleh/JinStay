@@ -1,11 +1,20 @@
 <template>
   <div class="py-5 p-3 flex justify-center">
-    <div v-if="largeView" class="w-full flex flex-col items-center justify-center py-4 mx-3 my-8 bg-white rounded-xl border border-2" style="max-width: 1000px;">
+    <div v-if="largeView" class="w-full flex flex-col items-center justify-center py-4 mx-3 bg-white rounded-xl shadow-md" style="max-width: 1000px;">
       <span class="text-lg pb-2">{{ title }}</span>
       <div class="flex py-4">
-        <div>
-          <img class="rounded h-64" :src="image" alt="Canada">
-        </div>
+        <q-carousel
+          class="rounded h-64 w-96"
+          swipeable
+          animated
+          arrows
+          v-model="slideIndex"
+          infinite
+        >
+          <q-carousel-slide :name="1" :img-src="photos[0]"></q-carousel-slide>
+          <q-carousel-slide :name="2" :img-src="photos[1]"></q-carousel-slide>
+          <q-carousel-slide :name="3" :img-src="photos[2]"></q-carousel-slide>
+        </q-carousel>
         <div style="width: 450px;" class="flex flex-col justify-center items-center">
           <div class="w-full flex">
             <div class="w-1/2 flex flex-col flex-nowrap items-center justify-center">
@@ -55,11 +64,11 @@
         </div>
       </div>
     </div>
-    <div v-else class="flex flex-col flex-nowrap items-center justify-center pt-5 bg-white rounded-xl border border-2" style="height: 330px; width: 500px;">
+    <div v-else class="flex flex-col flex-nowrap items-center justify-center pt-5 bg-white rounded-xl shadow-md hover:shadow-lg cursor-pointer" style="height: 330px; width: 500px;">
       <span class="text-lg font-bold">{{ title }}</span>
       <div class="w-full h-full flex px-4">
         <div class="flex justify-center items-center pr-2">
-          <img class="h-56 rounded" src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,g_xy_center,h_640,q_80,w_640,x_960,y_640/v1/clients/toronto/167_3_1464_jpeg_large_ede42653-7423-47bc-b76e-49bfd2086080.jpg" alt="Canada">
+          <img class="h-56 rounded" :src="smallPhoto" alt="Canada">
         </div>
         <div class="flex-1 flex flex-col items-center justify-center">
           <div class="flex flex-col pb-2">
@@ -122,7 +131,11 @@ export default {
       type: Boolean,
       required: true
     },
-    image: {
+    smallPhoto: {
+      type: String,
+      required: true
+    },
+    photos: {
       type: String,
       required: true
     },
@@ -165,6 +178,7 @@ export default {
   },
   data() {
     return {
+      slideIndex: 1,
       isLiked: false,
       isDisliked: false
     }

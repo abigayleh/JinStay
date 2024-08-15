@@ -20,25 +20,7 @@
             <div class="w-1/2 flex flex-col flex-nowrap items-center justify-center">
               <div class="flex items-center pb-2">
                 <q-icon name="location_on" class="pr-4"></q-icon>
-                <span>{{ location }}</span>
-              </div>
-              <div class="flex items-center pb-2">
-                <span>{{ cuisine }}</span>
-              </div>
-              <div class="flex items-center pb-2">
-                <q-icon name="lunch_dining" class="pr-4"></q-icon>
-                <div class="flex flex-col">
-                  <span>{{ recommendationOne }}</span>
-                  <span>{{ recommendationTwo }}</span>
-                </div>
-              </div>
-              <div class="flex items-center pb-2">
-                <q-icon name="event_seat" class="pr-4"></q-icon>
-                <span>{{ reservation }}</span>
-              </div>
-              <div class="flex items-center pb-2">
-                <q-icon name="takeout_dining" class="pr-4"></q-icon>
-                <span>{{ takeout }}</span>
+                <span>{{ address }}</span>
               </div>
               <div v-if="walk !== ''" class="flex items-center pb-2 justify-center">
                 <q-icon name="directions_walk" class="pr-2"></q-icon>
@@ -87,13 +69,6 @@
         <div class="flex-1 flex flex-col items-center justify-center">
           <div class="flex flex-col pb-2">
             <div class="flex flex-nowrap justify-evenly w-full items-center pb-2">
-              <div class="flex items-center pb-2 justify-center pr-4">
-                <span>{{ cuisine }}</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col pb-2">
-            <div class="flex flex-nowrap justify-evenly w-full items-center pb-2">
               <div v-if="walk !== ''" class="flex items-center pb-2 justify-center pr-4">
                 <q-icon name="directions_walk" class="pr-2"></q-icon>
                 <span>{{ walk }}</span>
@@ -134,7 +109,7 @@
 
 <script>
 export default {
-  name: 'RestaurantSquare',
+  name: 'MarketSquare',
   props: {
     likes: {
       type: Number,
@@ -160,19 +135,7 @@ export default {
       type: String,
       required: true
     },
-    cuisine: {
-      type: String,
-      required: true
-    },
-    location: {
-      type: String,
-      required: true
-    },
-    reservation: {
-      type: String,
-      required: true
-    },
-    takeout: {
+    address: {
       type: String,
       required: true
     },
@@ -185,14 +148,6 @@ export default {
       required: true
     },
     uber: {
-      type: String,
-      required: true
-    },
-    recommendationOne: {
-      type: String,
-      required: true
-    },
-    recommendationTwo: {
       type: String,
       required: true
     },
