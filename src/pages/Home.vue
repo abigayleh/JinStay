@@ -37,18 +37,18 @@
           <span>{{ $t('SubwayFromAirport') }}</span>
         </div>
       </div>
-      <div class="flex flex-col rounded-2xl p-8 text-center mb-8 bg-white shadow-md hover:shadow-xl cursor-pointer" style="width: 900px;">
+      <div class="amenities flex flex-col flex-nowrap rounded-2xl px-12 p-8 text-center mb-8 bg-white shadow-md hover:shadow-xl cursor-pointer">
         <span class="text-bold pb-1 underline pb-4 text-xl">{{ $t('Amenities') }}</span>
-        <div class="flex flex-col text-start text-base" style="height: 490px;">
-          <div class="pl-10 py-1 pr-4 flex items-center">
+        <div class="h-full flex flex-col text-start text-base">
+          <div class="pt-2 pr-12 py-1 flex items-center">
             <q-icon name="location_city" class="pr-2"></q-icon>
             <span>Downtown Toronto View</span>
           </div>
-          <div class="pl-10 py-1 pr-4">
+          <div class="pb-2 py-1">
             <q-icon name="key" class="pr-2"></q-icon>
             <span>Self check in</span>
           </div>
-          <div class="pt-4 pl-10 py-2">
+          <div class="py-2">
             <span class="font-bold">Bedroom and laundry</span>
             <div class="pt-2 py-1 pr-4 flex items-center">
               <q-icon name="bed" class="pr-2"></q-icon>
@@ -63,7 +63,7 @@
               <span>Hangers</span>
             </div>
           </div>
-          <div class="pt-4 pl-10">
+          <div class="py-2">
             <span class="font-bold">Bathroom</span>
             <div class="pt-2 py-1 pb-1 pr-4 flex items-center">
               <q-icon name="" class="pr-2"></q-icon>
@@ -86,7 +86,7 @@
               <span>Hot water</span>
             </div>
           </div>
-          <div class="pl-10">
+          <div class="py-2">
             <span class="font-bold">Kitchen and dining</span>
             <div class="pt-2 py-1 pb-1 pr-4">
               <q-icon name="kitchen" class="pr-2"></q-icon>
@@ -121,7 +121,7 @@
               <span>Coffee maker</span>
             </div>
           </div>
-          <div class="pt-4 pl-10">
+          <div class="py-2">
             <span class="font-bold">Outdoor</span>
             <div class="pt-2 pb-1 pr-4">
               <q-icon name="local_taxi" class="pr-2"></q-icon>
@@ -144,7 +144,7 @@
               <span>{{ $t('Concierge') }}</span>
             </div>
           </div>
-          <div class="pl-6">
+          <div class="py-2">
             <span class="font-bold">Entertainment</span>
             <div class="pt-2 pb-1 pr-4">
               <q-icon name="tv" class="pr-2"></q-icon>
@@ -158,7 +158,7 @@
               </div>
             </div>
           </div>
-          <div class="pt-6 pl-6">
+          <div class="py-2">
             <span class="font-bold">Internet and office</span>
             <div class="pt-2 pb-1 pr-4">
               <q-icon name="wifi" class="pr-2"></q-icon>
@@ -169,7 +169,7 @@
               <span>{{ $t('DesignatedWorkspace') }}</span>
             </div>
           </div>
-          <div class="pt-6 pl-6">
+          <div class="py-2">
             <span class="font-bold">Home safety</span>
             <div class="pt-2 pb-1 pr-4 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M440-120v-200h80v200h-80Zm323-101L621-362l57-57 141 142-56 56Zm-566 0-56-56 141-142 57 57-142 141Zm3-539v40h560v-40H200Zm124 120 12 40h288l12-40H324Zm12 120q-26 0-47-15.5T260-576l-20-64h-40q-33 0-56.5-23.5T120-720v-120h720v120q0 33-23.5 56.5T760-640h-40l-26 68q-9 23-29 37.5T620-520H336ZM200-760v40-40Z"/></svg>
@@ -465,5 +465,13 @@ export default {
     width: 100%;
     height: 100%;
     pointer-events: none;
+  }
+  .amenities {
+    width: 600px;
+    height: 860px;
+    @media (min-width: 860px) {
+      width: 830px;
+      height: 610px;
+    }
   }
 </style>

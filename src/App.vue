@@ -24,7 +24,7 @@
             <div>{{ $t('CityAddress') }}</div>
           </div>
         </div>
-        <div v-if="!largeHeader" class="h-min w-full flex items-center overflow-x-scroll pl-5 mb-4 text-base font-bold">
+        <div v-if="!largeHeader" class="h-min w-full flex flex-nowrap text-nowrap items-center overflow-x-scroll pl-5 mb-4 text-base font-bold">
           <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">OUR HOME</span>
           <span class="pl-2 pr-3">|</span>
           <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">THINGS TO DO</span>
@@ -106,7 +106,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 5000;
     overflow: hidden;
   }
 

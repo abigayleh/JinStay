@@ -1,10 +1,10 @@
 <template>
   <div class="py-5 p-3 flex justify-center">
     <div v-if="largeView" class="w-full flex flex-col items-center justify-center py-4 mx-3 bg-white rounded-xl shadow-md" style="max-width: 1000px;">
-      <span class="text-lg pb-2">{{ title }}</span>
-      <div class="flex py-4">
+      <span class="font-bold text-xl pb-4">{{ title }}</span>
+      <div class="w-full flex md:flex-row flex-col items-center justify-evenly flex-nowrap py-4 pl-2">
         <q-carousel
-          class="rounded h-64 w-96"
+          class="rounded md:h-full md:w-1/2 mb-6 h-72 w-10/12"
           swipeable
           animated
           arrows
@@ -15,30 +15,30 @@
           <q-carousel-slide :name="2" :img-src="photos[1]"></q-carousel-slide>
           <q-carousel-slide :name="3" :img-src="photos[2]"></q-carousel-slide>
         </q-carousel>
-        <div style="width: 450px;" class="flex flex-col justify-center items-center">
-          <div class="w-full flex">
-            <div class="w-1/2 flex flex-col flex-nowrap items-center justify-center">
-              <div class="flex items-center pb-2">
-                <q-icon name="location_on" class="pr-4"></q-icon>
-                <span>{{ address }}</span>
-              </div>
-              <div v-if="walk !== ''" class="flex items-center pb-2 justify-center">
+        <div class="w-fit flex flex-col justify-center items-center">
+          <div class="w-full flex flex-col justify-center pb-4">
+            <div class="pb-2 flex flex-nowrap items-center justify-center">
+              <q-icon name="location_on" class="pr-2"></q-icon>
+              <span>{{ address }}</span>
+              <q-icon name="calendar_month" class="pl-4 pr-2"></q-icon>
+              <span>{{ dates }}</span>
+            </div>
+            <div class="flex items-center justify-center">
+              <div v-if="walk !== ''" class="pr-4 flex items-center justify-center">
                 <q-icon name="directions_walk" class="pr-2"></q-icon>
                 <span>{{ walk }}</span>
               </div>
-              <div v-if="subway !== ''" class="flex items-center pb-2 justify-center">
-                <q-icon name="directions_walk" class="pr-6"></q-icon>
+              <div v-if="subway !== ''" class="pr-4 flex items-center justify-center">
+                <q-icon name="train" class="pr-2"></q-icon>
                 <span>{{ subway }}</span>
               </div>
-            </div>
-            <div class="w-1/2 flex flex-col items-center justify-center">
-              <div v-if="uber !== ''" class="flex items-center ml-6 pb-2 justify-center">
-                <q-icon name="train" class="pr-2"></q-icon>
+              <div v-if="uber !== ''" class="flex items-center justify-center">
+                <q-icon name="local_taxi" class="pr-2"></q-icon>
                 <span>{{ uber }}</span>
               </div>
             </div>
           </div>
-          <div class="w-full flex flex-col items-center py-2 pb-5">
+          <div class="w-full flex flex-col items-center py-2 pb-4">
             <span class="text-base py-1">Would you recommend here?</span>
             <div>
               <q-btn class="rounded-l-full" size="sm" :label="likes" @click="onClick('like')" :color="isLiked ? 'green' : grey" icon="thumb_up"></q-btn>
@@ -49,34 +49,28 @@
             <q-icon name="open_in_new" class="pr-2"></q-icon>
             <a class="hover:underline" target="_blank" :href="website">{{ $t('Website') }}</a>
           </div>
-          <div class="flex items-center pb-1">
+          <div class="flex items-center pb-4">
             <q-icon name="map" class="pr-2"></q-icon>
             <a class="hover:underline" target="_blank" :href="directions">Directions from Union Station</a>
           </div>
         </div>
       </div>
     </div>
-    <div v-else class="flex flex-col flex-nowrap items-center justify-center pt-5 bg-white rounded-xl shadow-md hover:shadow-lg cursor-pointer" style="height: 330px; width: 500px;">
+    <div v-else class="flex flex-col flex-nowrap items-center justify-center pt-5 bg-white rounded-xl shadow-md hover:shadow-lg cursor-pointer" style="height: 330px; width: 520px;">
       <span class="text-lg font-bold">{{ title }}</span>
-      <div class="w-full h-full flex px-4">
+      <div class="w-full h-full flex justify-evenly px-4">
         <div class="flex justify-center items-center pr-2">
           <img class="h-56 rounded" :src="smallPhoto" alt="Canada">
         </div>
-        <div class="flex-1 flex flex-col items-center justify-center">
-          <div class="flex flex-col pb-2">
-            <div class="flex flex-nowrap justify-evenly w-full items-center pb-2">
-              <div class="flex items-center pb-2 justify-center pr-4">
-                <q-icon :name="typeIcon" class="pr-2"></q-icon>
-                <span>{{ type }}</span>
-              </div>
-              <div class="flex items-center pb-2 justify-center pr-4">
-                <q-icon name="calendar_month" class="pr-2"></q-icon>
-                <span>{{ dates }}</span>
-              </div>
+        <div class="w-fit flex flex-col items-center justify-center">
+          <div>
+            <div class="flex pb-4">
+              <q-icon :name="typeIcon" class="pr-2"></q-icon>
+              <span>{{ type }}</span>
+              <q-icon name="calendar_month" class="pl-4 px-2"></q-icon>
+              <span>{{ dates }}</span>
             </div>
-          </div>
-          <div class="flex flex-col pb-2">
-            <div class="flex flex-nowrap justify-evenly w-full items-center pb-2">
+            <div class="flex">
               <div v-if="walk !== ''" class="flex items-center pb-2 justify-center pr-4">
                 <q-icon name="directions_walk" class="pr-2"></q-icon>
                 <span>{{ walk }}</span>
@@ -90,6 +84,8 @@
                 <span>{{ uber }}</span>
               </div>
             </div>
+          </div>
+          <div class="flex flex-nowrap justify-evenly w-full items-center pb-2">
           </div>
           <div class="flex items-center flex-col pb-2">
             <div class="flex items-center">
