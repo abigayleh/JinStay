@@ -30,8 +30,7 @@
               'https://www.travelandleisure.com/thmb/_HL3sxR00kCnqnHUOqAulCMzXTU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cn-tower-observation-deck-TORONTOFAMILY0222-e8c3d2ba06414ccfa2a551ee460d6cab.jpg',
               'https://www.cntower.ca/sites/default/files/styles/16_9_scale_and_crop_medium/public/images/hours.jpg?h=5ce0254a&itok=UPwrStAG'
             ]"
-            :likes="120"
-            :dislikes="52"  
+            likesIndex="0"
             :largeView="selected === 'toDo'"
             title="CN Tower"
             type="Landmark"

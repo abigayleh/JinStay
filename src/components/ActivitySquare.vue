@@ -125,11 +125,7 @@
 export default {
   name: 'ActivitySquare',
   props: {
-    likes: {
-      type: Number,
-      required: true
-    },
-    dislikes: {
+    likesIndex: {
       type: Number,
       required: true
     },
@@ -201,8 +197,19 @@ export default {
   data() {
     return {
       slideIndex: 1,
+      likes: 0,
+      dislikes: 0
     }
   },
+  mounted () {
+    this.getLikes()
+  },
+  methods: {
+    async getLikes () {
+      const response = await fetch('https://raw.githubusercontent.com/abigayleh/JinStay/master/src/locales/likes.json');
+      console.log(response)
+    }
+  }
 }
 </script>
 

@@ -326,14 +326,14 @@
         </div>
         <div class="flex flex-col items-center justify-evenly w-9/12 flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
           <span class="font-bold text-center pt-2">{{ $t('Citymapper') }}</span>
-          <div class="w-full flex md:flex-row flex-col flex-nowrap px-10 py-4">
-            <div class="flex flex-row no-wrap justify-center items-center">
-              <div style="width: 100px; height: 100px;" class="mr-5">
-                <img class="rounded w-full h-full" src="https://w7.pngwing.com/pngs/421/750/png-transparent-citymapper-transit-android-bus-android-angle-grass-web-application-thumbnail.png" alt="Canada">
-              </div>
-              <div style="width: 100px; height: 100px;">
-                <img class="rounded w-full h-full" src="@/assets/cityMapper.png" alt="Canada">
-              </div>
+          <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
+            <div class="flex flex-col no-wrap justify-center items-center hover:underline">
+              <a href="https://citymapper.com/webapp" target="_blank" class="text-sm pt-1">
+                <div class="mb-1" style="width: 100px; height: 100px;">
+                  <img class="rounded w-full h-full " src="https://w7.pngwing.com/pngs/421/750/png-transparent-citymapper-transit-android-bus-android-angle-grass-web-application-thumbnail.png" alt="Canada">
+                </div>
+                Download here
+              </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
               <span class="px-8 py-4">Provides real-time transit navigation in Toronto, offering detailed directions, route options, and live updates for buses, subways, and streetcars.</span>
@@ -342,14 +342,14 @@
         </div>
         <div class="flex flex-col items-center justify-evenly w-9/12 flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
           <span class="font-bold text-center pt-2">{{ $t('Transit') }}</span>
-          <div class="w-full flex md:flex-row flex-col flex-nowrap px-10 py-4">
+          <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
-              <div style="width: 100px; height: 100px;" class="mr-5">
-                <img class="rounded w-full h-full" src="https://img.masstransitmag.com/files/base/cygnus/mass/image/2021/01/icon.5ff36696179d1.png?auto=format%2Ccompress&w=640&width=640" alt="Canada">
-              </div>
-              <div style="width: 100px; height: 100px;">
-                <img class="rounded w-full h-full" src="@/assets/transit.png" alt="Canada">
-              </div>
+              <a href="https://transitapp.com" target="_blank" class="text-sm pt-1 hover:underline">
+                <div class="mb-1" style="width: 100px; height: 100px;">
+                  <img class="rounded w-full h-full" src="https://img.masstransitmag.com/files/base/cygnus/mass/image/2021/01/icon.5ff36696179d1.png?auto=format%2Ccompress&w=640&width=640" alt="Canada">
+                </div>
+                Download here
+              </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
               <span class="px-8 py-4">A user-friendly app that helps Toronto commuters track real-time public transit schedules, find nearby routes, and plan efficient trips across the city.</span>
@@ -358,14 +358,14 @@
         </div>
         <div class="flex flex-col items-center justify-evenly w-9/12 flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
           <span class="font-bold text-center pt-2">PRESTO</span>
-          <div class="w-full flex md:flex-row flex-col flex-nowrap px-10 py-4">
+          <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
-              <div style="width: 90px; height: 90px;" class="mt-1 mr-5">
-                <img class="rounded w-full h-full" src="https://play-lh.googleusercontent.com/5WT8xYEj_hBJjP4RGGlBjhyGlCz9G5NjFTUSLs-rTklu2nM1t_c_h3Nr-HXmbFwbcw" alt="Canada">
-              </div>
-              <div style="width: 100px; height: 100px;">
-                <img class="rounded w-full h-full" src="@/assets/transit.png" alt="Canada">
-              </div>
+              <a href="https://www.prestocard.ca/en/about/presto-app" target="_blank" class="text-sm pt-1 hover:underline">
+                <div class="mb-1" style="width: 100px; height: 100px;">
+                  <img class="rounded w-full h-full" src="https://play-lh.googleusercontent.com/5WT8xYEj_hBJjP4RGGlBjhyGlCz9G5NjFTUSLs-rTklu2nM1t_c_h3Nr-HXmbFwbcw" alt="Canada">
+                </div>
+                Download here
+              </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
               <span class="px-8 py-4">Toronto’s digital fare payment system for public transit, allowing users to load funds, tap to pay, and track their balance on buses, streetcars, and the subway.</span>
@@ -374,14 +374,14 @@
         </div>
         <div class="flex flex-col items-center justify-evenly w-9/12 flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
           <span class="font-bold text-center pt-2">Bike Share</span>
-          <div class="w-full flex md:flex-row flex-col flex-nowrap px-10 py-4">
+          <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
-              <div style="width: 120px; height: 120px;" class="mr-3">
-                <img class="rounded w-full h-full" src="https://play-lh.googleusercontent.com/e_xNbbCshJae9YC0bUD1navMYg0dotUoO_8X5BKe4b_ZNgj0Tpj94bo1w3oy4HwGz9c" alt="Canada">
-              </div>
-              <div style="width: 100px; height: 100px;" class="mt-2">
-                <img class="rounded w-full h-full" src="@/assets/transit.png" alt="Canada">
-              </div>
+              <a href="https://bikesharetoronto.com/mobile-app/" target="_blank" class="text-sm pt-1 hover:underline">
+                <div class="mb-1" style="width: 100px; height: 100px;">
+                  <img class="rounded w-full h-full" src="https://play-lh.googleusercontent.com/e_xNbbCshJae9YC0bUD1navMYg0dotUoO_8X5BKe4b_ZNgj0Tpj94bo1w3oy4HwGz9c" alt="Canada">
+                </div>
+                Download here
+              </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
               <span class="px-8 py-4">Toronto offers a convenient and eco-friendly way to travel the city, with thousands of bikes available for rent at docking stations across the city.</span>
@@ -390,14 +390,14 @@
         </div>
         <div class="flex flex-col items-center justify-evenly w-9/12 flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
           <span class="font-bold text-center pt-2">Beck Taxi</span>
-          <div class="w-full flex md:flex-row flex-col flex-nowrap px-10 py-4">
+          <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
-              <div style="width: 95px; height: 95px;" class="mr-5 mt-1">
-                <img class="rounded w-full h-full" src="https://play-lh.googleusercontent.com/_NS-xBCcV4bdqeiIgGAkEQtULQdEXny6tgoss0rti-MlUqQdzVDsZLUrxuRsEFn-7Q8" alt="Canada">
-              </div>
-              <div style="width: 100px; height: 100px;">
-                <img class="rounded w-full h-full" src="@/assets/transit.png" alt="Canada">
-              </div>
+              <a href="https://becktaxi.com" target="_blank" class="text-sm pt-1 hover:underline">
+                <div class="mb-1" style="width: 100px; height: 100px;">
+                  <img class="rounded w-full h-full" src="https://play-lh.googleusercontent.com/_NS-xBCcV4bdqeiIgGAkEQtULQdEXny6tgoss0rti-MlUqQdzVDsZLUrxuRsEFn-7Q8" alt="Canada">
+                </div>
+                Download here
+              </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
               <span class="px-8 py-4">One of Toronto's most trusted taxi services, offering reliable rides through its easy-to-use app, where users can book, track, and pay for their trips.</span>
