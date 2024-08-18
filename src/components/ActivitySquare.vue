@@ -48,7 +48,7 @@
           </div>
           <div class="pt-4">
             <q-icon name="info" class="pr-2"></q-icon>
-            <span class="cursor-pointer hover:underline">More info</span>
+            <span @click="$emit('clickMoreInfo')" class="cursor-pointer hover:underline">More info</span>
           </div>
         </div>
       </div>
@@ -99,8 +99,8 @@
           <div class="w-full flex flex-col items-center py-2 pb-6">
             <span class="text-base py-1">Would you recommend here?</span>
             <div>
-              <q-btn class="rounded-l-full" size="sm" :label="likes" @click="onClick('like')" :color="isLiked ? 'green' : grey" icon="thumb_up"></q-btn>
-              <q-btn class="rounded-r-full" size="sm" :label="dislikes" @click="onClick('dislike')" :color="isDisliked ? 'red' : grey" icon="thumb_down"></q-btn>
+              <q-btn class="rounded-l-full" size="sm" :label="likes" @click="updateLikes('like')" :color="isLiked ? 'green' : grey" icon="thumb_up"></q-btn>
+              <q-btn class="rounded-r-full" size="sm" :label="dislikes" @click="updateLikes('dislike')" :color="isDisliked ? 'red' : grey" icon="thumb_down"></q-btn>
             </div>
           </div>
           <div class="flex items-center py-1">
@@ -206,9 +206,40 @@ export default {
   },
   methods: {
     async getLikes () {
-      const response = await fetch('https://raw.githubusercontent.com/abigayleh/JinStay/master/src/locales/likes.json');
-      console.log(response)
-    }
+      // const response = await fetch('https://raw.githubusercontent.com/abigayleh/JinStay/master/src/locales/likes.json');
+      // const data  = await response.json()
+      // const activityLikes = data.activityLikes
+      // this.likes = activityLikes[this.likesIndex].likes
+      // this.dislikes = activityLikes[this.likesIndex].dislikes
+    },
+    async updateLikes (type) {
+      if (type === 'like' && this.isLiked) {
+        this.likes -= 1
+        this.isLiked = false
+      } else if (type === 'like') {
+        this.likes += 1
+        this.isLiked = true
+        if (this.isDisliked) {
+          this.dislikes -= 1
+          this.isDisliked = false
+        }
+      } else if (this.isDisliked) {
+        this.dislikes -= 1
+        this.isDisliked = false
+      } else {
+        this.dislikes += 1
+        this.isDisliked = true
+        if (this.isLiked) {
+          this.likes -= 1
+          this.isLiked = false
+        }
+      }
+
+      // const response = await fetch('https://raw.githubusercontent.com/abigayleh/JinStay/master/src/locales/likes.json');
+      // const data  = await response.json()
+      // data.activityLikes[this.likesIndex].likes = this.likes
+      // data.activityLikes[this.likesIndex].dislikes = this.dislikes
+    },
   }
 }
 </script>

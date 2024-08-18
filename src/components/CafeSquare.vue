@@ -97,7 +97,7 @@
           </div>
           <div class="pt-4">
             <q-icon name="info" class="pr-2"></q-icon>
-            <span class="cursor-pointer hover:underline">More info</span>
+            <span @click="$emit('clickMoreInfo')" class="cursor-pointer hover:underline">More info</span>
           </div>
         </div>
       </div>
