@@ -7,11 +7,11 @@
           <span class="text-lg font-bold underline pb-1">{{ $t('QuickJump') }}</span>
         </div>
         <div class="flex flex-col text-base">
-          <span class="my-1 cursor-pointer hover:underline" @click="handleScroll(1230)">{{ $t('Transportation') }}</span>
-          <span class="my-1 ml-6 text-base cursor-pointer hover:underline" @click="handleScroll(1230)">{{ $t('FromPearsonAirport') }}</span>
-          <span class="my-1 ml-6 text-base cursor-pointer hover:underline" @click="handleScroll(1510)">{{ $t('GeneralTransportation') }}</span>
-          <span class="my-1 cursor-pointer hover:underline" @click="handleScroll(2750)">{{ $t('Payment') }}</span>
-          <span class="my-1 cursor-pointer hover:underline" @click="handleScroll(2900)">{{ $t('HelpfulApps') }}</span>
+          <span class="my-1 cursor-pointer hover:underline" @click="handleScroll(860)">{{ $t('Transportation') }}</span>
+          <span class="my-1 ml-6 text-base cursor-pointer hover:underline" @click="handleScroll(860)">{{ $t('FromPearsonAirport') }}</span>
+          <span class="my-1 ml-6 text-base cursor-pointer hover:underline" @click="handleScroll(2300)">{{ $t('GeneralTransportation') }}</span>
+          <span class="my-1 cursor-pointer hover:underline" @click="handleScroll(4700)">{{ $t('Payment') }}</span>
+          <span class="my-1 cursor-pointer hover:underline" @click="handleScroll(5100)">{{ $t('HelpfulApps') }}</span>
         </div>
       </div>
     </div>
@@ -308,7 +308,7 @@
         default-opened
       >
       <div class="flex flex-col items-center justify-center px-4 font-normal text-base py-4">
-        <div class="flex flex-col items-center justify-evenly w-9/12 flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
           <span class="font-bold text-center">{{ $t('Maps/GoogleMaps') }}</span>
           <div class="w-full flex md:flex-row flex-col flex-nowrap px-10 py-2">
             <div class="flex flex-row no-wrap justify-center items-center">
@@ -324,7 +324,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col items-center justify-evenly w-9/12 flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
           <span class="font-bold text-center pt-2">{{ $t('Citymapper') }}</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-col no-wrap justify-center items-center hover:underline">
@@ -340,7 +340,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col items-center justify-evenly w-9/12 flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
           <span class="font-bold text-center pt-2">{{ $t('Transit') }}</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
@@ -356,7 +356,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col items-center justify-evenly w-9/12 flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
           <span class="font-bold text-center pt-2">PRESTO</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
@@ -372,7 +372,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col items-center justify-evenly w-9/12 flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
           <span class="font-bold text-center pt-2">Bike Share</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
@@ -388,7 +388,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col items-center justify-evenly w-9/12 flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
           <span class="font-bold text-center pt-2">Beck Taxi</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">

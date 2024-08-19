@@ -3,12 +3,12 @@
     <div class="flex w-full justify-center pt-10 pb-2">
       <span class="text-3xl font-bold text-red">Plan your trip ✈️</span>
     </div>
-    <div class="flex px-14 flex-col items-center no-wrap h-auto">
+    <div class="flex px-2 sm:px-14 flex-col items-center no-wrap h-auto">
       <NavigationMap :filter="selected" />
     </div>
     <div class="w-full flex flex-nowrap overflow-x-scroll text-nowrap px-14 py-3">
       <q-btn class="rounded-3xl mr-2" :class="selected !== 'all' ? 'brightness-75' : ''" @click="selected = 'all'" color="indigo" text-color="white" label="All"></q-btn>
-      <q-btn class="rounded-3xl mr-2" :class="selected !== 'toDo' ? 'brightness-75' : ''" @click="selected = 'toDo'" color="red" text-color="white" label="Things to do"></q-btn>
+      <q-btn style="min-width: 136px;" class="rounded-3xl mr-2" :class="selected !== 'toDo' ? 'brightness-75' : ''" @click="selected = 'toDo'" color="red" text-color="white" label="Things to do"></q-btn>
       <q-btn class="rounded-3xl mr-2" :class="selected !== 'restaurants' ? 'brightness-75' : ''" @click="selected = 'restaurants'" color="blue-10" text-color="white" label="Restaurants"></q-btn>
       <q-btn class="rounded-3xl mr-2" :class="selected !== 'cafe' ? 'brightness-75' : ''" @click="selected = 'cafe'" color="orange" text-color="white" label="Cafes"></q-btn>
       <q-btn class="rounded-3xl mr-2" :class="selected !== 'shopping' ? 'brightness-75' : ''" @click="selected = 'shopping'" color="purple" text-color="white" label="Shopping"></q-btn>
@@ -121,13 +121,169 @@
             phone="+1 (416) 364-1177"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Distillery+District,+Toronto,+ON,+Canada/@43.6467384,-79.3810554,15z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m18!4m17!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b3517f4a2060d:0x8b5d6dfb77378fc7!2m2!1d-79.3597088!2d43.650155!2m3!6e0!7e2!8j1723140000!3e3?entry=ttu"
           />
+          <ActivitySquare
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(4)}"    
+            smallPhoto="https://sothebys-com.brightspotcdn.com/dims4/default/3e2cf65/2147483647/strip/true/crop/2632x3900+0+0/resize/648x960!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2F51%2F12%2F3a89b54648b8bfb7baec59f9f0aa%2Fa-44523.jpg"  
+            :photos="[
+              'https://www.todocanada.ca/wp-content/uploads/6922629483_06fc2c0d60_b.jpg',
+              'https://www.sartle.com/media/place/art-gallery-of-ontario.jpg',
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Art_Gallery_of_Ontario_%2823782351913%29.jpg/2560px-Art_Gallery_of_Ontario_%2823782351913%29.jpg'
+            ]"
+            :likes="120"
+            :dislikes="52"    
+            :largeView="selected === 'toDo'"
+            title="Art Gallery of Ontario"
+            type="Art Gallery"
+            typeIcon="museum"
+            location="317 Dundas St W"
+            walk=""
+            subway="24 minutes"
+            uber="6 minutes"
+            child=""
+            youth="Youth - $15"
+            adult="Adult - $30"
+            senior=""
+            website="https://ago.ca"
+            phone="+1 (416) 979-6648"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Art+Gallery+of+Ontario,+Dundas+Street+West,+Toronto,+ON,+Canada/@43.6467484,-79.4080196,14z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34c5ed5319bd:0xda277755ede046af!2m2!1d-79.3925123!2d43.6536066?entry=ttu"
+          />
+          <ActivitySquare
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(5)}"  
+            smallPhoto="https://assets.simpleviewinc.com/simpleview/image/upload/crm/toronto/rsz_shutterstock_1715341101_5f3910fe-5056-a36f-2362d19bfc79fb17.jpg"  
+            :photos="[
+              'https://cdn.britannica.com/57/242557-050-698567ED/Castle-of-Casa-Loma-Toronto-Ontario-Canada.jpg',
+              'https://hikingthegta.com/wp-content/uploads/2022/08/img_7387.jpg?w=624',
+              'https://cdn.skyrisecities.com/sites/default/files/images/articles/2019/10/39451/39451-131023.jpg'
+            ]"
+            :likes="120"
+            :dislikes="52"   
+            :largeView="selected === 'toDo'"
+            title="Casa Loma"
+            type="Castle"
+            typeIcon="castle"
+            location="1 Austin Terrace"
+            walk=""
+            subway="24 minutes"
+            uber="30 minutes"
+            child="Child (4-13) - $25"
+            youth="Youth (14-17) - $35"
+            adult="Adult (18-64) - $40"
+            senior="Senior (65+) - $35"
+            website="https://casaloma.ca"
+            phone="+1 (416) 923-1171"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Casa+Loma,+Old+Toronto,+Toronto,+ON,+Canada/@43.6669375,-79.4380967,13z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m18!4m17!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b33622b6bf9dd:0x589f556a98f282b2!2m2!1d-79.4110854!2d43.6845696!2m3!6e0!7e2!8j1723140000!3e3?entry=ttu"
+          />
+          <ActivitySquare
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(6)}"    
+            smallPhoto="https://aws-tiqets-cdn.imgix.net/images/content/b065d37d00074c9caa3ead75b94f275f.jpg?auto=format&fit=crop&h=800&ixlib=python-3.2.1&q=70&w=800&s=6b3882d4c732bb1efa3cafdaa3f3512a"  
+            :photos="[
+              'https://www.rom.on.ca/sites/default/files/imce/ROM_strategic_plan_highlight.png',
+              'https://www.sixteen-nine.net/wp-content/uploads/2021/08/MomentFactory_ROM_CentennialBall-scaled.jpg',
+              'https://www.rom.on.ca/sites/default/files/imce/ROMGallery_F1_Rotunda_Website_DC.jpg'
+            ]"
+            :likes="120"
+            :dislikes="52"  
+            :largeView="selected === 'toDo'"
+            title="Royal Ontario Museum"
+            type="Museum"
+            typeIcon="museum"
+            location="100 Queens Park"
+            walk=""
+            subway="26 minutes"
+            uber="8 minutes"
+            child="Child (4-14) - $16"
+            youth="Youth (15-19) - $20"
+            adult="Adult (20-64) - $26"
+            senior="Senior (65+) - $21"
+            website="https://www.rom.on.ca/en"
+            phone="+1 (416) 586-8000"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Royal+Ontario+Museum,+Queens+Park,+Toronto,+ON,+Canada/@43.6575272,-79.4075899,14z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34baf3dae513:0xc98434e11ec5f592!2m2!1d-79.3947771!2d43.6677097?entry=ttu"
+          />
+          <ActivitySquare
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(7)}"    
+            smallPhoto="https://live.staticflickr.com/2106/2466481344_0b4d39c4fe_c.jpg"  
+            :photos="[
+              'https://www.toronto.ca/wp-content/uploads/2017/12/8b4b-High-Park-Maple-Leaf.jpg',
+              'https://media.cntraveler.com/photos/5b2c06854c18411aa3e9f5d3/16:9/w_2560,c_limit/High-Park_GettyImages-171589236.jpg',
+              'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/49000/49157-High-Park.jpg'
+            ]"
+            :likes="120"
+            :dislikes="52"    
+            :largeView="selected === 'toDo'"
+            title="High Park"
+            type="Park"
+            typeIcon="nature"
+            location="1873 Bloor St W"
+            walk=""
+            subway="40 minutes"
+            uber="30 minutes"
+            child=""
+            youth=""
+            adult=""
+            senior=""
+            website="https://www.highparktoronto.com"
+            phone="+1 (416) 338-0338"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/High+Park,+Bloor+Street+West,+Toronto,+ON,+Canada/@43.6542897,-79.5103999,12z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m18!4m17!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b35d32336f705:0x1bcc825a300ee67!2m2!1d-79.4636903!2d43.6465479!2m3!6e0!7e2!8j1723140000!3e3?entry=ttu"
+          />
+          <ActivitySquare
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(8)}"    
+            smallPhoto="https://www.tzwcadopt.ca/cdn/shop/products/5.png?v=1679413686"  
+            :photos="[
+              'https://images.hornblower.com/fit-in/1200x500/images/tours/tozoo/958aaca7-1129-4725-b16f-8604a66b0eb8.jpeg',
+              'https://torontonicity.com/wp-content/uploads/2022/10/Giraffes-at-Toronto-Zoo-photo-courtesy-Toronto-Zoo-1.jpg',
+              'https://facts.net/wp-content/uploads/2023/09/11-extraordinary-facts-about-toronto-zoo-1694773326.jpg'
+            ]"
+            :likes="120"
+            :dislikes="52"    
+            :largeView="selected === 'toDo'"
+            title="Toronto Zoo"
+            type="Zoo"
+            typeIcon="pets"
+            location="2000 Meadowvale Rd"
+            walk=""
+            subway="1 hour"
+            uber="30 minutes"
+            child="Child (3-12) - $25"
+            youth=""
+            adult="Adult (13-64) - $35"
+            senior="Senior (65+) - $30"
+            website="https://www.torontozoo.com"
+            phone="+1 (416) 392-5900"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Ripley's+Aquarium+of+Canada,+Bremner+Boulevard,+Toronto,+ON,+Canada/@43.6437276,-79.3948629,15z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d5d5b6045b:0x8daf1a19298c213d!2m2!1d-79.3866022!2d43.6421785?entry=ttu"
+          />
+          <ActivitySquare
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(9)}"    
+            smallPhoto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZHhi8RBHRvb3M73_s7U4kn3l9ywWrYzFbw&s"  
+            :photos="[
+              'https://www.tclf.org/sites/default/files/thumbnails/image/42948_signature_EdwardsGardens.jpg',
+              'https://www.yoplaces.ca/images/gallery/edwardsgarden/DSC_0059.jpg',
+              'https://t4.ftcdn.net/jpg/03/61/11/17/360_F_361111758_yH54qvqIoc1hIrjsNUDMru5DcnSSz57n.jpg'
+            ]"
+            :likes="120"
+            :dislikes="52"    
+            :largeView="selected === 'toDo'"
+            title="Edwards Gardens"
+            type="Park"
+            typeIcon="nature"
+            location="755 Lawrence Ave E"
+            walk=""
+            subway="1 hour"
+            uber="45 minutes"
+            child=""
+            youth=""
+            adult=""
+            senior=""
+            website="https://torontobotanicalgarden.ca/get-gardening/public-gardens/edwards-gardens/"
+            phone="+1 (416) 392-8188"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Edwards+Gardens,+Lawrence+Avenue+East,+North+York,+ON,+Canada/@43.6911352,-79.4581621,12z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m18!4m17!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cd4059a27c19:0x8589764fbf5646e7!2m2!1d-79.357924!2d43.7338039!2m3!6e0!7e2!8j1723140000!3e3?entry=ttu"
+          />
         </div>
       </div>
       <div v-if="selected === 'all' || selected === 'restaurants'">
         <span @click="selected ='restaurants'" class="cursor-pointer text-bold text-3xl flex justify-center text-red">Restaurants 👉</span>
         <div class="flex no-wrap overflow-scroll" :class="selected === 'restaurants' ? 'flex flex-col' : ''">
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurant'; clickMoreInfo(0)}"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(0)}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -152,7 +308,7 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurant'; clickMoreInfo(1)}"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(1)}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -177,7 +333,7 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurant'; clickMoreInfo(2)}"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(2)}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -202,7 +358,7 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurant'; clickMoreInfo(3)}"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(3)}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -227,7 +383,7 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurant'; clickMoreInfo(4)}"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(4)}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -252,7 +408,7 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurant'; clickMoreInfo(5)}"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(5)}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -277,7 +433,7 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurant'; clickMoreInfo(6)}"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(6)}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -302,7 +458,7 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurant'; clickMoreInfo(7)}"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(7)}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -327,7 +483,7 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurant'; clickMoreInfo(8)}"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(8)}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -352,7 +508,7 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurant'; clickMoreInfo(9)}"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(9)}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -580,11 +736,10 @@
             :likes="120"
             :dislikes="52"  
             :largeView="selected === 'market'"
-            smallPhoto="https://i.redd.it/yiy47ulawq681.jpg"
+            smallPhoto="https://s3-media0.fl.yelpcdn.com/bphoto/oEeSHrXZDkhgHgo1-pZCIA/348s.jpg"
             :photos="[
-              'https://blog.databid.com/hubfs/Square%20one-1.jpg',
-              'https://www.todocanada.ca/wp-content/uploads/Michael-Muraz-Square-One-Shopping-Centre-011-Low-Res-1280x720.jpg',
-              'https://www.insauga.com/wp-content/uploads/2022/12/70S_9462-scaled.jpg'
+              'https://777baystreet.com/wp-content/uploads/2022/04/INS_Store.jpeg',
+              'https://insmarket.ca/wp-content/uploads/2022/09/home_page_image_s.jpg'
             ]"
             title="INS Market"
             address="65 Front St W"
@@ -600,11 +755,11 @@
             :likes="103"
             :dislikes="12"
             :largeView="selected === 'market'"
-            smallPhoto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShWKjyX6_Whpwrwt4xWwEEkESQODa8-hbWlQ&s"
+            smallPhoto="https://lh3.googleusercontent.com/p/AF1QipPfVrAEs8hneG1obKKzcW6UZf-2RJy6z6GmMOBn=s680-w680-h510"
             :photos="[
-              'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/98/16/90/east-wing.jpg?w=1200&h=-1&s=1',
-              'https://img1.10bestmedia.com/Images/Photos/323058/p-11162895846-4c814ff297-k_55_660x440.jpg',
-              'https://upload.wikimedia.org/wikipedia/commons/5/58/Yorkdale_Mall.jpg'
+              'https://lh3.googleusercontent.com/p/AF1QipM2XptWTAsuuLqW3e8bgmBnkVKjISNbR8pz69Eu=s680-w680-h510',
+              'https://lh3.googleusercontent.com/p/AF1QipPUjDFVNAtcER2JMO2-c-C7dEPDEavv-eXNwZGv=s680-w680-h510',
+              'https://lh3.googleusercontent.com/p/AF1QipPhwpzeP7t6h0FwnbN34QXyASN4EUxp0ZvfJAKG=s680-w680-h510'
             ]"
             title="Longo's"
             address="15 York St"
@@ -620,11 +775,10 @@
             :likes="120"
             :dislikes="52"  
             :largeView="selected === 'market'"
-            smallPhoto="https://i.redd.it/yiy47ulawq681.jpg"
+            smallPhoto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX-9mK-0JlJh-eNpBbONTJ1H1A5Yi8WNUiUA4ey1Y4NpD_JQUipik2UMk7a2aAluvoQpw&usqp=CAU"
             :photos="[
-              'https://blog.databid.com/hubfs/Square%20one-1.jpg',
-              'https://www.todocanada.ca/wp-content/uploads/Michael-Muraz-Square-One-Shopping-Centre-011-Low-Res-1280x720.jpg',
-              'https://www.insauga.com/wp-content/uploads/2022/12/70S_9462-scaled.jpg'
+              'https://images2.minutemediacdn.com/image/upload/c_crop,w_4200,h_2362,x_0,y_349/c_fill,w_752,ar_16:9,f_auto,q_auto,g_auto/images/GettyImages/mmsport/mentalfloss/01g6k4t01fpszt02cys0.jpg',
+              'https://ctmdesign.ca/wp-content/uploads/2021/02/CTM-Portfolio-711_YYC-Img2.png'
             ]"
             title="7-Eleven"
             address="372 Bay St"
@@ -640,11 +794,11 @@
             :likes="27"
             :dislikes="120"  
             :largeView="selected === 'market'"
-            smallPhoto="https://assets.cadillacfairview.com/transform/82c1319d-471a-4e7f-8af3-e23e8313bf5d/-Retail-Sherway-Gardens-Mall-Interior?io=transform:fill,width:1600&quality=80"
+            smallPhoto="https://lh3.googleusercontent.com/p/AF1QipPK03Za7gtlOy4CSQmnK7qHS_jAZwC9IK8QOqcS=s680-w680-h510"
             :photos="[
-              'https://images.ctfassets.net/70unvdt5g4gf/2lsnucM0wTYBkBcpNGPf76/92c5d71628adecdd5628e6c9730921a9/170519-Sherway-418-min.jpg',
-              'https://images.ctfassets.net/70unvdt5g4gf/45TxYHVxgLYB6AGUhz1G7/36a628dfdc9c23088784424122ad2e9d/170519-Sherway-389-min__1_.jpg',
-              'https://images.ctfassets.net/70unvdt5g4gf/2lsnucM0wTYBkBcpNGPf76/92c5d71628adecdd5628e6c9730921a9/170519-Sherway-418-min.jpg'
+              'https://lh3.googleusercontent.com/p/AF1QipMTwF5iSrwtTFu-T1A4kcieyxf1GMiewpom4knw=s680-w680-h510',
+              'https://lh3.googleusercontent.com/p/AF1QipOL-5vb22MEnOv4sD0CWu8t57LoNVHM_5soJB7n=s680-w680-h510',
+              'https://lh3.googleusercontent.com/p/AF1QipN6NfnPk8HKgcufuZQ1GcrBCXmtLdBhuDOBluxP=s680-w680-h510'
             ]"
             title="Metro"
             address="80 Front St E"
@@ -660,11 +814,11 @@
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'market'"
-            smallPhoto="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,g_xy_center,h_640,q_80,w_640,x_960,y_640/v1/clients/toronto/167_3_1464_jpeg_large_ede42653-7423-47bc-b76e-49bfd2086080.jpg"
+            smallPhoto="https://lh3.googleusercontent.com/p/AF1QipPTFnqnzE9A24mhxOC_Jq0rv9s7ahcUSativ5Ch=s680-w680-h510"
             :photos="[
-              'https://allthebestspots.com/wp-content/uploads/2024/01/Depositphotos_eaton-center_S.jpg',
-              'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/49000/49319-Toronto-Eaton-Centre.jpg',
-              'https://retailinsider.b-cdn.net/wp-content/uploads/2022/01/IMG_3478-scaled.jpg'
+              'https://lh3.googleusercontent.com/p/AF1QipNSp9ZsuiWjAXEDi39V58EptqNwzUSq3bLwEq5s=s680-w680-h510',
+              'https://lh3.googleusercontent.com/p/AF1QipNrcnh-VP59zBcpAVi5nk9qbSO3BL1mmKRCvV-E=s680-w680-h510',
+              'https://lh3.googleusercontent.com/p/AF1QipMGONtzk17tawEy8QEsY3aIaUHVJSsPLu_IcwFu=s680-w680-h510'
             ]"
             title="Loblaws"
             address="10 Lower Jarvis St"
@@ -682,14 +836,36 @@
         <div class="flex no-wrap overflow-scroll" :class="selected === 'seasonal' ? 'flex flex-col' : ''">
           <SeasonalSquare
             @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(0)}"  
+            :likes="103"
+            :dislikes="12"
+            :largeView="selected === 'seasonal'"
+            smallPhoto="https://www.narcity.com/media-library/toronto-santa-claus-parade-route-will-cause-numerous-downtown-closures-next-weekend.jpg?id=25955521&width=600&height=600&coordinates=252%2C0%2C252%2C0"
+            :photos="[
+              'https://www.todocanada.ca/wp-content/uploads/Toronto-Santa-Claus-Parade.jpg',
+              'https://www.ctvnews.ca/polopoly_fs/1.1043296.1353266390!/httpImage/image.jpeg_gen/derivatives/landscape_960/image.jpeg',
+              'https://media.blogto.com/articles/20221014-santa-claus-parade-f.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70'
+            ]"
+            title="Santa Clause Parade"
+            address="Christie Street - St Lawrence Market"
+            walk="10 minutes"
+            subway=""
+            uber=""
+            dates="Nov 24th"
+            type="Parade"
+            typeIcon="festival"
+            website="https://www.thesantaclausparade.com/"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/St.+Lawrence+Market,+Toronto,+ON,+Canada/@43.6471791,-79.3754323,16z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb31b4dd275b:0xca0ab5acf1a5b6fd!2m2!1d-79.3715454!2d43.6486879?entry=ttu"
+          />
+          <SeasonalSquare
+            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(1)}"  
             :likes="120"
             :dislikes="52"  
             :largeView="selected === 'seasonal'"
-            smallPhoto="https://i.redd.it/yiy47ulawq681.jpg"
+            smallPhoto="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_640,q_65,w_640,x_1713,y_1300/v1/clients/toronto/d69761ffbb1e75d903732f522dcdbd8fb5313c09_7964ebf6-fc8d-41a9-85cd-561a73fd1ffd.jpg"
             :photos="[
-              'https://blog.databid.com/hubfs/Square%20one-1.jpg',
-              'https://www.todocanada.ca/wp-content/uploads/Michael-Muraz-Square-One-Shopping-Centre-011-Low-Res-1280x720.jpg',
-              'https://www.insauga.com/wp-content/uploads/2022/12/70S_9462-scaled.jpg'
+              'https://media.blogto.com/articles/20211124-cavalcade-of-lights-2021.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70',
+              'https://www.toronto.ca/wp-content/uploads/2022/11/98eb-Social-Hero-Image-1--1024x681.jpg',
+              'https://live.staticflickr.com/4014/4300087425_3d7925bfb0_b.jpg'
             ]"
             title="Cavalcade of Lights"
             address="100 Queen Street W"
@@ -703,15 +879,15 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <SeasonalSquare
-            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(1)}"  
+            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(2)}"  
             :likes="120"
             :dislikes="52"  
             :largeView="selected === 'seasonal'"
-            smallPhoto="https://i.redd.it/yiy47ulawq681.jpg"
+            smallPhoto="https://travel.home.sndimg.com/content/dam/images/travel/fullrights/2015/12/14/new-years-world-toronto.jpg.rend.hgtvcom.1280.1920.suffix/1491592908849.jpeg"
             :photos="[
-              'https://blog.databid.com/hubfs/Square%20one-1.jpg',
-              'https://www.todocanada.ca/wp-content/uploads/Michael-Muraz-Square-One-Shopping-Centre-011-Low-Res-1280x720.jpg',
-              'https://www.insauga.com/wp-content/uploads/2022/12/70S_9462-scaled.jpg'
+              'https://prod-static.curiocity.com/uploads/2021/12/BeFunky-collage-30.jpg',
+              'https://i.pinimg.com/474x/7d/ec/9f/7dec9f59473ef6db7f8fd14b19463c5c.jpg',
+              'https://travel.home.sndimg.com/content/dam/images/travel/fullrights/2015/12/14/new-years-world-toronto.jpg.rend.hgtvcom.1280.1920.suffix/1491592908849.jpeg'
             ]"
             title="New Year's Eve Celebration"
             address="100 Queen Street W"
@@ -725,15 +901,15 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <SeasonalSquare
-            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(2)}"  
+            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(3)}"  
             :likes="27"
             :dislikes="120"  
             :largeView="selected === 'seasonal'"
-            smallPhoto="https://assets.cadillacfairview.com/transform/82c1319d-471a-4e7f-8af3-e23e8313bf5d/-Retail-Sherway-Gardens-Mall-Interior?io=transform:fill,width:1600&quality=80"
+            smallPhoto="https://i.pinimg.com/736x/4f/f0/70/4ff0700acdffbd97f1b01d6308923d86.jpg"
             :photos="[
-              'https://images.ctfassets.net/70unvdt5g4gf/2lsnucM0wTYBkBcpNGPf76/92c5d71628adecdd5628e6c9730921a9/170519-Sherway-418-min.jpg',
-              'https://images.ctfassets.net/70unvdt5g4gf/45TxYHVxgLYB6AGUhz1G7/36a628dfdc9c23088784424122ad2e9d/170519-Sherway-389-min__1_.jpg',
-              'https://images.ctfassets.net/70unvdt5g4gf/2lsnucM0wTYBkBcpNGPf76/92c5d71628adecdd5628e6c9730921a9/170519-Sherway-418-min.jpg'
+              'https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/toronto/nathan_phillips_square_skating_seeusoontravel_da2a4178-04bb-4960-b451-334239608735.jpg',
+              'https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_384,q_80,w_640,x_2448,y_2235/v1/clients/toronto/167_3_1482_jpeg_min_0e52e367-54ca-47cb-bab1-e1d1c9b9e548.jpg',
+              'https://www.mybackyardicerink.com/images/outdoor-skating-rink-Nathan-Phillips-Square-Toronto-Canada.jpg'
             ]"
             title="Nathan Philips Square Ice Skating"
             address="100 Queen St W"
@@ -747,15 +923,15 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <SeasonalSquare
-            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(3)}"  
+            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(4)}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'seasonal'"
-            smallPhoto="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,g_xy_center,h_640,q_80,w_640,x_960,y_640/v1/clients/toronto/167_3_1464_jpeg_large_ede42653-7423-47bc-b76e-49bfd2086080.jpg"
+            smallPhoto="https://www.gotourscanada.com/wp-content/uploads/2017/12/TCM.jpg"
             :photos="[
-              'https://allthebestspots.com/wp-content/uploads/2024/01/Depositphotos_eaton-center_S.jpg',
-              'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/49000/49319-Toronto-Eaton-Centre.jpg',
-              'https://retailinsider.b-cdn.net/wp-content/uploads/2022/01/IMG_3478-scaled.jpg'
+              'https://www.narcity.com/media-library/the-distillery-winter-village-in-toronto-ontario.jpg?id=50292424&width=1245&height=700&coordinates=0%2C0%2C90%2C0',
+              'https://photos.bringfido.com/events/4/2/0/41024/41024_33681.jpg?size=slide&density=2x',
+              'https://bloximages.chicago2.vip.townnews.com/insidehalton.com/content/tncms/assets/v3/editorial/8/04/80412d03-9d1b-508b-a8be-c420ec495c43/63dcbe40c0ff8.image.jpg?crop=1000%2C563%2C0%2C84'
             ]"
             title="Toronto Christmas Market"
             address="55 Mill St"
@@ -766,28 +942,6 @@
             type="Market"
             typeIcon="storefront"
             website="https://www.thedistillerywintervillage.com"
-            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
-          />
-          <SeasonalSquare
-            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(4)}"  
-            :likes="103"
-            :dislikes="12"
-            :largeView="selected === 'seasonal'"
-            smallPhoto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShWKjyX6_Whpwrwt4xWwEEkESQODa8-hbWlQ&s"
-            :photos="[
-              'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/98/16/90/east-wing.jpg?w=1200&h=-1&s=1',
-              'https://img1.10bestmedia.com/Images/Photos/323058/p-11162895846-4c814ff297-k_55_660x440.jpg',
-              'https://upload.wikimedia.org/wikipedia/commons/5/58/Yorkdale_Mall.jpg'
-            ]"
-            title="Winterlicious"
-            address="1552 Avenue Rd"
-            walk=""
-            subway="37 minutes"
-            uber="35 minutes"
-            dates="Jan 31-Feb 13"
-            type="Food"
-            typeIcon="lunch_dining"
-            website="https://www.toronto.ca/explore-enjoy/festivals-events/winterlicious/"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
         </div>
@@ -817,7 +971,7 @@ export default {
   methods: {
     clickMoreInfo (index) {
       window.scrollTo({
-        top: 1100 + (index * 450),
+        top: 1100 + (index * 730),
         behavior: 'smooth'
       });
     }

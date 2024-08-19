@@ -10,36 +10,36 @@
     <div class="py-4 w-full flex items-center justify-evenly">
       <div class="h-fit flex flex-col items-center rounded-2xl p-8 text-center mb-8 bg-white shadow-md hover:shadow-xl cursor-pointer" style="width: 400px">
         <span class="text-bold pb-1 underline pb-4 text-xl">{{ $t('QuickFacts') }}</span>
-        <div class="pb-1 pr-4">
+        <div class="pb-2 pr-4">
           <q-icon name="hotel" class="pr-2"></q-icon>
           <span>{{ $t('Sleeps3') }}</span>
         </div>
-        <div class="flex">
-          <div class="pb-1 pr-4">
+        <div class="flex sm:flex-row flex-col">
+          <div class="pb-2 pr-4">
             <q-icon name="login" class="pr-2"></q-icon>
             <span>{{ $t('CheckIn') }}</span>
           </div>
-          <div>
+          <div class="pb-2">
             <q-icon name="logout" class="pr-2"></q-icon>
             <span>{{ $t('CheckOut') }}</span>
           </div>
         </div>
-        <div class="pr-4 pb-1">
+        <div class="pr-4 pb-2">
           <q-icon name="directions_walk" class="pr-2"></q-icon>
           <span>{{ $t('WalkFromUnionStation') }}</span>
         </div>
-        <div class="pr-4 pb-1">
+        <div class="pr-4 pb-2">
           <q-icon name="local_taxi" class="pr-2"></q-icon>
           <span>{{ $t('DriveFromAirport') }}</span>
         </div>
-        <div class="pr-4 pb-1">
+        <div class="pr-4 pb-2">
           <q-icon name="subway" class="pr-2"></q-icon>
           <span>{{ $t('SubwayFromAirport') }}</span>
         </div>
       </div>
-      <div class="amenities flex flex-col flex-nowrap rounded-2xl px-12 p-8 text-center mb-8 bg-white shadow-md hover:shadow-xl cursor-pointer">
+      <div class="amenities w-full flex flex-col flex-nowrap rounded-2xl px-12 p-8 text-center mb-8 bg-white shadow-md hover:shadow-xl cursor-pointer">
         <span class="text-bold pb-1 underline pb-4 text-xl">{{ $t('Amenities') }}</span>
-        <div class="h-full flex flex-col text-start text-base">
+        <div class="h-full flex flex-col flex-wrap text-start text-base">
           <div class="pt-2 pr-12 py-1 flex items-center">
             <q-icon name="location_city" class="pr-2"></q-icon>
             <span>Downtown Toronto View</span>
@@ -467,10 +467,12 @@ export default {
     pointer-events: none;
   }
   .amenities {
-    width: 600px;
-    height: 860px;
+    max-width: 820px;
+    height: 1400px;
+    @media (min-width: 640px) {
+      height: 860px;
+    }
     @media (min-width: 860px) {
-      width: 830px;
       height: 610px;
     }
   }

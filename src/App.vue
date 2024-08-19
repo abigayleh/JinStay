@@ -24,14 +24,14 @@
             <div>{{ $t('CityAddress') }}</div>
           </div>
         </div>
-        <div v-if="!largeHeader" class="h-min w-full flex flex-nowrap text-nowrap items-center overflow-x-scroll pl-5 mb-4 text-base font-bold">
-          <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">OUR HOME</span>
+        <div v-if="!largeHeader" class="h-min flex flex-nowrap text-nowrap items-center overflow-scroll pl-5 mb-4 text-base font-bold">
+          <span style="min-width: 90px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">OUR HOME</span>
           <span class="pl-2 pr-3">|</span>
-          <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">THINGS TO DO</span>
+          <span style="min-width: 120px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">THINGS TO DO</span>
           <span class="pl-2 pr-3">|</span>
           <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/transportation')">TRANSPORTATION</span>
           <span class="pl-2 pr-3">|</span>
-          <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/host')">ABOUT THE HOST</span>
+          <span style="min-width: 150px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/host')">ABOUT THE HOST</span>
         </div>
       </div>
       <span v-if="largeHeader" class="font-bold text-3xl py-10">{{ language === 'eng' ? 'Welcome to Toronto' : '토론토에 오신것을 환영합니다' }} 👋</span>
