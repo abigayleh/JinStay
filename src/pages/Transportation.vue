@@ -7,18 +7,18 @@
           <span class="text-lg font-bold underline pb-1">{{ $t('QuickJump') }}</span>
         </div>
         <div class="flex flex-col text-base">
-          <span class="my-1 cursor-pointer hover:underline" @click="handleScroll(860)">{{ $t('Transportation') }}</span>
-          <span class="my-1 ml-6 text-base cursor-pointer hover:underline" @click="handleScroll(860)">{{ $t('FromPearsonAirport') }}</span>
-          <span class="my-1 ml-6 text-base cursor-pointer hover:underline" @click="handleScroll(2300)">{{ $t('GeneralTransportation') }}</span>
-          <span class="my-1 cursor-pointer hover:underline" @click="handleScroll(4700)">{{ $t('Payment') }}</span>
-          <span class="my-1 cursor-pointer hover:underline" @click="handleScroll(5100)">{{ $t('HelpfulApps') }}</span>
+          <span class="my-1 cursor-pointer hover:underline" @click="handleScroll('airport')">{{ $t('Transportation') }}</span>
+          <span class="my-1 ml-6 text-base cursor-pointer hover:underline" @click="handleScroll('airport')">{{ $t('FromPearsonAirport') }}</span>
+          <span class="my-1 ml-6 text-base cursor-pointer hover:underline" @click="handleScroll('general')">{{ $t('GeneralTransportation') }}</span>
+          <span class="my-1 cursor-pointer hover:underline" @click="handleScroll('payment')">{{ $t('Payment') }}</span>
+          <span class="my-1 cursor-pointer hover:underline" @click="handleScroll('apps')">{{ $t('HelpfulApps') }}</span>
         </div>
       </div>
     </div>
     <div class="pt-8 pb-6 w-full flex justify-evenly items-center text-base font-bold">
-      <a href="https://www.urbanrail.net/am/toro/Toronto-metro-map.png" target="_blank" class="hover:underline cursor-pointer">Open Subway line map 🚇</a>
-      <a href="https://www.google.com/maps/dir///@43.6565783,-79.4075055,14z?entry=ttu" target="_blank" class="hover:underline cursor-pointer">Plan your route 🛣️</a>
-      <a href="https://assets.metrolinx.com/image/upload/s--QiImbry3--/c_limit,f_auto,q_auto,w_3840/v1/Images/GO/system-map" target="_blank" class="hover:underline cursor-pointer">Open Go Train map 🚃</a>
+      <a href="https://www.urbanrail.net/am/toro/Toronto-metro-map.png" target="_blank" class="hover:underline cursor-pointer">{{ $t('SubwayLineMap') }}</a>
+      <a href="https://www.google.com/maps/dir///@43.6565783,-79.4075055,14z?entry=ttu" target="_blank" class="hover:underline cursor-pointer">{{ $t('PlanRoute') }}</a>
+      <a href="https://assets.metrolinx.com/image/upload/s--QiImbry3--/c_limit,f_auto,q_auto,w_3840/v1/Images/GO/system-map" target="_blank" class="hover:underline cursor-pointer">{{ $t('GoTrain') }}</a>
     </div>
     <q-expansion-item
         expand-separator
@@ -27,7 +27,7 @@
         default-opened
       >
       <div class="flex flex-col items-center justify-center py-4 px-8 font-normal text-base">
-        <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
+        <div id="airport" class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
           <span class="font-bold text-center py-4">{{ $t('UPExpress') }}</span>
           <div class="w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
@@ -38,33 +38,33 @@
                 <q-carousel-slide :name="0" img-src="https://upload.wikimedia.org/wikipedia/commons/a/aa/UPXatMimico.jpg"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
-                <span class="pr-2">✅ Debit/Credit</span>
-                <span class="pr-2">✅ Cash</span>
-                <span class="pr-2">✅ PRESTO</span>
+                <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
+                <span class="pr-2">✅ {{ $t('Cash') }}</span>
+                <span class="pr-2">✅ {{ $t('PRESTO') }}</span>
               </div>
             </div>
             <div class="pr-6 w-fit md:max-w-sm flex flex-col items-center justify-center">
               <span class="pb-4">{{ $t('UPExpressInfo') }}</span>
               <div class="flex items-center pb-1">
                 <q-icon name="timelapse" class="pr-1"></q-icon>
-                <span>25 minutes</span>
+                <span>{{ $t('UPExpressTime') }}</span>
               </div>
               <div class="flex items-center pb-1">
-                <span>$12 one-way (kids under 12 are free)</span>
+                <span>{{ $t('UPExpressCost') }}</span>
               </div>
               <div class="flex items-center pb-6">
                 <q-icon name="schedule" class="pr-1"></q-icon>
-                <span>Comes every 15 minutes</span>
+                <span>{{ $t('UPExpressFreq') }}</span>
               </div>
               <div class="pb-6 flex flex-nowrap justify-center items-center">
                 <q-icon name="location_on" class="pr-1"></q-icon>
-                <span>Main lobby of Pearson Airport Terminal 1 (UP Express terminal)</span>
+                <span>{{ $t('UPExpressWhere') }}</span>
               </div>
             </div>
           </div>
         </div>
         <div class="w-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">Taxi</span>
+          <span class="font-bold text-center py-4">{{ $t('Taxi') }}</span>
           <div class="w-full min-h-96 flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
@@ -74,31 +74,31 @@
                 <q-carousel-slide :name="0" img-src="https://media.blogto.com/articles/20200430-airportlimo2.jpg?w=1200&cmd=resize_then_crop&height=630&quality=70"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
-                <span class="pr-2">✅ Debit/Credit</span>
-                <span class="pr-2">✅ Cash</span>
-                <span class="pr-2">❌ PRESTO</span>
+                <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
+                <span class="pr-2">✅ {{ $t('Cash') }}</span>
+                <span class="pr-2">❌ {{ $t('PRESTO') }}</span>
               </div>
             </div>
             <div class="pr-6 md:w-fit md:max-w-sm w-full flex flex-col items-center justify-center">
               <div class="flex items-center pb-1">
                 <q-icon name="timelapse" class="pr-1"></q-icon>
-                <span>30-45 minutes (traffic depending)</span>
+                <span>{{ $t('TaxiTime') }}</span>
               </div>
               <div class="flex items-center pb-4">
-                <span>$60-75</span>
+                <span>{{ $t('TaxiCost') }}</span>
               </div>
               <div class="flex items-center pb-4">
                 <q-icon name="location_on" class="pr-2"></q-icon>
                 <div class="flex flex-col items-start">
-                  <span>Terminal 1: Door D</span>
-                  <span>Terminal 3: Door D, E, F</span>
+                  <span>{{ $t('TaxiWhereOne') }}</span>
+                  <span>{{ $t('TaxiWhereTwo') }}</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">Uber</span>
+          <span class="font-bold text-center py-4">{{ $t('Uber') }}</span>
           <div class="w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="min-h-96 flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
@@ -108,24 +108,24 @@
                 <q-carousel-slide :name="0" img-src="https://assets-global.website-files.com/63ff9cd42186283f0e990e08/65d635cda06cdba37c76afa6_MOZCO%20Mateusz%20Szymanski%20Getty%20Images.jpg"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm py-3 pb-6">
-                <span class="pr-2">✅ Debit/Credit</span>
-                <span class="pr-2">✅ Cash</span>
-                <span class="pr-2">❌ PRESTO</span>
+                <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
+                <span class="pr-2">✅ {{ $t('Cash') }}</span>
+                <span class="pr-2">❌ {{ $t('PRESTO') }}</span>
               </div>
             </div>
             <div class="pr-6 md:w-fit md:max-w-sm w-full flex flex-col items-center justify-center">
               <div class="flex items-center pb-1">
                 <q-icon name="timelapse" class="pr-1"></q-icon>
-                <span>30-45 minutes (traffic depending)</span>
+                <span>{{ $t('UberTime') }}</span>
               </div>
               <div class="flex items-center pb-6">
-                <span>$50-70</span>
+                <span>{{ $t('UberCost') }}</span>
               </div>
               <div class="flex items-center pb-6">
                 <q-icon name="location_on" class="pr-2"></q-icon>
                 <div class="flex flex-col">
-                  <span>Terminal 1: Door Q</span>
-                  <span>Terminal 3: Door D</span>
+                  <span>{{ $t('UberWhereOne') }}</span>
+                  <span>{{ $t('UberWhereTwo') }}</span>
                 </div>
               </div>
             </div>
@@ -140,8 +140,8 @@
         default-opened
       >
       <div class="flex flex-col items-center justify-center px-4 font-normal text-base py-4">
-        <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">Subway</span>
+        <div id="general" class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
+          <span class="font-bold text-center py-4">{{ $t('Subway') }}</span>
           <div class="min-h-96 w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
@@ -151,22 +151,22 @@
                 <q-carousel-slide :name="0" img-src="https://d3d0lqu00lnqvz.cloudfront.net/media/media/a0103c46-7dc7-4df0-b488-fdc41e4de918.jpg"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
-                <span class="pr-2">✅ Debit/Credit</span>
-                <span class="pr-2">✅ Cash</span>
-                <span class="pr-2">✅ PRESTO</span>
+                <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
+                <span class="pr-2">✅ {{ $t('Cash') }}</span>
+                <span class="pr-2">✅ {{ $t('PRESTO') }}</span>
               </div>
             </div>
             <div class="pr-6 w-fit md:max-w-sm flex flex-col items-center justify-center pb-6">
               <span class="px-8 pb-4">{{ $t('SubwayInfo') }}</span>
               <div class="flex items-center">
-                <span>$3.35 per use</span>
+                <span>{{ $t('SubwayCost') }}</span>
               </div>
-              <a href="https://www.ttc.ca/riding-the-ttc/Updates/New-TTC-fares" target="_blank" class="hover:underline cursor-pointer text-sm">See more here</a>
+              <a href="https://www.ttc.ca/riding-the-ttc/Updates/New-TTC-fares" target="_blank" class="hover:underline cursor-pointer text-sm">{{ $t('SeeMoreHere') }}</a>
             </div>
           </div>
         </div>
         <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">Bus</span>
+          <span class="font-bold text-center py-4">{{ $t('Bus') }}</span>
           <div class="min-h-96 w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
@@ -176,21 +176,21 @@
                 <q-carousel-slide :name="0" img-src="https://arrivein.com/wp-content/uploads/2020/07/Blog-Image-Public-Transit-Toronto-bike-rack-scaled.jpg"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
-                <span class="pr-2">✅ Debit/Credit</span>
-                <span class="pr-2">✅ Cash</span>
-                <span class="pr-2">✅ PRESTO</span>
+                <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
+                <span class="pr-2">✅ {{ $t('Cash') }}</span>
+                <span class="pr-2">✅ {{ $t('PRESTO') }}</span>
               </div>
             </div>
             <div class="pr-6 w-fit md:max-w-sm flex flex-col items-center justify-center">
               <span class="px-8 pb-4">{{ $t('BusInfo') }}</span>
               <div class="flex items-center pb-6">
-                <span>$3.35 per use</span>
+                <span>{{ $t('SubwayCost') }}</span>
               </div>
             </div>
           </div>
         </div>
         <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">Streetcar</span>
+          <span class="font-bold text-center py-4">{{ $t('Streetcar') }}</span>
           <div class="min-h-96 w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
@@ -200,21 +200,21 @@
                 <q-carousel-slide :name="0" img-src="https://www.railway-technology.com/wp-content/uploads/sites/13/2023/11/Shutterstock_1791383147.jpg"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
-                <span class="pr-2">✅ Debit/Credit</span>
-                <span class="pr-2">✅ Cash</span>
-                <span class="pr-2">✅ PRESTO</span>
+                <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
+                <span class="pr-2">✅ {{ $t('Cash') }}</span>
+                <span class="pr-2">✅ {{ $t('PRESTO') }}</span>
               </div>
             </div>
             <div class="pr-6 w-fit md:max-w-sm flex flex-col items-center justify-center">
               <span class="px-8 pb-4">{{ $t('StreetcarInfo') }}</span>
               <div class="flex items-center pb-6">
-                <span>$3.25 per use</span>
+                <span>{{ $t('SubwayCost') }}</span>
               </div>
             </div>
           </div>
         </div>
         <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">GOTrain</span>
+          <span class="font-bold text-center py-4">{{ $t('GOTrain') }}</span>
           <div class="min-h-96 w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
@@ -224,22 +224,22 @@
                 <q-carousel-slide :name="0" img-src="https://d3d0lqu00lnqvz.cloudfront.net/media/media/a0103c46-7dc7-4df0-b488-fdc41e4de918.jpg"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
-                <span class="pr-2">✅ Debit/Credit</span>
-                <span class="pr-2">✅ Cash</span>
-                <span class="pr-2">✅ PRESTO</span>
+                <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
+                <span class="pr-2">✅ {{ $t('Cash') }}</span>
+                <span class="pr-2">✅ {{ $t('PRESTO') }}</span>
               </div>
             </div>
             <div class="w-fit md:max-w-sm flex flex-col items-center justify-center pb-6">
               <span class="px-8 pb-4">{{ $t('GOTrainInfo') }}</span>
               <div class="flex items-center">
-                <span>$37.70 for short trips</span>
+                <span>{{ $t('GOTrainCost') }}</span>
               </div>
-              <a href="https://www.gotransit.com/en/ways-to-pay/fare-information" target="_blank" class="hover:underline cursor-pointer text-sm">See more here</a>
+              <a href="https://www.gotransit.com/en/ways-to-pay/fare-information" target="_blank" class="hover:underline cursor-pointer text-sm">{{ $t('SeeMoreHere') }}</a>
             </div>
           </div>
         </div>
         <div class="p-6 w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">Bikeshare</span>
+          <span class="font-bold text-center py-4">{{ $t('Bikeshare') }}</span>
           <div class="w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
@@ -249,22 +249,22 @@
                 <q-carousel-slide :name="0" img-src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/BikeShareToronto_Temperance_St_at_Cloud_Gardens.JPG/260px-BikeShareToronto_Temperance_St_at_Cloud_Gardens.JPG"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
-                <span class="pr-2">✅ Debit/Credit</span>
-                <span class="pr-2">❌ Cash</span>
-                <span class="pr-2">✅ PRESTO</span>
+                <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
+                <span class="pr-2">❌ {{ $t('Cash') }}</span>
+                <span class="pr-2">✅ {{ $t('PRESTO') }}</span>
               </div>
             </div>
             <div class="w-fit md:max-w-sm flex flex-col items-center justify-center pb-6">
               <span class="px-8 pb-4">{{ $t('BikeShareInfo') }}</span>
-              <span class="px-8 pb-4">Purchase at Bike Share kiosk or <span @click="handleScroll(6000)" class="underline cursor-pointer">mobile app</span></span>
+              <span class="px-8 pb-4">{{ $t('BikeShareKiosk') }} <span @click="handleScroll(6000)" class="underline cursor-pointer">{{ $t('mobile app') }}</span></span>
               <div class="flex items-center">
                 <div class="flex flex-col items-start">
-                  <span class="pb-1">$0.12/min for classic bike</span>
-                  <span class="pb-1">$0.20/min for e-bike</span>
-                  <span class="pb-1">$15 for 90 minute ride</span>
+                  <span class="pb-1">{{ $t('ClassicBike') }}</span>
+                  <span class="pb-1">{{ $t('EBike') }}</span>
+                  <span class="pb-1">{{ $t('DailyRide') }}</span>
                 </div>
               </div>
-              <a href="https://bikesharetoronto.com" target="_blank" class="hover:underline cursor-pointer text-sm">See more here</a>
+              <a href="https://bikesharetoronto.com" target="_blank" class="hover:underline cursor-pointer text-sm">{{ $t('SeeMoreHere') }}</a>
             </div>
           </div>
         </div>
@@ -277,8 +277,8 @@
         default-opened
       >
       <div class="flex flex-col items-center justify-center px-4 font-normal text-base py-4">
-        <div class="p-6 w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">PRESTO</span>
+        <div id="payment" class="p-6 w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
+          <span class="font-bold text-center py-4">{{ $t('PRESTO') }}</span>
           <div class="w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
@@ -290,12 +290,12 @@
             </div>
             <div class="pb-6 w-fit md:max-w-sm flex flex-col items-center justify-center">
               <span class="px-8 py-2">{{ $t('PRESTOInfo') }}</span>
-              <div class="flex items-center pb-6">$4 to buy card, then pay per use</div>
+              <div class="flex items-center pb-6">{{ $t('PrestoCost') }}</div>
               <div class="flex flex-nowrap items-center pb-2">
                 <q-icon name="location_on" class="pr-1"></q-icon>
-                <span>Subway stations (PRESTO machines), <a target="_blank" href="https://www.prestocard.ca/en/" class="underline cursor-pointer">online</a> or through their <span @click="handleScroll(6000)" class="underline cursor-pointer">app</span></span>
+                <span>{{ $t('PrestoWhereOne') }}<a target="_blank" href="https://www.prestocard.ca/en/" class="underline cursor-pointer">{{ $t('PrestoWhereTwo') }}</a>{{ $t('PrestoWhereThree') }}<span @click="handleScroll(6000)" class="underline cursor-pointer">{{ $t('PrestoWhereFour') }}</span></span>
               </div>
-              <a href="https://www.prestocard.ca/en/find-an-outlet/customer-service-outlets" target="_blank" class="cursor-pointer">🗺️ <u>Map of PRESTO customer service outlets</u></a>
+              <a href="https://www.prestocard.ca/en/find-an-outlet/customer-service-outlets" target="_blank" class="cursor-pointer">🗺️ <u>{{ $t('PrestoMap') }}</u></a>
             </div>
           </div>
         </div>
@@ -308,7 +308,7 @@
         default-opened
       >
       <div class="flex flex-col items-center justify-center px-4 font-normal text-base py-4">
-        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div id="apps" class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
           <span class="font-bold text-center">{{ $t('Maps/GoogleMaps') }}</span>
           <div class="w-full flex md:flex-row flex-col flex-nowrap px-10 py-2">
             <div class="flex flex-row no-wrap justify-center items-center">
@@ -332,11 +332,11 @@
                 <div class="mb-1" style="width: 100px; height: 100px;">
                   <img class="rounded w-full h-full " src="https://w7.pngwing.com/pngs/421/750/png-transparent-citymapper-transit-android-bus-android-angle-grass-web-application-thumbnail.png" alt="Canada">
                 </div>
-                Download here
+                {{ $t('DownloadHere') }}
               </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
-              <span class="px-8 py-4">Provides real-time transit navigation in Toronto, offering detailed directions, route options, and live updates for buses, subways, and streetcars.</span>
+              <span class="px-8 py-4">{{ $t('CitymapperInfo') }}</span>
             </div>
           </div>
         </div>
@@ -348,59 +348,59 @@
                 <div class="mb-1" style="width: 100px; height: 100px;">
                   <img class="rounded w-full h-full" src="https://img.masstransitmag.com/files/base/cygnus/mass/image/2021/01/icon.5ff36696179d1.png?auto=format%2Ccompress&w=640&width=640" alt="Canada">
                 </div>
-                Download here
+                {{ $t('DownloadHere') }}
               </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
-              <span class="px-8 py-4">A user-friendly app that helps Toronto commuters track real-time public transit schedules, find nearby routes, and plan efficient trips across the city.</span>
+              <span class="px-8 py-4">{{ $t('TransitInfo') }}</span>
             </div>
           </div>
         </div>
         <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
-          <span class="font-bold text-center pt-2">PRESTO</span>
+          <span class="font-bold text-center pt-2">{{ $t('PRESTO') }}</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
               <a href="https://www.prestocard.ca/en/about/presto-app" target="_blank" class="text-sm pt-1 hover:underline">
                 <div class="mb-1" style="width: 100px; height: 100px;">
                   <img class="rounded w-full h-full" src="https://play-lh.googleusercontent.com/5WT8xYEj_hBJjP4RGGlBjhyGlCz9G5NjFTUSLs-rTklu2nM1t_c_h3Nr-HXmbFwbcw" alt="Canada">
                 </div>
-                Download here
+                {{ $t('DownloadHere') }}
               </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
-              <span class="px-8 py-4">Toronto’s digital fare payment system for public transit, allowing users to load funds, tap to pay, and track their balance on buses, streetcars, and the subway.</span>
+              <span class="px-8 py-4">{{ $t('PrestoInfo') }}</span>
             </div>
           </div>
         </div>
         <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
-          <span class="font-bold text-center pt-2">Bike Share</span>
+          <span class="font-bold text-center pt-2">{{ $t('BikeShareApp') }}</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
               <a href="https://bikesharetoronto.com/mobile-app/" target="_blank" class="text-sm pt-1 hover:underline">
                 <div class="mb-1" style="width: 100px; height: 100px;">
                   <img class="rounded w-full h-full" src="https://play-lh.googleusercontent.com/e_xNbbCshJae9YC0bUD1navMYg0dotUoO_8X5BKe4b_ZNgj0Tpj94bo1w3oy4HwGz9c" alt="Canada">
                 </div>
-                Download here
+                {{ $t('DownloadHere') }}
               </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
-              <span class="px-8 py-4">Toronto offers a convenient and eco-friendly way to travel the city, with thousands of bikes available for rent at docking stations across the city.</span>
+              <span class="px-8 py-4">{{ $t('BikeShareAppInfo') }}</span>
             </div>
           </div>
         </div>
         <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
-          <span class="font-bold text-center pt-2">Beck Taxi</span>
+          <span class="font-bold text-center pt-2">{{ $t('BeckTaxi') }}</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
               <a href="https://becktaxi.com" target="_blank" class="text-sm pt-1 hover:underline">
                 <div class="mb-1" style="width: 100px; height: 100px;">
                   <img class="rounded w-full h-full" src="https://play-lh.googleusercontent.com/_NS-xBCcV4bdqeiIgGAkEQtULQdEXny6tgoss0rti-MlUqQdzVDsZLUrxuRsEFn-7Q8" alt="Canada">
                 </div>
-                Download here
+                {{ $t('DownloadHere') }}
               </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
-              <span class="px-8 py-4">One of Toronto's most trusted taxi services, offering reliable rides through its easy-to-use app, where users can book, track, and pay for their trips.</span>
+              <span class="px-8 py-4">{{ $t('BeckTaxiInfo') }}</span>
             </div>
           </div>
         </div>
@@ -420,12 +420,16 @@ export default {
       index: 0
     }
   },
+  mounted () {
+    window.scrollTo({top: 1050, behavior: 'smooth'})
+  },
   methods: {
-    handleScroll (y) {
-      window.scrollTo({
-        top: y,
-        behavior: 'smooth'
-      });
+    handleScroll (element) {
+      var offset = document.getElementById(element)
+      offset.scrollIntoView({
+        behaviour: 'smooth',
+        block: 'center'
+      })
     }
   }
 }

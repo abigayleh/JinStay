@@ -1,5 +1,5 @@
 <template>
-  <div class="py-5 p-3 flex justify-center">
+  <div :id="id" class="py-5 p-3 flex justify-center">
     <div v-if="largeView" class="w-full flex flex-col items-center justify-center py-4 mx-3 bg-white rounded-xl shadow-md" style="max-width: 1000px;">
       <span class="font-bold text-xl pb-4">{{ title }}</span>
       <div class="w-full flex md:flex-row flex-col items-center justify-evenly flex-nowrap py-4 pl-2">
@@ -39,7 +39,7 @@
             </div>
           </div>
           <div class="w-full flex flex-col items-center py-2 pb-4">
-            <span class="text-base py-1 pb-2">Would you recommend here?</span>
+            <span class="text-base py-1 pb-2">{{ $t('RecommendHere') }}</span>
             <div>
               <q-btn class="rounded-l-full" size="sm" :label="likes" @click="onClick('like')" :color="isLiked ? 'green' : grey" icon="thumb_up"></q-btn>
               <q-btn class="rounded-r-full" size="sm" :label="dislikes" @click="onClick('dislike')" :color="isDisliked ? 'red' : grey" icon="thumb_down"></q-btn>
@@ -55,7 +55,7 @@
           </div>
           <div class="flex items-center pb-6">
             <q-icon name="map" class="pr-2"></q-icon>
-            <a class="hover:underline" target="_blank" :href="directions">Directions from Union Station</a>
+            <a class="hover:underline" target="_blank" :href="directions">{{ $t('Directions') }}</a>
           </div>
         </div>
       </div>
@@ -94,12 +94,12 @@
             </div>
             <div class="flex items-center">
               <q-icon name="map" class="pr-2"></q-icon>
-              <a class="hover:underline" target="_blank" :href="directions">Directions from Union Station</a>
+              <a class="hover:underline" target="_blank" :href="directions">{{ $t('Directions') }}</a>
             </div>
           </div>
           <div class="pt-4">
             <q-icon name="info" class="pr-2"></q-icon>
-            <span @click="$emit('clickMoreInfo')" class="cursor-pointer hover:underline">More info</span>
+            <span @click="$emit('clickMoreInfo')" class="cursor-pointer hover:underline">{{ $t('MoreInfo') }}</span>
           </div>
         </div>
       </div>
@@ -111,6 +111,10 @@
 export default {
   name: 'MarketSquare',
   props: {
+    id: {
+      type: String,
+      required: true
+    },
     likes: {
       type: Number,
       required: true

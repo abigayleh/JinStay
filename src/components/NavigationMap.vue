@@ -1,17 +1,17 @@
 <template>
   <div class="w-full" style="height:600px">
-    <l-map ref="map" v-model:zoom="zoom" :center="center">
+    <l-map class="rounded" ref="map" v-model:zoom="zoom" :options="{scrollWheelZoom: false}" :center="center">
       <l-tile-layer
         :url="url"
         layer-type="base"
         name="OpenStreetMap"
       ></l-tile-layer>
       <l-marker class="marker" :lat-lng="airportMarker">
-        <l-tooltip>Pearson Airport</l-tooltip>
+        <l-tooltip>{{ $t('PearsonAirport') }}</l-tooltip>
         <l-icon :iconUrl="require('@/assets/airplane.png')" :iconSize="[150, 90]"></l-icon>
       </l-marker>
       <l-marker class="marker" :lat-lng="houseMarker">
-        <l-tooltip>JinStay 🫶</l-tooltip>
+        <l-tooltip>{{ $t('JinStay') }} 🫶</l-tooltip>
         <l-icon :iconUrl="require('@/assets/house.png')" :iconSize="[150, 90]"></l-icon>
       </l-marker>
       <l-marker
@@ -77,7 +77,6 @@
     </l-map>
   </div>
 </template>
-
 <script>
 import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer, LMarker, LIcon, LTooltip } from "@vue-leaflet/vue-leaflet";
@@ -105,16 +104,16 @@ export default {
       houseMarker: [43.6452, -79.3806],
       airportMarker: [43.6771, -79.6334],
       activityTitles: [
-        'CN Tower',
-        'Royal Ontario Museum',
-        'Ripleys Aquarium of Canada',
-        'Distillery District',
-        'Art Gallery of Ontario',
-        'Toronto Zoo',
-        'High Park',
-        'St. Lawrence Market',
-        'Casa Loma',
-        'Edwards Gardens'
+        this.$t('CNTower'),
+        this.$t('RoyalMuseum'),
+        this.$t('Aquarium'),
+        this.$t('Distillery'),
+        this.$t('ArtGallery'),
+        this.$t('Zoo'),
+        this.$t('HighPark'),
+        this.$t('StLawrence'),
+        this.$t('CasaLoma'),
+        this.$t('EdwardsGarden'),
       ],
       activityMarkers: [
         [43.6426, -79.3871],
@@ -129,16 +128,16 @@ export default {
         [43.7338, -79.3579]
       ],
       restaurantTitles: [
-        'Canoe Restaurant and Bar',
-        'Lee Chen Asian Bistro',
-        '360 Restaurant',
-        'George Restaurant',
-        'Kasa Moto',
-        'Mothers Dumplings',
-        'Yummy Korean Food',
-        'Maple Leaf Tavern',
-        'Guu Izakaya',
-        'Chodang Soon Tofu'
+        this.$t('Canoe'),
+        this.$t('LeeChen'),
+        this.$t('360Restaurant'),
+        this.$t('George'),
+        this.$t('KasaMoto'),
+        this.$t('MothersDumplings'),
+        this.$t('YummyKorean'),
+        this.$t('MapleLeaf'),
+        this.$t('GuuIzakaya'),
+        this.$t('ChodangSoonTofu'),
       ],
       restaurantMarkers: [
         [43.6476, -79.3793],
@@ -153,10 +152,10 @@ export default {
         [43.6551, -79.5584]
       ],
       shoppingTitles: [
-        'Eaton Centre',
-        'Yorkdale Shopping Centre',
-        'Sherway Gardens',
-        'Square One Shopping Centre'
+        this.$t('EatonCentre'),
+        this.$t('Yorkdale'),
+        this.$t('Sherway'),
+        this.$t('SquareOne'),
       ],
       shoppingMarkers: [
         [43.654434, -79.3807],
@@ -165,11 +164,11 @@ export default {
         [43.5930, -79.6425]
       ],
       cafeTitles: [
-        'Tim Hortons',
-        'BeaverTails Pastry',
-        'Ice Creamonology',
-        'Nom Nom Nom Poutine',
-        'Tea N Bannock' 
+        this.$t('Tims'),
+        this.$t('Beavertails'),
+        this.$t('IceCreamonology'),
+        this.$t('NomNomNom'),
+        this.$t('TeaNBannock'),
       ],
       cafeMarkers: [
         [43.6452, -79.3807], // Tim Hortons (near Union Station)
@@ -179,11 +178,11 @@ export default {
         [43.6609, -79.3483]  // Tea N Bannock
       ],
       marketTitles: [
-        'INS Market',
-        'Longos',
-        '7-Eleven',
-        'Metro',
-        'Loblaws'
+        this.$t('INS'),
+        this.$t('Longos'),
+        this.$t('7Eleven'),
+        this.$t('Metro'),
+        this.$t('Loblaws'),
       ],
       marketMarkers: [
         [43.6455, -79.3783], // INS Market (near Union Station)
@@ -193,11 +192,11 @@ export default {
         [43.6425, -79.3810]  // Loblaws (Maple Leaf Square near Union Station)
       ],
       seasonalTitles: [
-        'Cavalcade of Lights',
-        'New Years Eve Celebration',
-        'Nathan Philips Square Ice Skating',
-        'Toronto Christmas Market',
-        'Winterlicious'
+        this.$t('Cavalcade'),
+        this.$t('NewYears'),
+        this.$t('NathanPhilips'),
+        this.$t('TorontoChristmas'),
+        this.$t('SantaClause'),
       ],
       seasonalMarkers: [
         [43.6535, -79.3841],

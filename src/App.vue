@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div :class="largeHeader ? 'header-large' : 'header-small'" class="header">
-     <div class="flex w-full" :class="largeHeader ? '' : 'justify-between flex-row-reverse'">
-        <div class="pr-4 font-bold" :class="largeHeader ? 'flex w-full justify-end' : 'pt-5'">
+    <div :class="largeHeader ? 'header-large p-4' : 'header-small p-2 px-4'" class="header">
+      <div v-if="largeHeader" class="w-full h-full flex flex-col items-between">
+        <div class="w-full flex justify-end items-between font-bold">
           <q-btn flat color="white" icon="language" label="LANGUAGE">
             <q-menu>
               <q-list style="min-width: 100px">
@@ -14,29 +14,60 @@
             </q-menu>
           </q-btn>
         </div>
-        <div :class="largeHeader ? 'flex flex-col text-base w-full items-center justify-center' : 'mt-4'">
-          <div class="flex justify-center items-center">
-            <span class="font-bold text-2xl pl-6 pr-1">{{ $t('JinStay') }}</span>
-            <img class="w-6 h-6" src="@/assets/mapleLeaf.png" alt="Canada">
+        <div class="flex flex-1 justify-center">
+          <div class="flex flex-col text-base w-full items-center justify-center">
+            <div class="flex justify-center items-center">
+              <span class="font-bold text-2xl pl-6 pr-1">{{ $t('JinStay') }}</span>
+              <img class="w-6 h-6" src="@/assets/mapleLeaf.png" alt="Canada">
+            </div>
+            <div class="flex flex-col justify-center items-center">
+              <div>{{ $t('Address') }}</div>
+              <div>{{ $t('CityAddress') }}</div>
+            </div>
           </div>
-          <div v-if="largeHeader" class="flex flex-col justify-center items-center">
-            <div>{{ $t('Address') }}</div>
-            <div>{{ $t('CityAddress') }}</div>
-          </div>
+          <span class="font-bold text-3xl">{{ $t('WelcomeToToronto') }} 👋</span>
         </div>
-        <div v-if="!largeHeader" class="h-min flex flex-nowrap text-nowrap items-center overflow-scroll pl-5 mb-4 text-base font-bold">
-          <span style="min-width: 90px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">OUR HOME</span>
+        <div class="flex text-base font-bold">
+          <span style="min-width: 90px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">{{ $t('OurHome') }}</span>
           <span class="pl-2 pr-3">|</span>
-          <span style="min-width: 120px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">THINGS TO DO</span>
+          <span style="min-width: 120px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">{{ $t('ThingsToDo') }}</span>
           <span class="pl-2 pr-3">|</span>
-          <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/transportation')">TRANSPORTATION</span>
+          <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/transportation')">{{ $t('TransportationTitle') }}</span>
           <span class="pl-2 pr-3">|</span>
-          <span style="min-width: 150px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/host')">ABOUT THE HOST</span>
+          <span style="min-width: 150px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/host')">{{ $t('AboutTheHost') }}</span>
         </div>
       </div>
-      <span v-if="largeHeader" class="font-bold text-3xl py-10">{{ language === 'eng' ? 'Welcome to Toronto' : '토론토에 오신것을 환영합니다' }} 👋</span>
+      <div v-else class="w-full h-full flex flex-col items-between justify-between">
+        <div class="w-full flex justify-between">
+          <div class="flex justify-center items-center">
+            <span class="font-bold text-2xl pr-1">{{ $t('JinStay') }}</span>
+            <img class="w-6 h-6" src="@/assets/mapleLeaf.png" alt="Canada">
+          </div>
+          <div class="flex font-bold">
+            <q-btn flat color="white" icon="language" label="LANGUAGE">
+              <q-menu>
+                <q-list style="min-width: 100px">
+                  <q-item v-for="lang in languages" :key="lang.key" clickable v-close-popup @click="language = lang.key">
+                    <q-item-section>{{ lang.name }}</q-item-section>
+                  </q-item>
+                  <q-separator></q-separator>
+                </q-list>
+              </q-menu>
+            </q-btn>
+          </div>
+        </div>
+        <div class="flex text-base font-bold">
+          <span style="min-width: 90px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">{{ $t('OurHome') }}</span>
+          <span class="pl-2 pr-3">|</span>
+          <span style="min-width: 120px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">{{ $t('ThingsToDo') }}</span>
+          <span class="pl-2 pr-3">|</span>
+          <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/transportation')">{{ $t('TransportationTitle') }}</span>
+          <span class="pl-2 pr-3">|</span>
+          <span style="min-width: 150px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/host')">{{ $t('AboutTheHost') }}</span>
+        </div>
+      </div>
     </div>
-    <div class="flex items-center h-auto">
+    <div class="pt-64 flex items-center h-auto">
       <video ref="videoPlayer" width="100%" autoplay muted loop>
         <source src="@/assets/torontoVideo.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -56,8 +87,8 @@ export default {
       largeHeader: true,
       language: 'eng',
       languages: [
-        { name: 'English', key: 'en' },
-        { name: 'Korean', key: 'kr' }
+        { name: this.$t('English'), key: 'en' },
+        { name: this.$t('Korean'), key: 'kr' }
       ]
     }
   },

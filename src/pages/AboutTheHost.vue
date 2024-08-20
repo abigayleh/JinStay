@@ -43,6 +43,9 @@ export default {
     return {
     }
   },
+  mounted () {
+    window.scrollTo({top: 1050, behavior: 'smooth'})
+  },
   methods: {
   }
 }

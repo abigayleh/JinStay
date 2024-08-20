@@ -1,30 +1,31 @@
 <template>
-  <div class="px-1" style="background-color: #f6f7f8;">
+  <div class="px-1 relative" style="background-color: #f6f7f8;">
     <div class="flex w-full justify-center pt-10 pb-2">
-      <span class="text-3xl font-bold text-red">Plan your trip ✈️</span>
+      <span class="text-3xl font-bold text-red">{{ $t('PlanTrip') }}</span>
     </div>
-    <div class="flex px-2 sm:px-14 flex-col items-center no-wrap h-auto">
+    <div class="flex px-4 flex-col items-center no-wrap h-auto">
       <NavigationMap :filter="selected" />
     </div>
     <div class="w-full flex flex-nowrap overflow-x-scroll text-nowrap px-14 py-3">
-      <q-btn class="rounded-3xl mr-2" :class="selected !== 'all' ? 'brightness-75' : ''" @click="selected = 'all'" color="indigo" text-color="white" label="All"></q-btn>
-      <q-btn style="min-width: 136px;" class="rounded-3xl mr-2" :class="selected !== 'toDo' ? 'brightness-75' : ''" @click="selected = 'toDo'" color="red" text-color="white" label="Things to do"></q-btn>
-      <q-btn class="rounded-3xl mr-2" :class="selected !== 'restaurants' ? 'brightness-75' : ''" @click="selected = 'restaurants'" color="blue-10" text-color="white" label="Restaurants"></q-btn>
-      <q-btn class="rounded-3xl mr-2" :class="selected !== 'cafe' ? 'brightness-75' : ''" @click="selected = 'cafe'" color="orange" text-color="white" label="Cafes"></q-btn>
-      <q-btn class="rounded-3xl mr-2" :class="selected !== 'shopping' ? 'brightness-75' : ''" @click="selected = 'shopping'" color="purple" text-color="white" label="Shopping"></q-btn>
-      <q-btn class="rounded-3xl mr-2 " :class="selected !== 'market' ? 'brightness-75' : ''" @click="selected = 'market'" color="green" text-color="white" label="Supermarket"></q-btn>
-      <q-btn class="rounded-3xl mr-2 " :class="selected !== 'seasonal' ? 'brightness-75' : ''" @click="selected = 'seasonal'" color="cyan" text-color="white" label="Seasonal"></q-btn>
+      <q-btn class="rounded-3xl mr-2" :class="selected === 'all' ? 'brightness-75' : ''" @click="selected = 'all'" color="indigo" text-color="white" label="All"></q-btn>
+      <q-btn style="min-width: 136px;" class="rounded-3xl mr-2" :class="selected === 'toDo' ? 'brightness-75' : ''" @click="selected = 'toDo'" color="red" text-color="white" label="Things to do"></q-btn>
+      <q-btn class="rounded-3xl mr-2" :class="selected === 'restaurants' ? 'brightness-75' : ''" @click="selected = 'restaurants'" color="blue-10" text-color="white" label="Restaurants"></q-btn>
+      <q-btn class="rounded-3xl mr-2" :class="selected === 'cafe' ? 'brightness-75' : ''" @click="selected = 'cafe'" color="orange" text-color="white" label="Cafes"></q-btn>
+      <q-btn class="rounded-3xl mr-2" :class="selected === 'shopping' ? 'brightness-75' : ''" @click="selected = 'shopping'" color="purple" text-color="white" label="Shopping"></q-btn>
+      <q-btn class="rounded-3xl mr-2 " :class="selected === 'market' ? 'brightness-75' : ''" @click="selected = 'market'" color="green" text-color="white" label="Supermarket"></q-btn>
+      <q-btn class="rounded-3xl mr-2 " :class="selected === 'seasonal' ? 'brightness-75' : ''" @click="selected = 'seasonal'" color="cyan" text-color="white" label="Seasonal"></q-btn>
     </div>
     <div v-if="selected === 'restaurants'" class="pl-20 flex flex-col">
-      <span>👉 <b class="text-red">Pro tip:</b> In Canada it's customary to leave a 15-20% tip at restaurants</span>
-      <span>If you're unsure the amount to leave, tipping the HST (tax) is a good standard!</span>
+      <span>👉 <b class="text-red">{{ $t('ProTip') }}</b> {{ $t('CanadaTipOne') }}</span>
+      <span>{{ $t('CanadaTipTwo') }}</span>
     </div>
     <div class="w-full py-4">
       <div v-if="selected === 'all' || selected === 'toDo'">
-        <span @click="selected ='toDo'" class="cursor-pointer text-bold text-3xl flex justify-center text-red">Things to do 👉</span>
+        <span @click="selected ='toDo'" class="cursor-pointer text-bold text-3xl flex justify-center text-red">{{ $t('ThingsToDoSmall') }}</span>
         <div class="flex no-wrap overflow-scroll" :class="selected === 'toDo' ? 'flex flex-col' : ''">
           <ActivitySquare
-            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(0)}"  
+            id="cntower"
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo('cntower')}"  
             smallPhoto="https://preview.redd.it/s6vthxvvuc851.jpg?width=1080&crop=smart&auto=webp&s=1f6119482beac6f73b684cb53fa45ec3de624496"
             :photos="[
               'https://media.tacdn.com/media/attractions-splice-spp-674x446/12/33/6d/3e.jpg',
@@ -33,12 +34,12 @@
             ]"
             :likesIndex="0"
             :largeView="selected === 'toDo'"
-            title="CN Tower"
+            :title="$t('CNTower')"
             type="Landmark"
             location="290 Bremner Blvd"
-            walk="13 minutes"
+            :walk="'13 ' + $t('minutes')"
             subway=""
-            uber="3 minutes"
+            :uber="'3' + $t('minutes')"
             child="Child (4-12) - $32"
             adult="Adult (13+) - $45"
             senior="Senior (65+) - $32"
@@ -47,7 +48,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/CN+Tower,+Bremner+Boulevard,+Toronto,+ON,+Canada/@43.6437449,-79.3948629,15z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d68bf33a9b:0x15edd8c4de1c7581!2m2!1d-79.3870568!2d43.6425662?entry=ttu"
           />
           <ActivitySquare
-            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(1)}"  
+            id="aquarium"
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo('aquarium')}"  
             smallPhoto="https://s3-media0.fl.yelpcdn.com/bphoto/EsoNZxUsO5qRSvHmvnTnxg/348s.jpg"  
             :photos="[
               'https://seeyousoon.ca/wp-content/uploads/2020/07/Ripleys-Aquarium-of-Canada.jpg',
@@ -60,9 +62,9 @@
             type="Museum"
             typeIcon="museum"
             location="288 Bremner Blvd"
-            walk="12 minutes"
+            :walk="'12' + $t('minutes')"
             subway=""
-            uber="4 minutes"
+            :uber="'4' + $t('minutes')"
             child="Child (3-5) - $13.50"
             youth="Youth (6-13) - $30"
             adult="Adult (14-64) - $46"
@@ -72,7 +74,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Ripley's+Aquarium+of+Canada,+Bremner+Boulevard,+Toronto,+ON,+Canada/@43.6437276,-79.3948629,15z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d5d5b6045b:0x8daf1a19298c213d!2m2!1d-79.3866022!2d43.6421785?entry=ttu"
           />
           <ActivitySquare
-            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(2)}"  
+            id="lawrence"
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo('lawrence')}"  
             smallPhoto="https://i.pinimg.com/originals/87/3c/4f/873c4f20eb58b349e2813a81b7330bdf.jpg"  
             :photos="[
               'https://media.cntraveler.com/photos/5b2c068c8ba0800c6ed8d62a/16:9/w_2560,c_limit/St.-Lawrence-Market__GettyImages-148554964.jpg',
@@ -85,9 +88,9 @@
             type="Market"
             typeIcon="store_front"
             location="92-95 Front St. E"
-            walk="13 minutes"
+            :walk="'13' + $t('minutes')"
             subway=""
-            uber="7 minutes"
+            :uber="'7' + $t('minutes')"
             child=""
             youth=""
             adult=""
@@ -97,7 +100,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/St.+Lawrence+Market,+Toronto,+ON,+Canada/@43.6471786,-79.3862782,15z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m18!4m17!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb31b4dd275b:0xca0ab5acf1a5b6fd!2m2!1d-79.3715454!2d43.6486879!2m3!6e0!7e2!8j1723140000!3e3?entry=ttu"
           />
           <ActivitySquare
-            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(3)}"  
+            id="distillery"
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo('distillery')}"  
             smallPhoto="https://cdn.getyourguide.com/img/tour/580594b2fbd324a2.jpeg/vertical_520_780.jpg"  
             :photos="[
               'https://media.cntraveler.com/photos/616480d36a69c761590b271a/16:9/w_2560,c_limit/Distillery%20District-57.jpg',
@@ -111,8 +115,8 @@
             typeIcon="historical"
             location="55 Mill St"
             walk=""
-            subway="21 minutes"
-            uber="8 minutes"
+            :subway="'21' + $t('minutes')"
+            :uber="'8' + $t('minutes')"
             child=""
             youth=""
             adult=""
@@ -122,7 +126,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Distillery+District,+Toronto,+ON,+Canada/@43.6467384,-79.3810554,15z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m18!4m17!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b3517f4a2060d:0x8b5d6dfb77378fc7!2m2!1d-79.3597088!2d43.650155!2m3!6e0!7e2!8j1723140000!3e3?entry=ttu"
           />
           <ActivitySquare
-            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(4)}"    
+            id="artGallery"
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo('artGallery')}"    
             smallPhoto="https://sothebys-com.brightspotcdn.com/dims4/default/3e2cf65/2147483647/strip/true/crop/2632x3900+0+0/resize/648x960!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2F51%2F12%2F3a89b54648b8bfb7baec59f9f0aa%2Fa-44523.jpg"  
             :photos="[
               'https://www.todocanada.ca/wp-content/uploads/6922629483_06fc2c0d60_b.jpg',
@@ -137,8 +142,8 @@
             typeIcon="museum"
             location="317 Dundas St W"
             walk=""
-            subway="24 minutes"
-            uber="6 minutes"
+            :subway="'24' + $t('minutes')"
+            :uber="'6' + $t('minutes')"
             child=""
             youth="Youth - $15"
             adult="Adult - $30"
@@ -148,7 +153,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Art+Gallery+of+Ontario,+Dundas+Street+West,+Toronto,+ON,+Canada/@43.6467484,-79.4080196,14z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34c5ed5319bd:0xda277755ede046af!2m2!1d-79.3925123!2d43.6536066?entry=ttu"
           />
           <ActivitySquare
-            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(5)}"  
+            id="casaLoma"
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo('casaLoma')}"  
             smallPhoto="https://assets.simpleviewinc.com/simpleview/image/upload/crm/toronto/rsz_shutterstock_1715341101_5f3910fe-5056-a36f-2362d19bfc79fb17.jpg"  
             :photos="[
               'https://cdn.britannica.com/57/242557-050-698567ED/Castle-of-Casa-Loma-Toronto-Ontario-Canada.jpg',
@@ -163,8 +169,8 @@
             typeIcon="castle"
             location="1 Austin Terrace"
             walk=""
-            subway="24 minutes"
-            uber="30 minutes"
+            :subway="'24' + $t('minutes')"
+            :uber="'30' + $t('minutes')"
             child="Child (4-13) - $25"
             youth="Youth (14-17) - $35"
             adult="Adult (18-64) - $40"
@@ -174,7 +180,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Casa+Loma,+Old+Toronto,+Toronto,+ON,+Canada/@43.6669375,-79.4380967,13z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m18!4m17!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b33622b6bf9dd:0x589f556a98f282b2!2m2!1d-79.4110854!2d43.6845696!2m3!6e0!7e2!8j1723140000!3e3?entry=ttu"
           />
           <ActivitySquare
-            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(6)}"    
+            id="museum"
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo('museum')}"    
             smallPhoto="https://aws-tiqets-cdn.imgix.net/images/content/b065d37d00074c9caa3ead75b94f275f.jpg?auto=format&fit=crop&h=800&ixlib=python-3.2.1&q=70&w=800&s=6b3882d4c732bb1efa3cafdaa3f3512a"  
             :photos="[
               'https://www.rom.on.ca/sites/default/files/imce/ROM_strategic_plan_highlight.png',
@@ -189,8 +196,8 @@
             typeIcon="museum"
             location="100 Queens Park"
             walk=""
-            subway="26 minutes"
-            uber="8 minutes"
+            :subway="'26' + $t('minutes')"
+            :uber="'8' + $t('minutes')"
             child="Child (4-14) - $16"
             youth="Youth (15-19) - $20"
             adult="Adult (20-64) - $26"
@@ -200,7 +207,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Royal+Ontario+Museum,+Queens+Park,+Toronto,+ON,+Canada/@43.6575272,-79.4075899,14z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34baf3dae513:0xc98434e11ec5f592!2m2!1d-79.3947771!2d43.6677097?entry=ttu"
           />
           <ActivitySquare
-            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(7)}"    
+            id="highPark"
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo('highPark')}"    
             smallPhoto="https://live.staticflickr.com/2106/2466481344_0b4d39c4fe_c.jpg"  
             :photos="[
               'https://www.toronto.ca/wp-content/uploads/2017/12/8b4b-High-Park-Maple-Leaf.jpg',
@@ -215,8 +223,8 @@
             typeIcon="nature"
             location="1873 Bloor St W"
             walk=""
-            subway="40 minutes"
-            uber="30 minutes"
+            :subway="'40' + $t('minutes')"
+            :uber="'30' + $t('minutes')"
             child=""
             youth=""
             adult=""
@@ -226,7 +234,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/High+Park,+Bloor+Street+West,+Toronto,+ON,+Canada/@43.6542897,-79.5103999,12z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m18!4m17!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b35d32336f705:0x1bcc825a300ee67!2m2!1d-79.4636903!2d43.6465479!2m3!6e0!7e2!8j1723140000!3e3?entry=ttu"
           />
           <ActivitySquare
-            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(8)}"    
+            id="zoo"
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo('zoo')}"    
             smallPhoto="https://www.tzwcadopt.ca/cdn/shop/products/5.png?v=1679413686"  
             :photos="[
               'https://images.hornblower.com/fit-in/1200x500/images/tours/tozoo/958aaca7-1129-4725-b16f-8604a66b0eb8.jpeg',
@@ -242,7 +251,7 @@
             location="2000 Meadowvale Rd"
             walk=""
             subway="1 hour"
-            uber="30 minutes"
+            :uber="'30' + $t('minutes')"
             child="Child (3-12) - $25"
             youth=""
             adult="Adult (13-64) - $35"
@@ -252,7 +261,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Ripley's+Aquarium+of+Canada,+Bremner+Boulevard,+Toronto,+ON,+Canada/@43.6437276,-79.3948629,15z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d5d5b6045b:0x8daf1a19298c213d!2m2!1d-79.3866022!2d43.6421785?entry=ttu"
           />
           <ActivitySquare
-            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo(9)}"    
+            id="garden"
+            @clickMoreInfo="() => {selected = 'toDo'; clickMoreInfo('garden')}"    
             smallPhoto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZHhi8RBHRvb3M73_s7U4kn3l9ywWrYzFbw&s"  
             :photos="[
               'https://www.tclf.org/sites/default/files/thumbnails/image/42948_signature_EdwardsGardens.jpg',
@@ -268,7 +278,7 @@
             location="755 Lawrence Ave E"
             walk=""
             subway="1 hour"
-            uber="45 minutes"
+            :uber="'45' + $t('minutes')"
             child=""
             youth=""
             adult=""
@@ -283,7 +293,8 @@
         <span @click="selected ='restaurants'" class="cursor-pointer text-bold text-3xl flex justify-center text-red">Restaurants 👉</span>
         <div class="flex no-wrap overflow-scroll" :class="selected === 'restaurants' ? 'flex flex-col' : ''">
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(0)}"  
+            id="canoe"
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('canoe')}"
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -298,7 +309,7 @@
             location="66 Wellington St W"
             reservation="Reservation recommended"
             takeout="Takeout available"
-            walk="8 minutes"
+            :walk="'8' + $t('minutes')"
             subway=""
             uber=""
             recommendationOne=""
@@ -308,7 +319,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(1)}"  
+            id="leeChen"
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('leeChen')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -323,8 +335,8 @@
             location="214 King St W"
             reservation="Reservation recommended"
             takeout="Takeout available"
-            walk="10 minute"
-            subway="6 minute"
+            :walk="'10' + $t('minutes')"
+            :subway="'6' + $t('minutes')"
             uber=""
             recommendationOne="Steamed shrimp Dumplings ($12)"
             recommendationTwo="Soup dumplings ($12)"
@@ -333,7 +345,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(2)}"  
+            id="360"
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('360')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -350,15 +363,16 @@
             takeout="Takeout not available"
             recommendationOne=""
             recommendationTwo=""
-            walk="11 minutes"
+            :walk="'11' + $t('minutes')"
             subway=""
-            uber="7 minutes"
+            :uber="'7' + $t('minutes')"
             website="https://www.cntower.ca/"
             phone="+1 416-868-6937"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(3)}"  
+            id="george"
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('george')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -375,15 +389,16 @@
             takeout="Takeout available"
             recommendationOne=""
             recommendationTwo=""
-            walk="20 minutes"
-            subway="12 minutes"
+            :walk="'20' + $t('minutes')"
+            :subway="'12' + $t('minutes')"
             uber=""
             website="http://www.georgeonqueen.com"
             phone="+1 416-863-6006"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(4)}"  
+            id="kasaMoto"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('kasaMoto')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -399,8 +414,8 @@
             reservation="Required"
             takeout="Takeout available"
             walk=""
-            subway="17 minutes"
-            uber="16 minutes"
+            :subway="'17' + $t('minutes')"
+            :uber="'16' + $t('minutes')"
             recommendationOne="Jidori chicken ($35)"
             recommendationTwo="Wagyu skirt steak ($56)"
             website="https://kasamoto.ca/"
@@ -408,7 +423,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(5)}"  
+            id="mothersDumplings"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('mothersDumplings')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -424,8 +440,8 @@
             reservation="Reservation recommended"
             takeout="Takeout available"
             walk=""
-            subway="22 minutes"
-            uber="14 minutes"
+            :subway="'22' + $t('minutes')"
+            :uber="'14' + $t('minutes')"
             recommendationOne="Peking Duck ($80)"
             recommendationTwo="Dim Sum ($5-8)"
             website="https://mothersdumplings.com/"
@@ -433,7 +449,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(6)}"  
+            id="yummyKorean"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('yummyKorean')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -449,8 +466,8 @@
             reservation="Reservation recommended"
             takeout="Takeout available"
             walk=""
-            subway="22 minutes"
-            uber="20 minutes"
+            :subway="'22' + $t('minutes')"
+            :uber="'20' + $t('minutes')"
             recommendationOne="Bulgogi ($10)"
             recommendationTwo="Kimchi stew ($8)"
             website="http://www.yummykorean.com/"
@@ -458,7 +475,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(7)}"  
+            id="mapleLeaf"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('mapleLeaf')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -476,14 +494,15 @@
             recommendationOne=""
             recommendationTwo=""
             walk=""
-            subway="35 minutes"
-            uber="18 minutes"
+            :subway="'35' + $t('minutes')"
+            :uber="'18' + $t('minutes')"
             website="https://mapleleaftavern.ca/"
             phone="+1 416-465-0955"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(8)}"  
+            id="guuIzakaya"  
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('guuIzakaya')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -501,14 +520,15 @@
             recommendationOne=""
             recommendationTwo=""
             walk=""
-            subway="40 minutes"
-            uber="20 minutes"
+            :subway="'40' + $t('minutes')"
+            :uber="'20' + $t('minutes')"
             website="https://www.guu-izakaya.com"
             phone="+1 647-351-1314"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <RestaurantSquare
-            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo(9)}"  
+            id="chodang"
+            @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('chodang')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'restaurants'"
@@ -524,8 +544,8 @@
             reservation="Reservation not required"
             takeout="Takeout available"
             walk=""
-            subway="48 minute"
-            uber="30 minutes"
+            :subway="'48' + $t('minutes')"
+            :uber="'30' + $t('minutes')"
             recommendationOne="Chodang ($18)"
             recommendationTwo="Stone Bowl Bulgogi ($23)"
             website="http://chodangsoontofu.bu-bi.com/?doc=sub_02"
@@ -538,7 +558,8 @@
         <span @click="selected ='shopping'" class="text-bold cursor-pointer text-3xl flex justify-center text-red">Shopping 👉</span>
         <div class="flex no-wrap overflow-scroll" :class="selected === 'shopping' ? 'flex flex-col' : ''">
           <ShoppingSquare
-            @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo(0)}"  
+            id="eaton"  
+            @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo('eaton')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'shopping'"
@@ -551,15 +572,16 @@
             title="Eaton Centre"
             address="220 Yonge St"
             stores="255 stores"
-            walk="15 minutes"
+            :walk="'15' + $t('minutes')"
             subway=""
-            uber="4 minutes"
+            :uber="'4' + $t('minutes')"
             website="https://shops.cadillacfairview.com/property/cf-toronto-eaton-centre"
             phone="+1 416-598-8560"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Eaton+Centre,+Yonge+Street,+Toronto,+ON,+Canada/@43.650139,-79.3904687,15z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34cb510746bd:0x8b89147b8cbbc837!2m2!1d-79.3806994!2d43.6544382?entry=ttu"
           />
           <ShoppingSquare
-            @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo(1)}"  
+            id="sherway"  
+            @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo('sherway')}"  
             :likes="27"
             :dislikes="120"  
             :largeView="selected === 'shopping'"
@@ -574,13 +596,14 @@
             stores="215 stores"
             walk=""
             subway="1 hour"
-            uber="14 minutes"
+            :uber="'14' + $t('minutes')"
             website="https://shops.cadillacfairview.com/property/cf-sherway-gardens"
             phone="+1 416-621-1070"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Sherway+Gardens,+The+West+Mall,+Etobicoke,+ON,+Canada/@43.6311567,-79.7991707,10z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m14!4m13!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b4806de464d0d:0x231db41dd5d2cc91!2m2!1d-79.5571072!2d43.6118804!3e3?entry=ttu"
           />
           <ShoppingSquare
-            @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo(2)}"  
+            id="squareOne"
+            @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo('squareOne')}"  
             :likes="120"
             :dislikes="52"  
             :largeView="selected === 'shopping'"
@@ -595,13 +618,14 @@
             stores="360+ stores"
             walk=""
             subway="1 hour"
-            uber="24 minutes"
+            :uber="'24' + $t('minutes')"
             website="https://shopsquareone.com"
             phone="+1 905-270-7771"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Square+One+Shopping+Centre,+City+Centre+Drive,+Mississauga,+ON,+Canada/@43.6401801,-79.8421216,10z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b47149e001f97:0xf50b13c4cabe7fbc!2m2!1d-79.6424732!2d43.5930011?entry=ttu"
           />
           <ShoppingSquare
-            @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo(3)}"  
+            id="yorkdale"  
+            @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo('yorkdale')}"  
             :likes="103"
             :dislikes="12"
             :largeView="selected === 'shopping'"
@@ -616,7 +640,7 @@
             stores="270 stores"
             walk=""
             subway="1 hour"
-            uber="27 minutes"
+            :uber="'27' + $t('minutes')"
             website="https://yorkdale.com"
             phone="+1 416-789-3261"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/3401+Dufferin+St,+North+York,+ON+M6A+3A1,+Canada/@43.6707989,-79.8027636,10z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b3235ba3275ad:0x21f678375497bf4a!2m2!1d-79.4528087!2d43.7251083?entry=ttu"
@@ -627,7 +651,8 @@
         <span @click="selected ='cafe'" class="text-bold cursor-pointer text-3xl flex justify-center text-red">Cafes 👉</span>
         <div class="flex no-wrap overflow-scroll" :class="selected === 'cafe' ? 'flex flex-col' : ''">
           <CafeSquare
-            @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo(0)}"  
+            id="tims" 
+            @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo('tims')}"  
             :likes="120"
             :dislikes="52"  
             :largeView="selected === 'cafe'"
@@ -639,7 +664,7 @@
             ]"
             title="Tim Hortons"
             address="65 Front St W"
-            walk="5 minutes"
+            :walk="'5' + $t('minutes')"
             subway=""
             uber=""
             website="https://www.timhortons.com/store-locator/store/109436/65-front-str-w---bay-concourse--toronto--ontario--m5j-1e3"
@@ -647,7 +672,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Tim+Hortons,+York+Street,+Toronto,+ON,+Canada/@43.6454227,-79.3815252,17z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d30f14f071:0xaa18129910344868!2m2!1d-79.3825715!2d43.6461046!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <CafeSquare
-            @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo(1)}"  
+            id="beavertails"  
+            @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo('beavertails')}"  
             :likes="27"
             :dislikes="120"  
             :largeView="selected === 'cafe'"
@@ -659,15 +685,16 @@
             ]"
             title="BeaverTails Pastry"
             address="145 Queens Quay W"
-            walk="10 minutes"
-            subway="10 minutes"
+            :walk="'10' + $t('minutes')"
+            :subway="'10' + $t('minutes')"
             uber=""
             website="https://beavertails.com/"
             phone="+1 416-360-8245"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/BeaverTails+Toronto+Waterfront,+Queens+Quay+West,+Toronto,+ON,+Canada/@43.6428124,-79.3793814,16z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cbdb1e772fa1:0x36d13f2695a2d84e!2m2!1d-79.3800033!2d43.6397724!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <CafeSquare
-            @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo(2)}"  
+            id="icecream"  
+            @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo('icecream')}"  
             :likes="120"
             :dislikes="52"  
             :largeView="selected === 'cafe'"
@@ -679,15 +706,16 @@
             ]"
             title="Ice Creamonology"
             address="250 Queens Quay W"
-            walk="15 minutes"
-            subway="10 minutes"
+            :walk="'15' + $t('minutes')"
+            :subway="'10' + $t('minutes')"
             uber=""
             website="https://www.icecreamonology.com"
             phone="+1 647-717-9848"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Ice+Creamonology,+Queens+Quay+West,+Toronto,+ON,+Canada/@43.6423137,-79.3819519,16z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b35cbb5508e0d:0x262926fbbfd08041!2m2!1d-79.3848903!2d43.6393174!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <CafeSquare
-            @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo(3)}"  
+            id="nomnom"  
+            @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo('nomnom')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'cafe'"
@@ -700,14 +728,15 @@
             title="Nom Nom Nom Poutine"
             address="707 Dundas Street W"
             walk=""
-            subway="25 minutes"
-            uber="14 minutes"
+            :subway="'25' + $t('minutes')"
+            :uber="'14' + $t('minutes')"
             website="https://www.nomnomnom.ca/"
             phone="+1 647-636-0707"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Nom+Nom+Nom+Poutine,+Dundas+Street+West,+Toronto,+ON,+Canada/@43.6502565,-79.3924927,14z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34e86ee713ff:0xec9a5488b8be60a9!2m2!1d-79.4048188!2d43.6519983?entry=ttu"
           />
           <CafeSquare
-            @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo(4)}"  
+            id="bannock"  
+            @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo('bannock')}"  
             :likes="103"
             :dislikes="12"
             :largeView="selected === 'cafe'"
@@ -720,8 +749,8 @@
             title="Tea N Bannock"
             address="1294 Gerrard St E"
             walk=""
-            subway="40 minutes"
-            uber="18 minutes"
+            :subway="'40' + $t('minutes')"
+            :uber="'18' + $t('minutes')"
             website="https://www.teanbannock.ca/"
             phone="+1 416-220-2915"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Tea+N+Bannock,+Gerrard+Street+East,+Toronto,+ON,+Canada/@43.6582215,-79.3543217,13z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb870cf16c8f:0x2e6e3dd7d826980d!2m2!1d-79.3273376!2d43.671181!2m3!6e0!7e2!8j1723717799?entry=ttu"
@@ -732,7 +761,8 @@
         <span @click="selected ='market'" class="text-bold cursor-pointer text-3xl flex justify-center text-red">Supermarkets 👉</span>
         <div class="flex no-wrap overflow-scroll" :class="selected === 'market' ? 'flex flex-col' : ''">
           <MarketSquare
-            @clickMoreInfo="() => {selected = 'market'; clickMoreInfo(0)}"  
+            id="insMarket"  
+            @clickMoreInfo="() => {selected = 'market'; clickMoreInfo('insMarket')}"  
             :likes="120"
             :dislikes="52"  
             :largeView="selected === 'market'"
@@ -743,7 +773,7 @@
             ]"
             title="INS Market"
             address="65 Front St W"
-            walk="2 minutes"
+            :walk="'2' + $t('minutes')"
             subway=""
             uber=""
             website="https://www.insmarket.ca"
@@ -751,7 +781,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <MarketSquare
-            @clickMoreInfo="() => {selected = 'market'; clickMoreInfo(1)}"  
+            id="longo"  
+            @clickMoreInfo="() => {selected = 'market'; clickMoreInfo('longo')}"  
             :likes="103"
             :dislikes="12"
             :largeView="selected === 'market'"
@@ -763,7 +794,7 @@
             ]"
             title="Longo's"
             address="15 York St"
-            walk="8 minutes"
+            :walk="'8' + $t('minutes')"
             subway=""
             uber=""
             website="https://www.longos.com"
@@ -771,7 +802,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Longo's+Maple+Leaf+Square,+York+Street,+Toronto,+ON,+Canada/@43.6436855,-79.3813746,17z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb2b4a82b3b7:0xc419b1c9703a086a!2m2!1d-79.3808566!2d43.6421081!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <MarketSquare
-            @clickMoreInfo="() => {selected = 'market'; clickMoreInfo(2)}"  
+            id="7eleven"  
+            @clickMoreInfo="() => {selected = 'market'; clickMoreInfo('7eleven')}"  
             :likes="120"
             :dislikes="52"  
             :largeView="selected === 'market'"
@@ -782,7 +814,7 @@
             ]"
             title="7-Eleven"
             address="372 Bay St"
-            walk="10 minutes"
+            :walk="'10' + $t('minutes')"
             subway=""
             uber=""
             website="https://www.7-eleven.ca"
@@ -790,7 +822,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/7-Eleven,+@+Richmond,+372+Bay+Street,+Toronto,+ON,+Canada/@43.6493065,-79.3797479,16z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34cd26a6f539:0x80af108e4b3e9bad!2m2!1d-79.3814207!2d43.6510075!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <MarketSquare
-            @clickMoreInfo="() => {selected = 'market'; clickMoreInfo(3)}"  
+            id="metro"  
+            @clickMoreInfo="() => {selected = 'market'; clickMoreInfo('metro')}"  
             :likes="27"
             :dislikes="120"  
             :largeView="selected === 'market'"
@@ -802,7 +835,7 @@
             ]"
             title="Metro"
             address="80 Front St E"
-            walk="12 minutes"
+            :walk="'12' + $t('minutes')"
             subway=""
             uber=""
             website="https://www.metro.ca"
@@ -810,7 +843,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Metro,+80+Front+Street+East,+Toronto,+ON,+Canada/@43.6472327,-79.3765731,16z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb31c95bab8d:0x56924e17328229fc!2m2!1d-79.3727345!2d43.6492034!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <MarketSquare
-            @clickMoreInfo="() => {selected = 'market'; clickMoreInfo(4)}"  
+            id="loblaws"  
+            @clickMoreInfo="() => {selected = 'market'; clickMoreInfo('loblaws')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'market'"
@@ -822,8 +856,8 @@
             ]"
             title="Loblaws"
             address="10 Lower Jarvis St"
-            walk="20 minutes"
-            subway="10 minutes"
+            :walk="'20' + $t('minutes')"
+            :subway="'10' + $t('minutes')"
             uber=""
             website="https://www.loblaws.ca"
             phone="+1 416-304-0611"
@@ -835,7 +869,8 @@
         <span @click="selected ='seasonal'" class="text-bold cursor-pointer text-3xl flex justify-center text-red">Seasonal 👉</span>
         <div class="flex no-wrap overflow-scroll" :class="selected === 'seasonal' ? 'flex flex-col' : ''">
           <SeasonalSquare
-            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(0)}"  
+            id="santaClause"  
+            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo('santaClause')}"  
             :likes="103"
             :dislikes="12"
             :largeView="selected === 'seasonal'"
@@ -847,7 +882,7 @@
             ]"
             title="Santa Clause Parade"
             address="Christie Street - St Lawrence Market"
-            walk="10 minutes"
+            :walk="'10' + $t('minutes')"
             subway=""
             uber=""
             dates="Nov 24th"
@@ -857,7 +892,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/St.+Lawrence+Market,+Toronto,+ON,+Canada/@43.6471791,-79.3754323,16z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb31b4dd275b:0xca0ab5acf1a5b6fd!2m2!1d-79.3715454!2d43.6486879?entry=ttu"
           />
           <SeasonalSquare
-            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(1)}"  
+            id="cavalcade"  
+            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo('cavalcade')}"  
             :likes="120"
             :dislikes="52"  
             :largeView="selected === 'seasonal'"
@@ -869,8 +905,8 @@
             ]"
             title="Cavalcade of Lights"
             address="100 Queen Street W"
-            walk="15 minutes"
-            subway="10 minutes"
+            :walk="'15' + $t('minutes')"
+            :subway="'10' + $t('minutes')"
             uber=""
             dates="November 23rd"
             type="Light show"
@@ -879,7 +915,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <SeasonalSquare
-            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(2)}"  
+            id="newYear"  
+            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo('newYear')}"  
             :likes="120"
             :dislikes="52"  
             :largeView="selected === 'seasonal'"
@@ -891,8 +928,8 @@
             ]"
             title="New Year's Eve Celebration"
             address="100 Queen Street W"
-            walk="15 minutes"
-            subway="10 minutes"
+            :walk="'15' + $t('minutes')"
+            :subway="'10' + $t('minutes')"
             uber=""
             dates="December 31st"
             type="Festival"
@@ -901,7 +938,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <SeasonalSquare
-            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(3)}"  
+            id="nathanPhilips"  
+            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo('nathanPhilips')}"  
             :likes="27"
             :dislikes="120"  
             :largeView="selected === 'seasonal'"
@@ -913,8 +951,8 @@
             ]"
             title="Nathan Philips Square Ice Skating"
             address="100 Queen St W"
-            walk="16 minutes"
-            subway="10 minutes"
+            :walk="'16' + $t('minutes')"
+            :subway="'10' + $t('minutes')"
             uber=""
             dates="Nov-March"
             type="Ice skating"
@@ -923,7 +961,8 @@
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
           />
           <SeasonalSquare
-            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo(4)}"  
+            id="christmasMarket"  
+            @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo('christmasMarket')}"  
             :likes="324"
             :dislikes="52"
             :largeView="selected === 'seasonal'"
@@ -936,8 +975,8 @@
             title="Toronto Christmas Market"
             address="55 Mill St"
             walk=""
-            subway="20 minutes"
-            uber="10 minutes"
+            :subway="'20' + $t('minutes')"
+            :uber="'10' + $t('minutes')"
             dates="Nov 13-Dec 31"
             type="Market"
             typeIcon="storefront"
@@ -968,12 +1007,18 @@ export default {
       selected: 'all',
     }
   },
+  mounted () {
+    window.scrollTo({top: 1050, behavior: 'smooth'})
+  },
   methods: {
-    clickMoreInfo (index) {
-      window.scrollTo({
-        top: 1100 + (index * 730),
-        behavior: 'smooth'
-      });
+    clickMoreInfo (element) {
+      setTimeout(() => {
+        var offset = document.getElementById(element)
+        offset.scrollIntoView({
+          behaviour: 'smooth',
+          block: 'center'
+        })
+      }, 500)
     }
   }
 }

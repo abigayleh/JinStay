@@ -42,98 +42,98 @@
         <div class="h-full flex flex-col flex-wrap text-start text-base">
           <div class="pt-2 pr-12 py-1 flex items-center">
             <q-icon name="location_city" class="pr-2"></q-icon>
-            <span>Downtown Toronto View</span>
+            <span>{{ $t('DowntownView') }}</span>
           </div>
           <div class="pb-2 py-1">
             <q-icon name="key" class="pr-2"></q-icon>
-            <span>Self check in</span>
+            <span>{{ $t('SelfCheckIn') }}</span>
           </div>
           <div class="py-2">
-            <span class="font-bold">Bedroom and laundry</span>
+            <span class="font-bold">{{ $t('BedroomLaundry') }}</span>
             <div class="pt-2 py-1 pr-4 flex items-center">
               <q-icon name="bed" class="pr-2"></q-icon>
               <span>{{ $t('QueenBed') }}</span>
             </div>
             <div class="py-1 pr-4 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-520v320h560v-320H200Zm0-80h560v-160H200v160Zm280 360q-33 0-56.5-23.5T400-320q0-27 15-57.5T480-480q50 72 65 102.5t15 57.5q0 33-23.5 56.5T480-240Zm200-400q17 0 28.5-11.5T720-680q0-17-11.5-28.5T680-720q-17 0-28.5 11.5T640-680q0 17 11.5 28.5T680-640ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-480v-160 160Z"/></svg>
-              <span class="pl-1">Washer and dryer</span>
+              <span class="pl-1">{{ $t('WasherDryer') }}</span>
             </div>
             <div class="py-1 pr-4 flex items-center">
               <q-icon name="checkroom" class="pr-2"></q-icon>
-              <span>Hangers</span>
+              <span>{{ $t('Hangers') }}</span>
             </div>
           </div>
           <div class="py-2">
-            <span class="font-bold">Bathroom</span>
+            <span class="font-bold">{{ $t('Bathroom') }}</span>
             <div class="pt-2 py-1 pb-1 pr-4 flex items-center">
               <q-icon name="" class="pr-2"></q-icon>
-              <span>Hair dryer</span>
+              <span>{{ $t('HairDryer') }}</span>
             </div>
             <div class="py-1 pr-4 flex items-center">
               <q-icon name="bathtub" class="pr-2"></q-icon>
-              <span>Bathtub</span>
+              <span>{{ $t('Bathtub') }}</span>
             </div>
             <div class="py-1 pr-4 flex items-center">
               <q-icon name="soap" class="pr-2"></q-icon>
-              <span style="width: 180px;">Shampoo, body wash, soap</span>
+              <span style="width: 180px;">{{ $t('Shampoo') }}</span>
             </div>
             <div class="py-1 pr-4 flex items-center">
               <q-icon name="soap" class="pr-2"></q-icon>
-              <span>Towels</span>
+              <span>{{ $t('Towels') }}</span>
             </div>
             <div class="py-1 pr-4 flex items-center">
               <q-icon name="water" class="pr-2"></q-icon>
-              <span>Hot water</span>
+              <span>{{ $t('HotWater') }}</span>
             </div>
           </div>
           <div class="py-2">
-            <span class="font-bold">Kitchen and dining</span>
+            <span class="font-bold">{{ $t('KitchenDining') }}</span>
             <div class="pt-2 py-1 pb-1 pr-4">
               <q-icon name="kitchen" class="pr-2"></q-icon>
-              <span>Refrigerator</span>
+              <span>{{ $t('Refrigerator') }}</span>
             </div>
             <div class="py-1 pr-4">
               <q-icon name="microwave" class="pr-2"></q-icon>
-              <span>Microwave</span>
+              <span>{{ $t('Microwave') }}</span>
             </div>
             <div class="py-1 pr-4 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M177-560q14-36 4.5-64T149-680q-33-40-43.5-75.5T102-840h78q-8 38-2.5 62t28.5 52q38 46 48.5 81.5t.5 84.5h-78Zm160 0q14-36 5-64t-32-56q-33-40-44-75.5t-4-84.5h78q-8 38-2.5 62t28.5 52q38 46 48.5 81.5t.5 84.5h-78Zm160 0q14-36 5-64t-32-56q-33-40-44-75.5t-4-84.5h78q-8 38-2.5 62t28.5 52q38 46 48.5 81.5t.5 84.5h-78ZM200-160q-50 0-85-35t-35-85v-200h561q5-34 27-59.5t54-36.5l185-62 25 76-185 62q-12 4-19.5 14.5T720-462v182q0 50-35 85t-85 35H200Zm0-80h400q17 0 28.5-11.5T640-280v-120H160v120q0 17 11.5 28.5T200-240Zm200-80Z"/></svg>
-              <span class="pl-1">Cooking basics</span>
+              <span class="pl-1">{{ $t('CookingBasics') }}</span>
             </div>
             <div class="py-1 pr-4">
               <q-icon name="restaurant" class="pr-2"></q-icon>
-              <span>Dishes and silverware</span>
+              <span>{{ $t('DishesSilverware') }}</span>
             </div>
             <div class="py-1 pr-4 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-520v320h560v-320H200Zm0-80h560v-160H200v160Zm280 360q-33 0-56.5-23.5T400-320q0-27 15-57.5T480-480q50 72 65 102.5t15 57.5q0 33-23.5 56.5T480-240Zm200-400q17 0 28.5-11.5T720-680q0-17-11.5-28.5T680-720q-17 0-28.5 11.5T640-680q0 17 11.5 28.5T680-640ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-480v-160 160Z"/></svg>
-              <span class="pl-1">Dishwasher</span>
+              <span class="pl-1">{{ $t('Dishwasher') }}</span>
             </div>
             <div class="py-1 pr-4 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M360-120v-120H80v-80h280q33 0 56.5 23.5T440-240v120h-80Zm160 0v-120q0-33 23.5-56.5T600-320h280v80H600v120h-80ZM240-360q-50 0-85-35t-35-85v-160h720v160q0 50-35 85t-85 35H240Zm0-80h480q17 0 28.5-11.5T760-480v-80H200v80q0 17 11.5 28.5T240-440ZM120-680v-80h240v-40q0-17 11.5-28.5T400-840h160q17 0 28.5 11.5T600-800v40h240v80H120Zm80 240v-120 120Z"/></svg>
-              <span class="pl-1">Stove</span>
+              <span class="pl-1">{{ $t('Stove') }}</span>
             </div>
             <div class="py-1 pr-4 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-360v280h560v-280h-80v200H280v-200h-80Zm160 120h240v-120H360v120ZM200-560h560v-200H200v200Zm120-80q-17 0-28.5-11.5T280-680q0-17 11.5-28.5T320-720q17 0 28.5 11.5T360-680q0 17-11.5 28.5T320-640Zm160 0q-17 0-28.5-11.5T440-680q0-17 11.5-28.5T480-720q17 0 28.5 11.5T520-680q0 17-11.5 28.5T480-640Zm160 0q-17 0-28.5-11.5T600-680q0-17 11.5-28.5T640-720q17 0 28.5 11.5T680-680q0 17-11.5 28.5T640-640Z"/></svg>
-              <span class="pl-1">Oven</span>
+              <span class="pl-1">{{ $t('Oven') }}</span>
             </div>
             <div class="py-1 pr-4">
               <q-icon name="coffee_maker" class="pr-2"></q-icon>
-              <span>Coffee maker</span>
+              <span>{{ $t('CoffeeMaker') }}</span>
             </div>
           </div>
           <div class="py-2">
-            <span class="font-bold">Outdoor</span>
+            <span class="font-bold">{{ $t('Outdoor') }}</span>
             <div class="pt-2 pb-1 pr-4">
               <q-icon name="local_taxi" class="pr-2"></q-icon>
-              <span>Paid parking off premises</span>
+              <span>{{ $t('PaidParking') }}</span>
             </div>
             <div class="pb-1 pr-4">
               <q-icon name="chair_alt" class="pr-2"></q-icon>
-              <span>Outdoor furniture</span>
+              <span>{{ $t('OutdoorFurniture') }}</span>
             </div>
             <div class="pb-1 pr-4">
               <q-icon name="balcony" class="pr-2"></q-icon>
-              <span>Private balcony</span>
+              <span>{{ $t('PrivateBalcony') }}</span>
             </div>
             <div class="pb-1 pr-4">
               <q-icon name="fitness_center" class="pr-2"></q-icon>
@@ -145,21 +145,21 @@
             </div>
           </div>
           <div class="py-2">
-            <span class="font-bold">Entertainment</span>
+            <span class="font-bold">{{ $t('Entertainment') }}</span>
             <div class="pt-2 pb-1 pr-4">
               <q-icon name="tv" class="pr-2"></q-icon>
-              <span>30 inch HDTV</span>
+              <span>{{ $t('TV') }}</span>
             </div>
             <div class="flex pt-2 pb-1 pr-4">
               <q-icon name="sports_esports" class="pr-2"></q-icon>
               <div class="flex flex-col">
-                <span>PS4 with Netflix, Disney+,</span>
-                <span>Amazon Prime Video, Youtube</span>
+                <span>{{ $t('PS4') }}</span>
+                <span>{{ $t('Youtube') }}</span>
               </div>
             </div>
           </div>
           <div class="py-2">
-            <span class="font-bold">Internet and office</span>
+            <span class="font-bold">{{ $t('Internet') }}</span>
             <div class="pt-2 pb-1 pr-4">
               <q-icon name="wifi" class="pr-2"></q-icon>
               <span>{{ $t('WiFi') }}</span>
@@ -170,55 +170,55 @@
             </div>
           </div>
           <div class="py-2">
-            <span class="font-bold">Home safety</span>
+            <span class="font-bold">{{ $t('HomeSafety') }}</span>
             <div class="pt-2 pb-1 pr-4 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M440-120v-200h80v200h-80Zm323-101L621-362l57-57 141 142-56 56Zm-566 0-56-56 141-142 57 57-142 141Zm3-539v40h560v-40H200Zm124 120 12 40h288l12-40H324Zm12 120q-26 0-47-15.5T260-576l-20-64h-40q-33 0-56.5-23.5T120-720v-120h720v120q0 33-23.5 56.5T760-640h-40l-26 68q-9 23-29 37.5T620-520H336ZM200-760v40-40Z"/></svg>
-              <span class="pl-1">Smoke alarm</span>
+              <span class="pl-1">{{ $t('SmokeAlarm') }}</span>
             </div>
             <div class="pb-1 pr-4 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M440-120v-200h80v200h-80Zm323-101L621-362l57-57 141 142-56 56Zm-566 0-56-56 141-142 57 57-142 141Zm3-539v40h560v-40H200Zm124 120 12 40h288l12-40H324Zm12 120q-26 0-47-15.5T260-576l-20-64h-40q-33 0-56.5-23.5T120-720v-120h720v120q0 33-23.5 56.5T760-640h-40l-26 68q-9 23-29 37.5T620-520H336ZM200-760v40-40Z"/></svg>
-              <span class="pl-1">Carbon monoxide alarm</span>
+              <span class="pl-1">{{ $t('CarbonMonoxide') }}</span>
             </div>
           </div>
         </div>
       </div>
       <div class="w-fit flex flex-col items-center rounded-2xl p-8 text-center mb-4 bg-white shadow-md hover:shadow-xl cursor-pointer">
         <span class="text-bold pb-1 text-xl underline pb-4">{{ $t('CleaningProcedure') }}</span>
-        <span style="max-width: 1200px;">At JinStay, maintaining high-quality cleanliness is our top priority. We understand how disappointing a stay can be if cleanliness is not up to standard, so we work hard to ensure top-notch quality. Instead of just telling you about it, here’s a list of everything we clean before each guest arrives:</span>
+        <span style="max-width: 1200px;">{{ $t('Cleanliness') }}</span>
         <div class="flex justify-center text-base">
           <div class="flex flex-col m-4" style="width: 300px;">
-            <div class="border border-2 p-3 mb-2" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">Kitchen</div>
+            <div class="border border-2 p-3 mb-2" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('Kitchen') }}</div>
             <div class="border border-2 flex flex-col p-3 text-start" style="height: 220px;">
-              <span><b class="text-xl">•</b> Wash and sanitize all dishes, cutlery and utensils</span>
-              <span><b class="text-xl">•</b> Wipe down and disinfect all countertops</span>
-              <span><b class="text-xl">•</b> Empty and disinfect trash cans</span>
+              <span><b class="text-xl">•</b> {{ $t('WashDishes') }}</span>
+              <span><b class="text-xl">•</b> {{ $t('WipeDown') }}</span>
+              <span><b class="text-xl">•</b> {{ $t('EmptyTrash') }}</span>
             </div>
           </div>
           <div class="flex flex-col m-4" style="width: 300px;">
-            <div class="border border-2 p-3 mb-2" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">Bathroom</div>
+            <div class="border border-2 p-3 mb-2" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('Bathroom') }}</div>
             <div class="border border-2 flex flex-col p-3 text-start" style="height: 220px;">
-              <span><b class="text-xl">•</b> Wash and sanitize all towels</span>
-              <span><b class="text-xl">•</b> Clean and disinfect sink, toilet, shower, and bathtub</span>
-              <span><b class="text-xl">•</b> Clean mirrors and glass surfaces</span>
-              <span><b class="text-xl">•</b> Replace toiletries, ensure fresh supplies</span>
-              <span><b class="text-xl">•</b> Empty and disinfect trash cans</span>
+              <span><b class="text-xl">•</b> {{ $t('WashTowels') }}</span>
+              <span><b class="text-xl">•</b> {{ $t('CleanSink') }}</span>
+              <span><b class="text-xl">•</b> {{ $t('CleanMirror') }}</span>
+              <span><b class="text-xl">•</b> {{ $t('ReplaceToilet') }}</span>
+              <span><b class="text-xl">•</b> {{ $t('EmptyTrash') }}</span>
             </div>
           </div>
           <div class="flex flex-col m-4" style="width: 300px;">
-            <div class="border border-2 p-3 mb-2" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">Living Areas</div>
+            <div class="border border-2 p-3 mb-2" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('LivingAreas') }}</div>
             <div class="border border-2 flex flex-col p-3 text-start" style="height: 220px;">
-              <span><b class="text-xl">•</b> Vacuum and mop all floors, including under furniture</span>
-              <span><b class="text-xl">•</b> Thoroughly dust all surfaces</span>
-              <span><b class="text-xl">•</b> Sanitize all surfaces, devices, and frequently touched items</span>
-              <span><b class="text-xl">•</b> Organize and arrange items back to their places</span>
+              <span><b class="text-xl">•</b> {{ $t('Vacuum') }}</span>
+              <span><b class="text-xl">•</b> {{ $t('Dust') }}</span>
+              <span><b class="text-xl">•</b> {{ $t('Sanitize') }}</span>
+              <span><b class="text-xl">•</b> {{ $t('Organize') }}</span>
             </div>
           </div>
           <div class="flex flex-col m-4" style="width: 300px;">
-            <div class="border border-2 p-3 mb-2" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">Bedroom</div>
+            <div class="border border-2 p-3 mb-2" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('Bedroom') }}</div>
             <div class="border border-2 flex flex-col p-3 text-start" style="height: 220px;">
-              <span><b class="text-xl">•</b> Wash bedding and linens with bleach</span>
-              <span><b class="text-xl">•</b> Dust and wipe down bedroom furniture</span>
-              <span><b class="text-xl">•</b> Vaccum bedroom floors and under bed</span>
+              <span><b class="text-xl">•</b> {{ $t('WashBedding') }}</span>
+              <span><b class="text-xl">•</b> {{ $t('DustBed') }}</span>
+              <span><b class="text-xl">•</b> {{ $t('VacuumBed') }}</span>
             </div>
           </div>
         </div>
@@ -422,7 +422,7 @@ export default {
     
   },
   mounted () {
-
+    window.scrollTo({top: 1050, behavior: 'smooth'})
   },
   data() {
     return {
