@@ -56,7 +56,7 @@
             </q-btn>
           </div>
         </div>
-        <div class="flex flex-nowrap text-base font-bold">
+        <div class="flex flex-nowrap overflow-scroll text-base font-bold">
           <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">{{ $t('OurHome') }}</span>
           <span class="pl-2 pr-3">|</span>
           <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">{{ $t('ThingsToDo') }}</span>
