@@ -25,16 +25,16 @@
               <div>{{ $t('CityAddress') }}</div>
             </div>
           </div>
-          <span class="font-bold text-3xl">{{ $t('WelcomeToToronto') }} 👋</span>
+          <span class="font-bold sm:text-3xl text-2xl">{{ $t('WelcomeToToronto') }} 👋</span>
         </div>
         <div class="flex flex-nowrap max-w-full overflow-scroll text-base font-bold">
-          <span style="min-width: 90px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">{{ $t('OurHome') }}</span>
+          <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">{{ $t('OurHome') }}</span>
           <span class="pl-2 pr-3">|</span>
-          <span style="min-width: 120px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">{{ $t('ThingsToDo') }}</span>
+          <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">{{ $t('ThingsToDo') }}</span>
           <span class="pl-2 pr-3">|</span>
           <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/transportation')">{{ $t('TransportationTitle') }}</span>
           <span class="pl-2 pr-3">|</span>
-          <span style="min-width: 150px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/host')">{{ $t('AboutTheHost') }}</span>
+          <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/host')">{{ $t('AboutTheHost') }}</span>
         </div>
       </div>
       <div v-else class="w-full h-full flex flex-col items-between justify-between">
@@ -57,13 +57,13 @@
           </div>
         </div>
         <div class="flex flex-nowrap text-base font-bold">
-          <span style="min-width: 90px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">{{ $t('OurHome') }}</span>
+          <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">{{ $t('OurHome') }}</span>
           <span class="pl-2 pr-3">|</span>
-          <span style="min-width: 120px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">{{ $t('ThingsToDo') }}</span>
+          <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">{{ $t('ThingsToDo') }}</span>
           <span class="pl-2 pr-3">|</span>
           <span class="cursor-pointer mr-2 hover:underline" @click="$router.push('/transportation')">{{ $t('TransportationTitle') }}</span>
           <span class="pl-2 pr-3">|</span>
-          <span style="min-width: 150px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/host')">{{ $t('AboutTheHost') }}</span>
+          <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/host')">{{ $t('AboutTheHost') }}</span>
         </div>
       </div>
     </div>
