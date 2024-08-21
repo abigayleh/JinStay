@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full items-center flex flex-col text-lg p-4" style="background-color: #f6f7f8;">
-    <div class="relative flex flex-col w-fit p-2 px-4 text-center">
-      <span class="text-bold pb-1">{{ $t('Welcome') }}</span>
+  <div id="home" class="w-full items-center flex flex-col text-lg" style="background-color: #f6f7f8;">
+    <span class="pt-8 pb-4 sm:text-3xl text-2xl font-bold text-red">{{ $t('Welcome') }} 🏡</span>
+    <div class="relative flex flex-col w-fit p-2 text-center">
       <span>{{ $t('HomeInformation') }}</span>
       <span>{{ $t('HomeLocation') }}</span>
       <span>{{ $t('HaveANiceDay') }}<b @click="startConfetti()" class="hover:underline cursor-pointer">{{ $t('JinStay') }}</b> 🫰</span>
@@ -422,7 +422,14 @@ export default {
     
   },
   mounted () {
-    window.scrollTo({top: 1050, behavior: 'smooth'})
+    var element = document.getElementById('home');
+    var headerOffset = 80;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+         top: offsetPosition,
+         behavior: "smooth"
+    });
   },
   data() {
     return {

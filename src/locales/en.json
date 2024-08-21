@@ -46,7 +46,7 @@
   "TorontoTransportation": "Toronto Transportation 🚌",
   "QuickJump": "Quick jump:",
   "Transportation": "🚙 Transportation",
-  "FromPearsonAirport": "✈️ From Pearson Airport",
+  "FromPearsonAirport": "✈️ From Toronto Pearson Airport",
   "GeneralTransportation": "🚊 General transportation",
   "Payment": "💳 Payment",
   "HelpfulApps": "📱 Helpful apps",
@@ -74,7 +74,7 @@
   "Transit": "Transit",
   "SeoulTorontoTitle": "Seoul -> Toronto",
   "ExperiencedHotelier": "Experienced 5-star hotelier",
-  "HotelierInfo": "In Seoul, I have experience working at both Marriot and Grand Hyatt hotels, accummulating over 2 years of pristine experience before deciding to take my adventure to Canada. I've always loved my job as a hotelier. The feeling I get when helping make someones vacation memorable and just that little bit better is worth so much to me. I also love the ability to talk with all kinds of people from difference cultures and backgrounds, and not only help them but learn from them and evolve myself in the process. I push myself everyday to always do more and make great experiences for people. Through AirBnb I'm truly happy being able to help and interact with people.",
+  "HotelierInfo": "In Seoul, I have experience working at both Marriot and Grand Hyatt hotels, accummulating over 2 years of experience before deciding to take my adventure to Canada. I've always loved my job as a hotelier, helping make someones vacation memorable and just that little bit better is worth so much to me. I also love the ability to talk with all kinds of people from difference cultures and backgrounds, and not only help them but learn from them and evolve myself in the process. I push myself everyday to always do more and make great experiences for people. Through AirBnb I'm truly happy being able to help and interact with people.",
   "SeoulToToronto": "Seoul to Toronto",
   "SeoulTorontoInfo": "Born and raised in Seoul, it's always been my dream to expand my hotelier experience overseas and take on a greater challenge to push myself further. I met my girlfriend, a Newfoundlander, in Seoul where we decided to make the move to Toronto together. She's made my dream possible and I'm able to bring the joys I've found in Toronto to tourists visiting here as well",
   "Foodie": "Foodie and traveler",
@@ -131,7 +131,7 @@
   "NathanPhilips": "Nathan Philips Square Ice Skating",
   "TorontoChristmas": "Toronto Christmas Market",
   "SantaClause": "Santa Clause Parade",
-  "PlanTrip": "Plan your trip ✈️",
+  "PlanTrip": "Plan your trip 🏖️",
   "DowntownView": "Downtown Toronto View",
   "SelfCheckIn": "Self check in",
   "BedroomLaundry": "Bedroom and laundry",
@@ -228,5 +228,7 @@
   "CnTowerType": "Landmark",
   "CnTowerChild": "",
   "CnTowerAdult": "",
-  "CnTowerSenior": ""
+  "CnTowerSenior": "",
+  "FromTorontoAirport": "From Toronto Pearson Airport"
+
 }

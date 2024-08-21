@@ -208,18 +208,8 @@ export default {
     };
   },
   methods: {
-    handleScroll (index) {
-      if (this.filter.length > 1) {
-        window.scrollTo({
-          top: 2000,
-          behavior: 'smooth'
-        });
-      } else {
-        window.scrollTo({
-          top: 1200 + (index * 450),
-          behavior: 'smooth'
-        });
-      }
+    handleScroll () {
+
     }
   },
   watch: {

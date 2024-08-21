@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full flex flex-col py-4" style="background-color: #f6f7f8;">
-    <span class="w-full text-center font-bold text-2xl pb-2">{{ $t('TorontoTransportation') }}</span>
+  <div id="transportation" class="w-full flex flex-col py-4" style="background-color: #f6f7f8;">
+    <span class="w-full text-center pt-8 pb-4 sm:text-3xl text-2xl font-bold text-red">{{ $t('TorontoTransportation') }}</span>
     <div class="w-full flex flex-col items-center">
       <div class="w-fit pt-3 p-5 px-14 bg-white rounded-xl shadow-md hover:shadow-lg cursor-pointer">
         <div class="flex justify-center">
@@ -21,13 +21,14 @@
       <a href="https://assets.metrolinx.com/image/upload/s--QiImbry3--/c_limit,f_auto,q_auto,w_3840/v1/Images/GO/system-map" target="_blank" class="hover:underline cursor-pointer">{{ $t('GoTrain') }}</a>
     </div>
     <q-expansion-item
+        id="airport"    
         expand-separator
         class="text-center font-bold text-lg"
-        label="✈️ From Toronto Pearson Airport"
+        :label="$t('FromPearsonAirport')"
         default-opened
       >
       <div class="flex flex-col items-center justify-center py-4 px-8 font-normal text-base">
-        <div id="airport" class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
+        <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
           <span class="font-bold text-center py-4">{{ $t('UPExpress') }}</span>
           <div class="w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
@@ -134,13 +135,14 @@
       </div>
     </q-expansion-item>
     <q-expansion-item
+        id="general"    
         expand-separator
         class="text-center font-bold text-lg"
-        label="🚍 General transportation"
+        :label="$t('GeneralTransportation')"
         default-opened
       >
       <div class="flex flex-col items-center justify-center px-4 font-normal text-base py-4">
-        <div id="general" class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
+        <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
           <span class="font-bold text-center py-4">{{ $t('Subway') }}</span>
           <div class="min-h-96 w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
@@ -256,7 +258,7 @@
             </div>
             <div class="w-fit md:max-w-sm flex flex-col items-center justify-center pb-6">
               <span class="px-8 pb-4">{{ $t('BikeShareInfo') }}</span>
-              <span class="px-8 pb-4">{{ $t('BikeShareKiosk') }} <span @click="handleScroll(6000)" class="underline cursor-pointer">{{ $t('mobile app') }}</span></span>
+              <span class="px-8 pb-4">{{ $t('BikeShareKiosk') }} <span @click="handleScroll(6000)" class="underline cursor-pointer">{{ $t('MobileApp') }}</span></span>
               <div class="flex items-center">
                 <div class="flex flex-col items-start">
                   <span class="pb-1">{{ $t('ClassicBike') }}</span>
@@ -271,13 +273,14 @@
       </div>
     </q-expansion-item>
     <q-expansion-item
+        id="payment"    
         expand-separator
         class="text-center font-bold text-lg"
-        label="💳 Payment"
+        :label="$t('Payment')"
         default-opened
       >
       <div class="flex flex-col items-center justify-center px-4 font-normal text-base py-4">
-        <div id="payment" class="p-6 w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
+        <div class="p-6 w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
           <span class="font-bold text-center py-4">{{ $t('PRESTO') }}</span>
           <div class="w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
@@ -302,13 +305,14 @@
       </div>
     </q-expansion-item>
     <q-expansion-item
+        id="apps"    
         expand-separator
         class="text-center font-bold text-lg"
-        label="📱 Helpful apps"
+        :label="$t('HelpfulApps')"
         default-opened
       >
       <div class="flex flex-col items-center justify-center px-4 font-normal text-base py-4">
-        <div id="apps" class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
           <span class="font-bold text-center">{{ $t('Maps/GoogleMaps') }}</span>
           <div class="w-full flex md:flex-row flex-col flex-nowrap px-10 py-2">
             <div class="flex flex-row no-wrap justify-center items-center">
@@ -324,7 +328,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
           <span class="font-bold text-center pt-2">{{ $t('Citymapper') }}</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-col no-wrap justify-center items-center hover:underline">
@@ -340,7 +344,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
           <span class="font-bold text-center pt-2">{{ $t('Transit') }}</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
@@ -356,7 +360,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
           <span class="font-bold text-center pt-2">{{ $t('PRESTO') }}</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
@@ -372,7 +376,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
           <span class="font-bold text-center pt-2">{{ $t('BikeShareApp') }}</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
@@ -388,7 +392,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6">
+        <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
           <span class="font-bold text-center pt-2">{{ $t('BeckTaxi') }}</span>
           <div class="w-full flex sm:flex-row flex-col flex-nowrap px-10 py-4">
             <div class="flex flex-row no-wrap justify-center items-center">
@@ -421,15 +425,25 @@ export default {
     }
   },
   mounted () {
-    window.scrollTo({top: 1050, behavior: 'smooth'})
+    var element = document.getElementById('transportation');
+    var headerOffset = 80;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+         top: offsetPosition,
+         behavior: "smooth"
+    });
   },
   methods: {
-    handleScroll (element) {
-      var offset = document.getElementById(element)
-      offset.scrollIntoView({
-        behaviour: 'smooth',
-        block: 'center'
-      })
+    handleScroll (el) {
+      var element = document.getElementById(el);
+      var headerOffset = 80;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+      });
     }
   }
 }

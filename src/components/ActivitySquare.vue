@@ -1,13 +1,13 @@
 <template>
-  <div class="py-5 p-3 flex justify-center" :id="id">
-    <div v-if="!largeView" class="flex flex-col flex-nowrap items-center pt-5 bg-white rounded-xl shadow-md hover:shadow-lg cursor-pointer" style="width: 520px; height: 330px;">
+  <div class="w-full py-5 p-3 flex justify-center" :id="id">
+    <div v-if="!largeView" class="smallView flex flex-col flex-nowrap items-center pt-5 bg-white rounded-xl shadow-md hover:shadow-lg cursor-pointer">
       <span class="text-lg font-bold">{{ title }}</span>
       <div class="h-full w-full flex justify-evenly items-evenly px-4">
         <div class="flex justify-center items-center">
           <img class="h-56 rounded" :src="smallPhoto" alt="Canada">
         </div>
         <div class="w-fit flex flex-col items-center justify-center">
-          <div class="pb-5">
+          <div class="sm:pb-5 pb-2">
             <div class="flex items-center justify-center w-full pb-2">
               <div class="flex justify-center items-center pr-4">
                 <div v-if="type === 'Landmark'">
@@ -32,7 +32,7 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-col items-center">
+          <div class="flex flex-col items-center sm:pb-0 pb-2">
             <div class="flex items-center">
               <q-icon name="open_in_new" class="pr-2"></q-icon>
               <a class="hover:underline" target="_blank" :href="website">{{ $t('Website') }}</a>
@@ -46,7 +46,7 @@
               <a class="hover:underline" target="_blank" :href="directions">{{ $t('Directions') }}</a>
             </div>
           </div>
-          <div class="pt-4">
+          <div class="pt-4 pb-2">
             <q-icon name="info" class="pr-2"></q-icon>
             <span @click="$emit('clickMoreInfo')" class="cursor-pointer hover:underline">{{ $t('MoreInfo') }}</span>
           </div>
@@ -99,8 +99,8 @@
           <div class="w-full flex flex-col items-center py-2 pb-6">
             <span class="text-base py-1">{{ $t('RecommendHere') }}</span>
             <div>
-              <q-btn class="rounded-l-full" size="sm" :label="likes" @click="updateLikes('like')" :color="isLiked ? 'green' : grey" icon="thumb_up"></q-btn>
-              <q-btn class="rounded-r-full" size="sm" :label="dislikes" @click="updateLikes('dislike')" :color="isDisliked ? 'red' : grey" icon="thumb_down"></q-btn>
+              <q-btn class="rounded-l-full" size="sm" :label="likes" @click="onClick('like')" :color="isLiked ? 'green' : grey" icon="thumb_up"></q-btn>
+              <q-btn class="rounded-r-full" size="sm" :label="dislikes" @click="onClick('dislike')" :color="isDisliked ? 'red' : grey" icon="thumb_down"></q-btn>
             </div>
           </div>
           <div class="flex items-center py-1">
@@ -129,8 +129,8 @@ export default {
       type: String,
       required: true
     },
-    likesIndex: {
-      type: Number,
+    data: {
+      type: Array,
       required: true
     },
     smallPhoto: {
@@ -201,52 +201,77 @@ export default {
   data() {
     return {
       slideIndex: 1,
+      isLiked: false,
+      isDisliked: false,
       likes: 0,
-      dislikes: 0
+      dislikes: 0,
     }
   },
   mounted () {
-    this.getLikes()
+    this.updateLikes()
   },
   methods: {
-    async getLikes () {
-      // const response = await fetch('https://raw.githubusercontent.com/abigayleh/JinStay/master/src/locales/likes.json');
-      // const data  = await response.json()
-      // const activityLikes = data.activityLikes
-      // this.likes = activityLikes[this.likesIndex].likes
-      // this.dislikes = activityLikes[this.likesIndex].dislikes
+    updateLikes () {
+      const item = this.data.filter((x) => x.name === this.title)
+      if (item.length > 0) {
+        this.likes = item[0].likes
+        this.dislikes = item[0].dislikes
+      }
     },
-    async updateLikes (type) {
+    onClick (type) {
       if (type === 'like' && this.isLiked) {
-        this.likes -= 1
         this.isLiked = false
+        this.likes -= 1
+      } else if (type === 'dislike' && this.isDisliked) {
+        this.isDisliked = false
+        this.dislikes -= 1
       } else if (type === 'like') {
-        this.likes += 1
-        this.isLiked = true
         if (this.isDisliked) {
           this.dislikes -= 1
-          this.isDisliked = false
         }
-      } else if (this.isDisliked) {
-        this.dislikes -= 1
+        this.isLiked = true
         this.isDisliked = false
+        this.likes += 1
       } else {
-        this.dislikes += 1
-        this.isDisliked = true
         if (this.isLiked) {
           this.likes -= 1
-          this.isLiked = false
         }
+        this.isLiked = false
+        this.isDisliked = true
+        this.dislikes += 1
       }
 
-      // const response = await fetch('https://raw.githubusercontent.com/abigayleh/JinStay/master/src/locales/likes.json');
-      // const data  = await response.json()
-      // data.activityLikes[this.likesIndex].likes = this.likes
-      // data.activityLikes[this.likesIndex].dislikes = this.dislikes
-    },
+      fetch(`https://x8ki-letl-twmt.n7.xano.io/api:yY6Cv1ke/activitylikes/${this.title}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          likes: this.likes,
+          dislikes: this.dislikes
+        }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+      })
+    }
+  },
+  watch: {
+    data () {
+      this.updateLikes()
+    }
   }
 }
 </script>
 
 <style>
+.smallView {
+  width: 100vw;
+  height: 520px;
+  @media (min-width: 640px) {
+    width: 520px;
+    height: 330px;
+  }
+}
 </style>

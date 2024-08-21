@@ -1,12 +1,12 @@
 <template>
-  <div class="px-1 relative" style="background-color: #f6f7f8;">
-    <div class="flex w-full justify-center pt-10 pb-2">
-      <span class="text-3xl font-bold text-red">{{ $t('PlanTrip') }}</span>
+  <div id="activities" class="px-1 relative" style="background-color: #f6f7f8;">
+    <div class="flex w-full justify-center pt-8 pb-4">
+      <span class="sm:text-3xl text-2xl font-bold text-red">{{ $t('PlanTrip') }} </span>
     </div>
     <div class="flex px-4 flex-col items-center no-wrap h-auto">
       <NavigationMap :filter="selected" />
     </div>
-    <div class="w-full flex flex-nowrap overflow-x-scroll text-nowrap px-14 py-3">
+    <div class="w-full flex flex-nowrap overflow-x-scroll text-nowrap px-6 py-3">
       <q-btn class="rounded-3xl mr-2" :class="selected === 'all' ? 'brightness-75' : ''" @click="selected = 'all'" color="indigo" text-color="white" label="All"></q-btn>
       <q-btn style="min-width: 136px;" class="rounded-3xl mr-2" :class="selected === 'toDo' ? 'brightness-75' : ''" @click="selected = 'toDo'" color="red" text-color="white" label="Things to do"></q-btn>
       <q-btn class="rounded-3xl mr-2" :class="selected === 'restaurants' ? 'brightness-75' : ''" @click="selected = 'restaurants'" color="blue-10" text-color="white" label="Restaurants"></q-btn>
@@ -32,7 +32,7 @@
               'https://www.travelandleisure.com/thmb/_HL3sxR00kCnqnHUOqAulCMzXTU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cn-tower-observation-deck-TORONTOFAMILY0222-e8c3d2ba06414ccfa2a551ee460d6cab.jpg',
               'https://www.cntower.ca/sites/default/files/styles/16_9_scale_and_crop_medium/public/images/hours.jpg?h=5ce0254a&itok=UPwrStAG'
             ]"
-            :likesIndex="0"
+            :data="activityList"
             :largeView="selected === 'toDo'"
             :title="$t('CNTower')"
             type="Landmark"
@@ -56,8 +56,8 @@
               'https://tirbnb.com/wp-content/uploads/2024/03/ripley-aquarium-toronto-building.jpg',
               'https://childslife.ca/wp-content/uploads/2022/03/RAC-1.jpg'
             ]"
-            :likesIndex="1"
             :largeView="selected === 'toDo'"
+            :data="activityList"
             title="Ripleys Aquarium of Canada"
             type="Museum"
             typeIcon="museum"
@@ -82,8 +82,8 @@
               'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Toronto_-_ON_-_St_Lawrence_Market.jpg/2560px-Toronto_-_ON_-_St_Lawrence_Market.jpg',
               'https://facts.net/wp-content/uploads/2023/09/14-intriguing-facts-about-st-lawrence-market-toronto-1694436206.jpg'
             ]"
-            :likesIndex="2" 
             :largeView="selected === 'toDo'"
+            :data="activityList"
             title="St. Lawrence Market"
             type="Market"
             typeIcon="store_front"
@@ -108,8 +108,8 @@
               'https://media.blogto.com/articles/20201120-distillery5.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70',
               'https://media.istockphoto.com/id/485612119/ru/%D1%84%D0%BE%D1%82%D0%BE/%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA-%D0%B2-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D1%80%D0%B0%D0%B9%D0%BE%D0%BD-distillery-district-%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%82%D0%BE.jpg?s=612x612&w=0&k=20&c=GiqY8ubl9w3rkjF8SI89amQW3JP1MtbByP6OqShwfDA='
             ]"
-            :likesIndex="3"
             :largeView="selected === 'toDo'"
+            :data="activityList"
             title="Distillery District"
             type="Historical Landmark"
             typeIcon="historical"
@@ -134,9 +134,8 @@
               'https://www.sartle.com/media/place/art-gallery-of-ontario.jpg',
               'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Art_Gallery_of_Ontario_%2823782351913%29.jpg/2560px-Art_Gallery_of_Ontario_%2823782351913%29.jpg'
             ]"
-            :likes="120"
-            :dislikes="52"    
             :largeView="selected === 'toDo'"
+            :data="activityList"
             title="Art Gallery of Ontario"
             type="Art Gallery"
             typeIcon="museum"
@@ -161,9 +160,8 @@
               'https://hikingthegta.com/wp-content/uploads/2022/08/img_7387.jpg?w=624',
               'https://cdn.skyrisecities.com/sites/default/files/images/articles/2019/10/39451/39451-131023.jpg'
             ]"
-            :likes="120"
-            :dislikes="52"   
             :largeView="selected === 'toDo'"
+            :data="activityList"
             title="Casa Loma"
             type="Castle"
             typeIcon="castle"
@@ -188,9 +186,8 @@
               'https://www.sixteen-nine.net/wp-content/uploads/2021/08/MomentFactory_ROM_CentennialBall-scaled.jpg',
               'https://www.rom.on.ca/sites/default/files/imce/ROMGallery_F1_Rotunda_Website_DC.jpg'
             ]"
-            :likes="120"
-            :dislikes="52"  
             :largeView="selected === 'toDo'"
+            :data="activityList"
             title="Royal Ontario Museum"
             type="Museum"
             typeIcon="museum"
@@ -215,9 +212,8 @@
               'https://media.cntraveler.com/photos/5b2c06854c18411aa3e9f5d3/16:9/w_2560,c_limit/High-Park_GettyImages-171589236.jpg',
               'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/49000/49157-High-Park.jpg'
             ]"
-            :likes="120"
-            :dislikes="52"    
             :largeView="selected === 'toDo'"
+            :data="activityList"
             title="High Park"
             type="Park"
             typeIcon="nature"
@@ -242,9 +238,8 @@
               'https://torontonicity.com/wp-content/uploads/2022/10/Giraffes-at-Toronto-Zoo-photo-courtesy-Toronto-Zoo-1.jpg',
               'https://facts.net/wp-content/uploads/2023/09/11-extraordinary-facts-about-toronto-zoo-1694773326.jpg'
             ]"
-            :likes="120"
-            :dislikes="52"    
             :largeView="selected === 'toDo'"
+            :data="activityList"
             title="Toronto Zoo"
             type="Zoo"
             typeIcon="pets"
@@ -269,9 +264,8 @@
               'https://www.yoplaces.ca/images/gallery/edwardsgarden/DSC_0059.jpg',
               'https://t4.ftcdn.net/jpg/03/61/11/17/360_F_361111758_yH54qvqIoc1hIrjsNUDMru5DcnSSz57n.jpg'
             ]"
-            :likes="120"
-            :dislikes="52"    
             :largeView="selected === 'toDo'"
+            :data="activityList"
             title="Edwards Gardens"
             type="Park"
             typeIcon="nature"
@@ -295,9 +289,8 @@
           <RestaurantSquare
             id="canoe"
             @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('canoe')}"
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'restaurants'"
+            :data="activityList"
             smallPhoto="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/7d/70/ea/course-6-surf-turf.jpg?w=1100&h=-1&s=1"
             :photos="[
               'https://dynamic-media-cdn.tripadvisor.com/media/photo-s/02/a2/e8/71/filename-img-5790-jpg.jpg?w=600&h=-1&s=1',
@@ -321,9 +314,8 @@
           <RestaurantSquare
             id="leeChen"
             @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('leeChen')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'restaurants'"
+            :data="activityList"
             smallPhoto="https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/42867079_2106360159396047_8322875076017913856_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0327a3&_nc_ohc=dIp3qQs1Rx4Q7kNvgH7rMFx&_nc_ht=scontent-gmp1-1.xx&oh=00_AYBwCa9Yrw1GFh1py3bEqcqhTW_CaA8FJmklDmS5ywXGiw&oe=66E7F922"
             :photos="[
               'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/47/80/ce/lee-chen-on-214-king.jpg?w=1200&h=-1&s=1',
@@ -347,9 +339,8 @@
           <RestaurantSquare
             id="360"
             @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('360')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'restaurants'"
+            :data="activityList"
             smallPhoto="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/a6/e4/e5/caption.jpg?w=1100&h=-1&s=1"
             :photos="[
               'https://lh5.googleusercontent.com/p/AF1QipP7DbU1sUvPU2U55Pv-mD6ZFUTv1CAmxpA_uOJD=w408-h255-k-no',
@@ -373,9 +364,8 @@
           <RestaurantSquare
             id="george"
             @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('george')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'restaurants'"
+            :data="activityList"
             smallPhoto="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/5b/74/f5/food.jpg?w=1100&h=-1&s=1"
             :photos="[
               'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/ff/5f/fa/exterior-photo.jpg?w=1200&h=-1&s=1',
@@ -399,9 +389,8 @@
           <RestaurantSquare
             id="kasaMoto"  
             @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('kasaMoto')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'restaurants'"
+            :data="activityList"
             smallPhoto="https://sparkleshinylove.com/wp-content/uploads/2015/08/image48-e1439320942189.jpg"
             :photos="[
               'https://www.blogto.com/listings/restaurants/upload/2015/06/20150604-590-Exterior.jpg',
@@ -425,9 +414,8 @@
           <RestaurantSquare
             id="mothersDumplings"  
             @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('mothersDumplings')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'restaurants'"
+            :data="activityList"
             smallPhoto="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/c9/b5/1f/20161202-193353-largejpg_rotated_90.jpg?w=1200&h=-1&s=1"
             :photos="[
               'https://media.blogto.com/uploads/2023/01/20/1674229967-20230119-MothersDumplings-1.jpg?w=1400&cmd=resize&height=2500&quality=70',
@@ -451,9 +439,8 @@
           <RestaurantSquare
             id="yummyKorean"  
             @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('yummyKorean')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'restaurants'"
+            :data="activityList"
             smallPhoto="https://s3-media0.fl.yelpcdn.com/bphoto/Q4haPED_m0ljxFhiz8eyNA/348s.jpg"
             :photos="[
               'https://lh3.googleusercontent.com/p/AF1QipMFmRFkO_-g1ToLYCYuAHYjLag7d2_qwMSsifjP=s680-w680-h510',
@@ -477,9 +464,8 @@
           <RestaurantSquare
             id="mapleLeaf"  
             @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('mapleLeaf')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'restaurants'"
+            :data="activityList"
             smallPhoto="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/08/22/88/photo1jpg.jpg?w=1200&h=-1&s=1"
             :photos="[
               'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/58/d7/46/20190921-114120-largejpg.jpg?w=1000&h=-1&s=1',
@@ -503,9 +489,8 @@
           <RestaurantSquare
             id="guuIzakaya"  
             @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('guuIzakaya')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'restaurants'"
+            :data="activityList"
             smallPhoto="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/37/5a/af/sushi.jpg?w=1200&h=-1&s=1"
             :photos="[
               'https://lh5.googleusercontent.com/p/AF1QipNNnAXssmWSUyqLeWk99cnXLdGrqBdCH4XTw5cg=w408-h272-k-no',
@@ -529,9 +514,8 @@
           <RestaurantSquare
             id="chodang"
             @clickMoreInfo="() => {selected = 'restaurants'; clickMoreInfo('chodang')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'restaurants'"
+            :data="activityList"
             smallPhoto="https://fastly.4sqi.net/img/general/600x600/5593721_vb3H81vViNAI7gp1yIFZvt2yQtZJ2NbUo1ZWPvRC8yo.jpg"
             :photos="[
               'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/1b/dc/e7/chodang-soon-tofu.jpg?w=1200&h=-1&s=1',
@@ -560,9 +544,8 @@
           <ShoppingSquare
             id="eaton"  
             @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo('eaton')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'shopping'"
+            :data="activityList"
             smallPhoto="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,g_xy_center,h_640,q_80,w_640,x_960,y_640/v1/clients/toronto/167_3_1464_jpeg_large_ede42653-7423-47bc-b76e-49bfd2086080.jpg"
             :photos="[
               'https://allthebestspots.com/wp-content/uploads/2024/01/Depositphotos_eaton-center_S.jpg',
@@ -582,9 +565,8 @@
           <ShoppingSquare
             id="sherway"  
             @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo('sherway')}"  
-            :likes="27"
-            :dislikes="120"  
             :largeView="selected === 'shopping'"
+            :data="activityList"
             smallPhoto="https://assets.cadillacfairview.com/transform/82c1319d-471a-4e7f-8af3-e23e8313bf5d/-Retail-Sherway-Gardens-Mall-Interior?io=transform:fill,width:1600&quality=80"
             :photos="[
               'https://images.ctfassets.net/70unvdt5g4gf/2lsnucM0wTYBkBcpNGPf76/92c5d71628adecdd5628e6c9730921a9/170519-Sherway-418-min.jpg',
@@ -604,9 +586,8 @@
           <ShoppingSquare
             id="squareOne"
             @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo('squareOne')}"  
-            :likes="120"
-            :dislikes="52"  
             :largeView="selected === 'shopping'"
+            :data="activityList"
             smallPhoto="https://i.redd.it/yiy47ulawq681.jpg"
             :photos="[
               'https://blog.databid.com/hubfs/Square%20one-1.jpg',
@@ -626,9 +607,8 @@
           <ShoppingSquare
             id="yorkdale"  
             @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo('yorkdale')}"  
-            :likes="103"
-            :dislikes="12"
             :largeView="selected === 'shopping'"
+            :data="activityList"
             smallPhoto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShWKjyX6_Whpwrwt4xWwEEkESQODa8-hbWlQ&s"
             :photos="[
               'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/98/16/90/east-wing.jpg?w=1200&h=-1&s=1',
@@ -653,9 +633,8 @@
           <CafeSquare
             id="tims" 
             @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo('tims')}"  
-            :likes="120"
-            :dislikes="52"  
             :largeView="selected === 'cafe'"
+            :data="activityList"
             smallPhoto="https://onecms-res.cloudinary.com/image/upload/v1700016361/mediacorp/8days/image/2023/11/15/tim_hortons_singapore_3.png"
             :photos="[
               'https://cdn.eateasily.com/restaurants/profile/app/400X300/1198.jpg',
@@ -674,9 +653,8 @@
           <CafeSquare
             id="beavertails"  
             @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo('beavertails')}"  
-            :likes="27"
-            :dislikes="120"  
             :largeView="selected === 'cafe'"
+            :data="activityList"
             smallPhoto="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/b9/6c/14/photo1jpg.jpg?w=1200&h=-1&s=1"
             :photos="[
               'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/a8/7f/24/pier-6.jpg?w=1200&h=-1&s=1',
@@ -695,9 +673,8 @@
           <CafeSquare
             id="icecream"  
             @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo('icecream')}"  
-            :likes="120"
-            :dislikes="52"  
             :largeView="selected === 'cafe'"
+            :data="activityList"
             smallPhoto="https://s3-media0.fl.yelpcdn.com/bphoto/FK5AfvYkMqVwnKCl30ji5Q/348s.jpg"
             :photos="[
               'https://static.wixstatic.com/media/1bec01_960a5f88b99b4cfba2b199ad4f5abf46~mv2.png/v1/fill/w_560,h_560,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/ice_edited.png',
@@ -716,9 +693,8 @@
           <CafeSquare
             id="nomnom"  
             @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo('nomnom')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'cafe'"
+            :data="activityList"
             smallPhoto="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/d8/2c/6e/photo5jpg.jpg?w=1100&h=-1&s=1"
             :photos="[
               'https://lh5.googleusercontent.com/p/AF1QipNzVqVTpTo9ONly-GJKBMAZ-n8KhrW5NN_ftSvr=w408-h307-k-no',
@@ -737,9 +713,8 @@
           <CafeSquare
             id="bannock"  
             @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo('bannock')}"  
-            :likes="103"
-            :dislikes="12"
             :largeView="selected === 'cafe'"
+            :data="activityList"
             smallPhoto="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/40/fe/73/store-front.jpg?w=1200&h=-1&s=1"
             :photos="[
               'https://lh5.googleusercontent.com/p/AF1QipP3BaVaWWRQHt2xpMS7KBHPi15PIxno91UlxGKd=w448-h240-k-no',
@@ -763,9 +738,8 @@
           <MarketSquare
             id="insMarket"  
             @clickMoreInfo="() => {selected = 'market'; clickMoreInfo('insMarket')}"  
-            :likes="120"
-            :dislikes="52"  
             :largeView="selected === 'market'"
+            :data="activityList"
             smallPhoto="https://s3-media0.fl.yelpcdn.com/bphoto/oEeSHrXZDkhgHgo1-pZCIA/348s.jpg"
             :photos="[
               'https://777baystreet.com/wp-content/uploads/2022/04/INS_Store.jpeg',
@@ -783,9 +757,8 @@
           <MarketSquare
             id="longo"  
             @clickMoreInfo="() => {selected = 'market'; clickMoreInfo('longo')}"  
-            :likes="103"
-            :dislikes="12"
             :largeView="selected === 'market'"
+            :data="activityList"
             smallPhoto="https://lh3.googleusercontent.com/p/AF1QipPfVrAEs8hneG1obKKzcW6UZf-2RJy6z6GmMOBn=s680-w680-h510"
             :photos="[
               'https://lh3.googleusercontent.com/p/AF1QipM2XptWTAsuuLqW3e8bgmBnkVKjISNbR8pz69Eu=s680-w680-h510',
@@ -804,9 +777,8 @@
           <MarketSquare
             id="7eleven"  
             @clickMoreInfo="() => {selected = 'market'; clickMoreInfo('7eleven')}"  
-            :likes="120"
-            :dislikes="52"  
             :largeView="selected === 'market'"
+            :data="activityList"
             smallPhoto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX-9mK-0JlJh-eNpBbONTJ1H1A5Yi8WNUiUA4ey1Y4NpD_JQUipik2UMk7a2aAluvoQpw&usqp=CAU"
             :photos="[
               'https://images2.minutemediacdn.com/image/upload/c_crop,w_4200,h_2362,x_0,y_349/c_fill,w_752,ar_16:9,f_auto,q_auto,g_auto/images/GettyImages/mmsport/mentalfloss/01g6k4t01fpszt02cys0.jpg',
@@ -824,9 +796,8 @@
           <MarketSquare
             id="metro"  
             @clickMoreInfo="() => {selected = 'market'; clickMoreInfo('metro')}"  
-            :likes="27"
-            :dislikes="120"  
             :largeView="selected === 'market'"
+            :data="activityList"
             smallPhoto="https://lh3.googleusercontent.com/p/AF1QipPK03Za7gtlOy4CSQmnK7qHS_jAZwC9IK8QOqcS=s680-w680-h510"
             :photos="[
               'https://lh3.googleusercontent.com/p/AF1QipMTwF5iSrwtTFu-T1A4kcieyxf1GMiewpom4knw=s680-w680-h510',
@@ -845,9 +816,8 @@
           <MarketSquare
             id="loblaws"  
             @clickMoreInfo="() => {selected = 'market'; clickMoreInfo('loblaws')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'market'"
+            :data="activityList"
             smallPhoto="https://lh3.googleusercontent.com/p/AF1QipPTFnqnzE9A24mhxOC_Jq0rv9s7ahcUSativ5Ch=s680-w680-h510"
             :photos="[
               'https://lh3.googleusercontent.com/p/AF1QipNSp9ZsuiWjAXEDi39V58EptqNwzUSq3bLwEq5s=s680-w680-h510',
@@ -871,9 +841,8 @@
           <SeasonalSquare
             id="santaClause"  
             @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo('santaClause')}"  
-            :likes="103"
-            :dislikes="12"
             :largeView="selected === 'seasonal'"
+            :data="activityList"
             smallPhoto="https://www.narcity.com/media-library/toronto-santa-claus-parade-route-will-cause-numerous-downtown-closures-next-weekend.jpg?id=25955521&width=600&height=600&coordinates=252%2C0%2C252%2C0"
             :photos="[
               'https://www.todocanada.ca/wp-content/uploads/Toronto-Santa-Claus-Parade.jpg',
@@ -894,9 +863,8 @@
           <SeasonalSquare
             id="cavalcade"  
             @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo('cavalcade')}"  
-            :likes="120"
-            :dislikes="52"  
             :largeView="selected === 'seasonal'"
+            :data="activityList"
             smallPhoto="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,g_xy_center,h_640,q_65,w_640,x_1713,y_1300/v1/clients/toronto/d69761ffbb1e75d903732f522dcdbd8fb5313c09_7964ebf6-fc8d-41a9-85cd-561a73fd1ffd.jpg"
             :photos="[
               'https://media.blogto.com/articles/20211124-cavalcade-of-lights-2021.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70',
@@ -917,9 +885,8 @@
           <SeasonalSquare
             id="newYear"  
             @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo('newYear')}"  
-            :likes="120"
-            :dislikes="52"  
             :largeView="selected === 'seasonal'"
+            :data="activityList"
             smallPhoto="https://travel.home.sndimg.com/content/dam/images/travel/fullrights/2015/12/14/new-years-world-toronto.jpg.rend.hgtvcom.1280.1920.suffix/1491592908849.jpeg"
             :photos="[
               'https://prod-static.curiocity.com/uploads/2021/12/BeFunky-collage-30.jpg',
@@ -940,9 +907,8 @@
           <SeasonalSquare
             id="nathanPhilips"  
             @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo('nathanPhilips')}"  
-            :likes="27"
-            :dislikes="120"  
             :largeView="selected === 'seasonal'"
+            :data="activityList"
             smallPhoto="https://i.pinimg.com/736x/4f/f0/70/4ff0700acdffbd97f1b01d6308923d86.jpg"
             :photos="[
               'https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/toronto/nathan_phillips_square_skating_seeusoontravel_da2a4178-04bb-4960-b451-334239608735.jpg',
@@ -963,9 +929,8 @@
           <SeasonalSquare
             id="christmasMarket"  
             @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo('christmasMarket')}"  
-            :likes="324"
-            :dislikes="52"
             :largeView="selected === 'seasonal'"
+            :data="activityList"
             smallPhoto="https://www.gotourscanada.com/wp-content/uploads/2017/12/TCM.jpg"
             :photos="[
               'https://www.narcity.com/media-library/the-distillery-winter-village-in-toronto-ontario.jpg?id=50292424&width=1245&height=700&coordinates=0%2C0%2C90%2C0',
@@ -1005,19 +970,35 @@ export default {
   data() {
     return {
       selected: 'all',
+      activityList: []
     }
   },
   mounted () {
-    window.scrollTo({top: 1050, behavior: 'smooth'})
+    var element = document.getElementById('activities');
+    var headerOffset = 80;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+         top: offsetPosition,
+         behavior: "smooth"
+    });
+    fetch(`https://x8ki-letl-twmt.n7.xano.io/api:yY6Cv1ke/activitylikes`)
+      .then(response => response.json())
+      .then(data => {
+        this.activityList = data
+      })
   },
   methods: {
-    clickMoreInfo (element) {
+    clickMoreInfo (el) {
       setTimeout(() => {
-        var offset = document.getElementById(element)
-        offset.scrollIntoView({
-          behaviour: 'smooth',
-          block: 'center'
-        })
+        var element = document.getElementById(el);
+        var headerOffset = 80;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
       }, 500)
     }
   }

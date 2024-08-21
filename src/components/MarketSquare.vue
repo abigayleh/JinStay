@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" class="py-5 p-3 flex justify-center">
+  <div :id="id" class="w-full py-5 p-3 flex justify-center">
     <div v-if="largeView" class="w-full flex flex-col items-center justify-center py-4 mx-3 bg-white rounded-xl shadow-md" style="max-width: 1000px;">
       <span class="font-bold text-xl pb-4">{{ title }}</span>
       <div class="w-full flex md:flex-row flex-col items-center justify-evenly flex-nowrap py-4 pl-2">
@@ -60,7 +60,7 @@
         </div>
       </div>
     </div>
-    <div v-else class="flex flex-col flex-nowrap items-center justify-center pt-5 bg-white rounded-xl shadow-md hover:shadow-lg cursor-pointer" style="height: 330px; width: 520px;">
+    <div v-else class="smallView flex flex-col flex-nowrap items-center justify-center pt-5 bg-white rounded-xl shadow-md hover:shadow-lg cursor-pointer">
       <span class="text-lg font-bold">{{ title }}</span>
       <div class="w-full h-full flex justify-evenly px-4">
         <div class="flex justify-center items-center pr-2">
@@ -97,7 +97,7 @@
               <a class="hover:underline" target="_blank" :href="directions">{{ $t('Directions') }}</a>
             </div>
           </div>
-          <div class="pt-4">
+          <div class="pt-4 pb-2">
             <q-icon name="info" class="pr-2"></q-icon>
             <span @click="$emit('clickMoreInfo')" class="cursor-pointer hover:underline">{{ $t('MoreInfo') }}</span>
           </div>
@@ -115,12 +115,8 @@ export default {
       type: String,
       required: true
     },
-    likes: {
-      type: Number,
-      required: true
-    },
-    dislikes: {
-      type: Number,
+    data: {
+      type: Array,
       required: true
     },
     largeView: {
@@ -172,26 +168,76 @@ export default {
     return {
       slideIndex: 1,
       isLiked: false,
-      isDisliked: false
+      isDisliked: false,
+      likes: 0,
+      dislikes: 0
     }
   },
+  mounted () {
+    this.updateLikes()
+  },
   methods: {
+    updateLikes () {
+      const item = this.data.filter((x) => x.name === this.title)
+      if (item.length > 0) {
+        this.likes = item[0].likes
+        this.dislikes = item[0].dislikes
+      }
+    },
     onClick (type) {
       if (type === 'like' && this.isLiked) {
         this.isLiked = false
+        this.likes -= 1
       } else if (type === 'dislike' && this.isDisliked) {
         this.isDisliked = false
+        this.dislikes -= 1
       } else if (type === 'like') {
+        if (this.isDisliked) {
+          this.dislikes -= 1
+        }
         this.isLiked = true
         this.isDisliked = false
+        this.likes += 1
       } else {
+        if (this.isLiked) {
+          this.likes -= 1
+        }
         this.isLiked = false
         this.isDisliked = true
+        this.dislikes += 1
       }
+
+      fetch(`https://x8ki-letl-twmt.n7.xano.io/api:yY6Cv1ke/activitylikes/${this.title}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          likes: this.likes,
+          dislikes: this.dislikes
+        }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+      })
+    }
+  },
+  watch: {
+    data () {
+      this.updateLikes()
     }
   }
 }
 </script>
 
 <style>
+  .smallView {
+    width: 100vw;
+    height: 520px;
+    @media (min-width: 640px) {
+      width: 520px;
+      height: 330px;
+    }
+  }
 </style>

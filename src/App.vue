@@ -14,7 +14,7 @@
             </q-menu>
           </q-btn>
         </div>
-        <div class="flex flex-1 justify-center">
+        <div class="max-w-full flex flex-1 justify-center">
           <div class="flex flex-col text-base w-full items-center justify-center">
             <div class="flex justify-center items-center">
               <span class="font-bold text-2xl pl-6 pr-1">{{ $t('JinStay') }}</span>
@@ -27,7 +27,7 @@
           </div>
           <span class="font-bold text-3xl">{{ $t('WelcomeToToronto') }} 👋</span>
         </div>
-        <div class="flex text-base font-bold">
+        <div class="flex flex-nowrap max-w-full overflow-scroll text-base font-bold">
           <span style="min-width: 90px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">{{ $t('OurHome') }}</span>
           <span class="pl-2 pr-3">|</span>
           <span style="min-width: 120px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">{{ $t('ThingsToDo') }}</span>
@@ -56,7 +56,7 @@
             </q-btn>
           </div>
         </div>
-        <div class="flex text-base font-bold">
+        <div class="flex flex-nowrap text-base font-bold">
           <span style="min-width: 90px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/home')">{{ $t('OurHome') }}</span>
           <span class="pl-2 pr-3">|</span>
           <span style="min-width: 120px;" class="cursor-pointer mr-2 hover:underline" @click="$router.push('/activities')">{{ $t('ThingsToDo') }}</span>
@@ -68,7 +68,7 @@
       </div>
     </div>
     <div class="pt-64 flex items-center h-auto">
-      <video ref="videoPlayer" width="100%" autoplay muted loop>
+      <video ref="videoPlayer" width="100%" autoplay muted loop playsinline>
         <source src="@/assets/torontoVideo.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -84,6 +84,7 @@ export default {
   },
   data() {
     return {
+      videoLoaded: false,
       largeHeader: true,
       language: 'eng',
       languages: [
@@ -93,7 +94,6 @@ export default {
     }
   },
   mounted() {
-    this.$refs.videoPlayer.addEventListener('ended', this.restartVideo);
     window.addEventListener('scroll', this.handleScroll);
   },
   beforeUnmount() {
