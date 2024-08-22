@@ -14,7 +14,8 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  title: 'JinStay'
 })
 
 export default router
