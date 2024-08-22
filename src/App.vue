@@ -68,7 +68,7 @@
       </div>
     </div>
     <div class="pt-64 flex items-center h-auto">
-      <video ref="videoPlayer" width="100%" autoplay muted loop playsinline>
+      <video ref="videoPlayer" width="100%" autoplay muted loop playsinline poster="@/assets/toronto.webp">
         <source src="@/assets/torontoVideo.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
