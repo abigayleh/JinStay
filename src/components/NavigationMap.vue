@@ -114,6 +114,7 @@ export default {
         this.$t('StLawrence'),
         this.$t('CasaLoma'),
         this.$t('EdwardsGarden'),
+        this.$t('Niagara')
       ],
       activityMarkers: [
         [43.6426, -79.3871],
@@ -125,7 +126,8 @@ export default {
         [43.6465, -79.4637],
         [43.6487, -79.3715],
         [43.6780, -79.4094],
-        [43.7338, -79.3579]
+        [43.7338, -79.3579],
+        [43.0815, -79.0642]
       ],
       restaurantTitles: [
         this.$t('Canoe'),

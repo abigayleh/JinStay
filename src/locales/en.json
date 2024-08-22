@@ -222,13 +222,14 @@
   "ProTip": "Pro tip:",
   "CanadaTipOne": "In Canada it's customary to leave a 15-20% tip at restaurants",
   "CanadaTipTwo": "If you're unsure the amount to leave, tipping the HST (tax) is a good standard!",
-  "ThingsToDoSmall": "Things to do 👉",
+  "ThingsToDoSmall": "Things to do",
   "Minutes": " minutes",
   "CnTowerAddress": "290 Bremner Blvd",
   "CnTowerType": "Landmark",
   "CnTowerChild": "",
   "CnTowerAdult": "",
   "CnTowerSenior": "",
-  "FromTorontoAirport": "From Toronto Pearson Airport"
+  "FromTorontoAirport": "From Toronto Pearson Airport",
+  "Niagara": "Niagara Falls"
 
 }
