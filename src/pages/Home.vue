@@ -1,5 +1,5 @@
 <template>
-  <div id="home" class="w-full items-center flex flex-col text-lg" style="background-color: #f6f7f8;">
+  <div id="home" class="w-full items-center flex flex-col text-lg overflow-hidden" style="background-color: #f6f7f8;">
     <span class="pt-8 pb-4 sm:text-3xl text-2xl font-bold text-red">{{ $t('Welcome') }} 🏡</span>
     <div class="relative flex flex-col w-fit p-2 text-center">
       <span>{{ $t('HomeInformation') }}</span>
@@ -66,7 +66,7 @@
           <div class="py-2">
             <span class="font-bold">{{ $t('Bathroom') }}</span>
             <div class="pt-2 py-1 pb-1 pr-4 flex items-center">
-              <q-icon name="" class="pr-2"></q-icon>
+              <img class="w-6 h-6 mr-1.5" src="@/assets/hair-dryer.png" alt="Canada">
               <span>{{ $t('HairDryer') }}</span>
             </div>
             <div class="py-1 pr-4 flex items-center">

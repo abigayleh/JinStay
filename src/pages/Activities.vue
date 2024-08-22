@@ -305,7 +305,7 @@
             uber=""
             website="https://www.insmarket.ca"
             phone="+1 416-364-2185"
-            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303?entry=ttu"
           />
           <MarketSquare
             id="longo"  
@@ -325,7 +325,7 @@
             uber=""
             website="https://www.longos.com"
             phone="+1 416-366-1717"
-            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Longo's+Maple+Leaf+Square,+York+Street,+Toronto,+ON,+Canada/@43.6436855,-79.3813746,17z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb2b4a82b3b7:0xc419b1c9703a086a!2m2!1d-79.3808566!2d43.6421081!2m3!6e0!7e2!8j1723717799?entry=ttu"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Longo's+Maple+Leaf+Square,+York+Street,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb2b4a82b3b7:0xc419b1c9703a086a!2m2!1d-79.3808566!2d43.6421081?entry=ttu"
           />
           <MarketSquare
             id="7eleven"  
@@ -344,7 +344,7 @@
             uber=""
             website="https://www.7-eleven.ca"
             phone="+1 416-203-8350"
-            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/7-Eleven,+@+Richmond,+372+Bay+Street,+Toronto,+ON,+Canada/@43.6493065,-79.3797479,16z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34cd26a6f539:0x80af108e4b3e9bad!2m2!1d-79.3814207!2d43.6510075!2m3!6e0!7e2!8j1723717799?entry=ttu"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Longo's+Maple+Leaf+Square,+York+Street,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb2b4a82b3b7:0xc419b1c9703a086a!2m2!1d-79.3808566!2d43.6421081?entry=ttu"
           />
           <MarketSquare
             id="metro"  
@@ -364,7 +364,7 @@
             uber=""
             website="https://www.metro.ca"
             phone="+1 416-703-9393"
-            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Metro,+80+Front+Street+East,+Toronto,+ON,+Canada/@43.6472327,-79.3765731,16z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb31c95bab8d:0x56924e17328229fc!2m2!1d-79.3727345!2d43.6492034!2m3!6e0!7e2!8j1723717799?entry=ttu"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Longo's+Maple+Leaf+Square,+York+Street,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb2b4a82b3b7:0xc419b1c9703a086a!2m2!1d-79.3808566!2d43.6421081?entry=ttu"
           />
           <MarketSquare
             id="loblaws"  
@@ -384,7 +384,7 @@
             uber=""
             website="https://www.loblaws.ca"
             phone="+1 416-304-0611"
-            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Loblaws+Lower+Jarvis+Street,+Lower+Jarvis+Street,+Toronto,+ON,+Canada/@43.6452822,-79.3744797,16z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb2f77623b11:0x90f02ec52a0d0e37!2m2!1d-79.369789!2d43.645427!2m3!6e0!7e2!8j1723717799?entry=ttu"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Longo's+Maple+Leaf+Square,+York+Street,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb2b4a82b3b7:0xc419b1c9703a086a!2m2!1d-79.3808566!2d43.6421081?entry=ttu"
           />
         </div>
       </div>
@@ -403,7 +403,7 @@
               'https://media.blogto.com/articles/20221014-santa-claus-parade-f.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70'
             ]"
             title="Santa Clause Parade"
-            address="Christie Street - St Lawrence Market"
+            address="Bloor St West - Queen St West"
             :walk="'10' + $t('minutes')"
             subway=""
             uber=""
@@ -411,7 +411,7 @@
             type="Parade"
             typeIcon="festival"
             website="https://www.thesantaclausparade.com/"
-            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/St.+Lawrence+Market,+Toronto,+ON,+Canada/@43.6471791,-79.3754323,16z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb31b4dd275b:0xca0ab5acf1a5b6fd!2m2!1d-79.3715454!2d43.6486879?entry=ttu"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Bloor+St+W,+Toronto,+ON,+Canada/@43.6581525,-79.3835769,15z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b36627c2c9c4b:0x21f142e1e86531e2!2m2!1d-79.3867779!2d43.6702395?entry=ttu"
           />
           <SeasonalSquare
             id="cavalcade"  
@@ -433,7 +433,7 @@
             type="Light show"
             typeIcon="festival"
             website="https://www.toronto.ca/explore-enjoy/festivals-events/cavalcade-of-lights/"
-            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Cavalcade+Of+Lights,+Toronto,+ON,+Canada/@43.6488193,-79.3831171,16z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34cc4512e3ab:0x62dcee15ff5b5a66!2m2!1d-79.3839854!2d43.6523767?entry=ttu"
           />
           <SeasonalSquare
             id="newYear"  
@@ -454,8 +454,8 @@
             dates="December 31st"
             type="Festival"
             typeIcon="festival"
-            website="https://www.insmarket.ca"
-            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
+            website="https://www.toronto.ca/explore-enjoy/festivals-events/new-years-eve/"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Cavalcade+Of+Lights,+Toronto,+ON,+Canada/@43.6488193,-79.3831171,16z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34cc4512e3ab:0x62dcee15ff5b5a66!2m2!1d-79.3839854!2d43.6523767?entry=ttu"
           />
           <SeasonalSquare
             id="nathanPhilips"  
@@ -477,7 +477,7 @@
             type="Ice skating"
             typeIcon="ice_skating"
             website="https://www.toronto.ca/data/parks/prd/facilities/complex/1089/index.html"
-            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Nathan+Phillips+Square,+Queen+Street+West,+Toronto,+ON,+Canada/@43.649146,-79.3831171,16z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34cc50761607:0xfd78ef1b308ab9d4!2m2!1d-79.3834137!2d43.6527069?entry=ttu"
           />
           <SeasonalSquare
             id="christmasMarket"  
@@ -499,7 +499,7 @@
             type="Market"
             typeIcon="storefront"
             website="https://www.thedistillerywintervillage.com"
-            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu"
+            directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/The+Distillery+Historic+District,+Mill+Street,+Toronto,+ON,+Canada/@43.6463769,-79.3697724,15z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b36f015f04867:0x8e227962d3af3ca9!2m2!1d-79.3591331!2d43.6502455?entry=ttu"
           />
         </div>
       </div>
@@ -790,7 +790,7 @@ export default {
             senior: "Senior (65+) - $30",
             website: "https://www.torontozoo.com",
             phone: "+1 (416) 392-5900",
-            directions: "https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Ripley's+Aquarium+of+Canada,+Bremner+Boulevard,+Toronto,+ON,+Canada/@43.6437276,-79.3948629,15z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d5d5b6045b:0x8daf1a19298c213d!2m2!1d-79.3866022!2d43.6421785?entry=ttu"
+            directions: "https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Toronto+Zoo,+Meadowvale+Road,+Scarborough,+ON,+Canada/@43.7621563,-79.336834,11z/data=!3m1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4d9f1ad96dacd:0x9e197a60028bb5d8!2m2!1d-79.1854373!2d43.8178667?entry=ttu"
           },
           {
             id: "garden",
@@ -877,7 +877,7 @@ export default {
             recommendationTwo: '',
             website: 'https://www.canoerestaurant.com',
             phone: '+1 416-364-0054',
-            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu'
+            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Canoe,+Wellington+Street+West,+Toronto,+ON,+Canada/@43.6466036,-79.3810827,18z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d2d0792a29:0x86a52a26df8b2ee8!2m2!1d-79.3809037!2d43.6475793?entry=ttu'
           },
           {
             id: 'leeChen',
@@ -904,7 +904,7 @@ export default {
             recommendationTwo: 'Soup dumplings ($12)',
             website: 'https://leechenbistro.com',
             phone: '+1 (416) 519-8688',
-            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu'
+            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Lee+Chen+Asian+Bistro,+King+Street+West,+Toronto,+ON,+Canada/@43.646444,-79.3834927,17z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d19d261df3:0x83289b0c0192e2a!2m2!1d-79.3866356!2d43.6473696?entry=ttu'
           },
           {
             id: '360',
@@ -931,7 +931,7 @@ export default {
             uber: '7' + this.$t('minutes'),
             website: 'https://www.cntower.ca/',
             phone: '+1 416-868-6937',
-            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu'
+            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/360+The+Restaurant+at+the+CN+Tower,+Bremner+Boulevard,+Toronto,+ON,+Canada/@43.6437012,-79.3837535,17z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d68bd2a44b:0x5645fbf28dda7286!2m2!1d-79.3871007!2d43.6425648?entry=ttu'
           },
           {
             id: 'george',
@@ -958,7 +958,7 @@ export default {
             uber: '',
             website: 'http://www.georgeonqueen.com',
             phone: '+1 416-863-6006',
-            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu'
+            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/GEORGE+Restaurant,+Queen+Street+East,+Toronto,+ON,+Canada/@43.6493851,-79.3772762,16z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb36abc6bb31:0xb2ddb50894e8ea65!2m2!1d-79.3743283!2d43.6533708?entry=ttu'
           },
           {
             id: 'kasaMoto',
@@ -985,7 +985,7 @@ export default {
             recommendationTwo: 'Wagyu skirt steak ($56)',
             website: 'https://kasamoto.ca/',
             phone: '+1 647-477-0423',
-            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu'
+            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Kasa+Moto,+Yorkville+Avenue,+Toronto,+ON,+Canada/@43.658954,-79.3848416,14z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34a56d06d375:0x115c399e55b9f2f7!2m2!1d-79.3927754!2d43.6706159?entry=ttu'
           },
           {
             id: 'mothersDumplings',
@@ -1012,7 +1012,7 @@ export default {
             recommendationTwo: 'Dim Sum ($5-8)',
             website: 'https://mothersdumplings.com/',
             phone: '+1 416-217-2008',
-            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu'
+            directions: "https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Mother's+Dumplings,+Spadina+Avenue,+Toronto,+ON,+Canada/@43.6512182,-79.3893049,15z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34c10e3f31d3:0xe36431ff024b1f2!2m2!1d-79.399431!2d43.657119?entry=ttu"
           },
           {
             id: 'yummyKorean',
@@ -1039,7 +1039,7 @@ export default {
             recommendationTwo: 'Kimchi stew ($8)',
             website: 'http://www.yummykorean.com/',
             phone: '+1 647-345-6588',
-            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu'
+            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Yummy+Korean+Food+Restaurant,+Bloor+Street+West,+Toronto,+ON,+Canada/@43.6559977,-79.3984572,14z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b348d8801e17d:0x430a84832ca0e029!2m2!1d-79.4178795!2d43.6639347?entry=ttu'
           },
           {
             id: 'mapleLeaf',
@@ -1066,7 +1066,7 @@ export default {
             uber: '18' + this.$t('minutes'),
             website: 'https://mapleleaftavern.ca/',
             phone: '+1 416-465-0955',
-            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu'
+            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Maple+Leaf+Tavern,+Gerrard+Street+East,+Toronto,+ON,+Canada/@43.656794,-79.3584996,14z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x89d4cb794660b3dd:0xb50f26f72bda20aa!2m2!1d-79.3397865!2d43.6681721?entry=ttu'
           },
           {
             id: 'guuIzakaya',
@@ -1093,7 +1093,7 @@ export default {
             uber: '20' + this.$t('minutes'),
             website: 'https://www.guu-izakaya.com',
             phone: '+1 647-351-1314',
-            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu'
+            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Guu+Izakaya,+Queen+Street+West,+Toronto,+ON,+Canada/@43.6423789,-79.4052066,14z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b35ac7fdd1f01:0xc6693e72f1d303dc!2m2!1d-79.4310846!2d43.6418341?entry=ttu'
           },
           {
             id: 'chodang',
@@ -1120,7 +1120,7 @@ export default {
             recommendationTwo: 'Stone Bowl Bulgogi ($23)',
             website: 'http://chodangsoontofu.bu-bi.com/?doc=sub_02',
             phone: '+1 416-234-1161',
-            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/INS+Market,+Front+Street+West,+Toronto,+ON,+Canada/@43.6447418,-79.3809071,17z/data=!3m1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m17!4m16!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34d357aead6f:0xba45926cb9d5214d!2m2!1d-79.3808476!2d43.6444303!2m3!6e0!7e2!8j1723717799?entry=ttu'
+            directions: 'https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Chodang+Soon+Tofu,+Dundas+Street+West,+Etobicoke,+ON,+Canada/@43.6327854,-79.4552908,12z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b37a352a84347:0xd18b5852cd46c14c!2m2!1d-79.5333705!2d43.6442168?entry=ttu'
           }
         ]
         this.sortedThingsToDo = this.restaurantsList
