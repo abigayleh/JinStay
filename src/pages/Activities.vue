@@ -522,7 +522,7 @@ export default {
   },
   data() {
     return {
-      selected: 'restaurants',
+      selected: 'all',
       activityList: [],
       sortByDistance: true,
       sortedThingsToDo: [],
