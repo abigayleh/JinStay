@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full" style="height:600px">
+  <div class="map w-full">
     <l-map class="rounded" ref="map" v-model:zoom="zoom" :options="{scrollWheelZoom: false}" :center="center">
       <l-tile-layer
         :url="url"
@@ -343,5 +343,14 @@ export default {
   }
   .marker:hover {
     z-index: 100;
+  }
+
+  .map {
+      height: 260px;
+    }
+  @media (min-width: 500px) {
+    .map {
+      height: 600px;
+    }
   }
 </style>

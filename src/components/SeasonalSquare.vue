@@ -1,27 +1,31 @@
 <template>
-  <div :id="id" class="w-full py-5 p-3 flex justify-center">
+  <div :id="id" class="w-full py-5 p-2 flex justify-center">
     <div v-if="largeView" class="w-full flex flex-col items-center justify-center py-4 mx-3 bg-white rounded-xl shadow-md" style="max-width: 1000px;">
-      <span class="font-bold text-xl pb-4">{{ title }}</span>
-      <div class="w-full flex md:flex-row flex-col items-center justify-evenly flex-nowrap py-4 pl-2">
+      <span class="font-bold text-xl py-2 sm:pb-4 pb-2">{{ title }}</span>
+      <div class="w-full flex md:flex-row flex-col items-center justify-evenly flex-nowrap py-4">
         <q-carousel
-          class="rounded md:h-full md:w-1/2 mb-6 h-72 w-10/12"
+          class="md:h-full md:w-1/2 mb-6 h-72 w-full px-3"
           swipeable
           animated
-          arrows
+          thumbnails
           v-model="slideIndex"
           infinite
         >
-          <q-carousel-slide :name="1" :img-src="photos[0]"></q-carousel-slide>
-          <q-carousel-slide :name="2" :img-src="photos[1]"></q-carousel-slide>
-          <q-carousel-slide :name="3" :img-src="photos[2]"></q-carousel-slide>
+          <q-carousel-slide class="rounded" :name="1" :img-src="photos[0]"></q-carousel-slide>
+          <q-carousel-slide class="rounded" :name="2" :img-src="photos[1]"></q-carousel-slide>
+          <q-carousel-slide class="rounded" :name="3" :img-src="photos[2]"></q-carousel-slide>
         </q-carousel>
         <div class="w-fit flex flex-col justify-center items-center">
-          <div class="w-full flex flex-col justify-center pb-4">
-            <div class="pb-2 flex flex-nowrap items-center justify-center">
-              <q-icon name="location_on" class="pr-2"></q-icon>
-              <span>{{ address }}</span>
-              <q-icon name="calendar_month" class="pl-4 pr-2"></q-icon>
-              <span>{{ dates }}</span>
+          <div class="w-full flex flex-col justify-center pb-2">
+            <div class="pb-2 flex items-center justify-center sm:flex-row flex-col">
+              <div>
+                <q-icon name="location_on" class="pr-2"></q-icon>
+                <span>{{ address }}</span>
+              </div>
+              <div class="pt-2">
+                <q-icon name="calendar_month" class="pl-4 pr-2"></q-icon>
+                <span>{{ dates }}</span>
+              </div>
             </div>
             <div class="flex items-center justify-center">
               <div v-if="walk !== ''" class="pr-4 flex items-center justify-center">

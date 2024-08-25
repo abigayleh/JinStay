@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full py-5 p-3 flex justify-center" :id="id">
+  <div class="w-full py-5 p-2 flex justify-center" :id="id">
     <div v-if="!largeView" class="smallView flex flex-col flex-nowrap items-center pt-5 bg-white rounded-xl shadow-md hover:shadow-lg cursor-pointer">
       <span class="text-lg font-bold">{{ title }}</span>
       <div class="h-full w-full flex justify-evenly items-evenly px-4">
@@ -54,19 +54,19 @@
       </div>
     </div>
     <div v-else class="w-full flex flex-col items-center bg-white justify-center py-4 mx-3 shadow-md hover:shadow-xl cursor-pointer rounded-xl" style="max-width: 1000px;">
-      <span class="text-xl font-bold pb-4">{{ title }}</span>
-      <div class="w-full flex md:flex-row flex-col items-center justify-evenly flex-nowrap py-4 pl-2">
+      <span class="text-xl font-bold py-2 sm:pb-4 pb-2">{{ title }}</span>
+      <div class="w-full flex md:flex-row flex-col items-center justify-evenly flex-nowrap py-4">
         <q-carousel
-          class="rounded md:h-full md:w-1/2 mb-6 h-72 w-10/12"
+          class="md:h-full md:w-1/2 mb-6 h-72 px-2 w-full"
           swipeable
           animated
-          arrows
+          thumbnails
           v-model="slideIndex"
           infinite
         >
-          <q-carousel-slide :name="1" :img-src="photos[0]"></q-carousel-slide>
-          <q-carousel-slide :name="2" :img-src="photos[1]"></q-carousel-slide>
-          <q-carousel-slide :name="3" :img-src="photos[2]"></q-carousel-slide>
+          <q-carousel-slide class="rounded" :name="1" :img-src="photos[0]"></q-carousel-slide>
+          <q-carousel-slide class="rounded" :name="2" :img-src="photos[1]"></q-carousel-slide>
+          <q-carousel-slide class="rounded" :name="3" :img-src="photos[2]"></q-carousel-slide>
         </q-carousel>
         <div class="w-fit flex flex-col justify-center items-center">
           <div class="w-full flex">
@@ -111,7 +111,7 @@
             <q-icon name="call" class="pr-2"></q-icon>
             <span>{{ phone }}</span>
           </div>
-          <div class="flex items-center pb-6">
+          <div class="flex items-center pb-2">
             <q-icon name="map" class="pr-2"></q-icon>
             <a class="hover:underline" target="_blank" :href="directions">{{ $t('Directions') }}</a>
           </div>

@@ -27,16 +27,16 @@
         :label="$t('FromPearsonAirport')"
         default-opened
       >
-      <div class="flex flex-col items-center justify-center py-4 px-8 font-normal text-base">
+      <div class="flex flex-col items-center justify-center py-4 px-4 font-normal text-base">
         <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
           <span class="font-bold text-center py-4">{{ $t('UPExpress') }}</span>
-          <div class="w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
-            <div class="flex-1 flex flex-nowrap flex-col items-center">
+          <div class="w-full flex md:flex-row flex-col flex-nowrap sm:pb-4 pb-0">
+            <div class="sm:min-h-96 min-h-0 flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
                 v-model="index"
-                class="rounded md:h-full h-72 w-10/12"
+                class="rounded md:h-full h-72 w-full px-3"
               >
-                <q-carousel-slide :name="0" img-src="https://upload.wikimedia.org/wikipedia/commons/a/aa/UPXatMimico.jpg"></q-carousel-slide>
+                <q-carousel-slide class="rounded" :name="0" img-src="https://upload.wikimedia.org/wikipedia/commons/a/aa/UPXatMimico.jpg"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
                 <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
@@ -44,8 +44,7 @@
                 <span class="pr-2">✅ {{ $t('PRESTO') }}</span>
               </div>
             </div>
-            <div class="pr-6 w-fit md:max-w-sm flex flex-col items-center justify-center">
-              <span class="pb-4">{{ $t('UPExpressInfo') }}</span>
+            <div class="md:max-w-sm flex flex-col items-center justify-center px-2">
               <div class="flex items-center pb-1">
                 <q-icon name="timelapse" class="pr-1"></q-icon>
                 <span>{{ $t('UPExpressTime') }}</span>
@@ -57,22 +56,26 @@
                 <q-icon name="schedule" class="pr-1"></q-icon>
                 <span>{{ $t('UPExpressFreq') }}</span>
               </div>
-              <div class="pb-6 flex flex-nowrap justify-center items-center">
+              <div class="flex flex-nowrap justify-center items-start px-6 pb-1">
                 <q-icon name="location_on" class="pr-1"></q-icon>
-                <span>{{ $t('UPExpressWhere') }}</span>
+                <div class="flex flex-col">
+                  <span>{{ $t('UPExpressWhere') }}</span>
+                  <span>Get off at Union Station</span>
+                </div>
               </div>
+              <a href="https://www.upexpress.com/en/up-express-stations/union-station" target="_blank" class="hover:underline cursor-pointer py-4">{{ $t('SeeMoreHere') }}</a>
             </div>
           </div>
         </div>
         <div class="w-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">{{ $t('Taxi') }}</span>
-          <div class="w-full min-h-96 flex md:flex-row flex-col flex-nowrap py-4 pl-2">
+          <span class="font-bold text-center pt-4 sm:pb-4 pb-0">{{ $t('Taxi') }}</span>
+          <div class="w-full min-h-96 flex md:flex-row flex-col flex-nowrap py-4">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
                 v-model="index"
-                class="rounded md:h-full h-72 w-10/12"
+                class="rounded md:h-full h-72 w-full px-3"
               >
-                <q-carousel-slide :name="0" img-src="https://media.blogto.com/articles/20200430-airportlimo2.jpg?w=1200&cmd=resize_then_crop&height=630&quality=70"></q-carousel-slide>
+                <q-carousel-slide class="rounded" :name="0" img-src="https://media.blogto.com/articles/20200430-airportlimo2.jpg?w=1200&cmd=resize_then_crop&height=630&quality=70"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
                 <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
@@ -80,7 +83,7 @@
                 <span class="pr-2">❌ {{ $t('PRESTO') }}</span>
               </div>
             </div>
-            <div class="pr-6 md:w-fit md:max-w-sm w-full flex flex-col items-center justify-center">
+            <div class="pr-6 md:w-fit md:max-w-sm w-full flex flex-col items-center justify-center px-2">
               <div class="flex items-center pb-1">
                 <q-icon name="timelapse" class="pr-1"></q-icon>
                 <span>{{ $t('TaxiTime') }}</span>
@@ -99,14 +102,14 @@
           </div>
         </div>
         <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">{{ $t('Uber') }}</span>
-          <div class="w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
-            <div class="min-h-96 flex-1 flex flex-nowrap flex-col items-center">
+          <span class="font-bold text-center pt-4 sm:pb-4 pb-0">{{ $t('Uber') }}</span>
+          <div class="w-full flex md:flex-row flex-col flex-nowrap py-4">
+            <div class="sm:min-h-96 min-h-0 flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
                 v-model="index"
-                class="rounded md:h-full h-72 w-10/12"
+                class="rounded md:h-full h-72 w-full px-3"
               >
-                <q-carousel-slide :name="0" img-src="https://assets-global.website-files.com/63ff9cd42186283f0e990e08/65d635cda06cdba37c76afa6_MOZCO%20Mateusz%20Szymanski%20Getty%20Images.jpg"></q-carousel-slide>
+                <q-carousel-slide class="rounded" :name="0" img-src="https://assets-global.website-files.com/63ff9cd42186283f0e990e08/65d635cda06cdba37c76afa6_MOZCO%20Mateusz%20Szymanski%20Getty%20Images.jpg"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm py-3 pb-6">
                 <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
@@ -114,7 +117,7 @@
                 <span class="pr-2">❌ {{ $t('PRESTO') }}</span>
               </div>
             </div>
-            <div class="pr-6 md:w-fit md:max-w-sm w-full flex flex-col items-center justify-center">
+            <div class="pr-6 md:w-fit md:max-w-sm w-full flex flex-col items-center justify-center px-2">
               <div class="flex items-center pb-1">
                 <q-icon name="timelapse" class="pr-1"></q-icon>
                 <span>{{ $t('UberTime') }}</span>
@@ -143,14 +146,14 @@
       >
       <div class="flex flex-col items-center justify-center px-4 font-normal text-base py-4">
         <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">{{ $t('Subway') }}</span>
-          <div class="min-h-96 w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
+          <span class="font-bold text-center pt-4 sm:pb-4 pb-0">{{ $t('Subway') }}</span>
+          <div class="min-h-96 w-full flex md:flex-row flex-col flex-nowrap py-4">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
                 v-model="index"
-                class="rounded md:h-full h-72 w-10/12"
+                class="rounded md:h-full h-72 w-full px-3"
               >
-                <q-carousel-slide :name="0" img-src="https://d3d0lqu00lnqvz.cloudfront.net/media/media/a0103c46-7dc7-4df0-b488-fdc41e4de918.jpg"></q-carousel-slide>
+                <q-carousel-slide class="rounded" :name="0" img-src="https://d3d0lqu00lnqvz.cloudfront.net/media/media/a0103c46-7dc7-4df0-b488-fdc41e4de918.jpg"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
                 <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
@@ -158,24 +161,24 @@
                 <span class="pr-2">✅ {{ $t('PRESTO') }}</span>
               </div>
             </div>
-            <div class="pr-6 w-fit md:max-w-sm flex flex-col items-center justify-center pb-6">
+            <div class="w-fit md:max-w-sm flex flex-col items-center justify-center">
               <span class="px-8 pb-4">{{ $t('SubwayInfo') }}</span>
               <div class="flex items-center">
                 <span>{{ $t('SubwayCost') }}</span>
               </div>
-              <a href="https://www.ttc.ca/riding-the-ttc/Updates/New-TTC-fares" target="_blank" class="hover:underline cursor-pointer text-sm">{{ $t('SeeMoreHere') }}</a>
+              <a href="https://www.ttc.ca/riding-the-ttc/Updates/New-TTC-fares" target="_blank" class="hover:underline cursor-pointer pt-2 pb-4">{{ $t('SeeMoreHere') }}</a>
             </div>
           </div>
         </div>
         <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">{{ $t('Bus') }}</span>
-          <div class="min-h-96 w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
+          <span class="font-bold text-center pt-4 sm:pb-4 pb-0">{{ $t('Bus') }}</span>
+          <div class="min-h-96 w-full flex md:flex-row flex-col flex-nowrap py-4">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
                 v-model="index"
-                class="rounded md:h-full h-72 w-10/12"
+                class="rounded md:h-full h-72 w-full px-3"
               >
-                <q-carousel-slide :name="0" img-src="https://arrivein.com/wp-content/uploads/2020/07/Blog-Image-Public-Transit-Toronto-bike-rack-scaled.jpg"></q-carousel-slide>
+                <q-carousel-slide class="rounded" :name="0" img-src="https://arrivein.com/wp-content/uploads/2020/07/Blog-Image-Public-Transit-Toronto-bike-rack-scaled.jpg"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
                 <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
@@ -192,14 +195,14 @@
           </div>
         </div>
         <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">{{ $t('Streetcar') }}</span>
+          <span class="font-bold text-center pt-4 sm:pb-4 pb-0">{{ $t('Streetcar') }}</span>
           <div class="min-h-96 w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
                 v-model="index"
-                class="rounded md:h-full h-72 w-10/12"
+                class="rounded md:h-full h-72 w-full px-3"
               >
-                <q-carousel-slide :name="0" img-src="https://www.railway-technology.com/wp-content/uploads/sites/13/2023/11/Shutterstock_1791383147.jpg"></q-carousel-slide>
+                <q-carousel-slide class="rounded" :name="0" img-src="https://www.railway-technology.com/wp-content/uploads/sites/13/2023/11/Shutterstock_1791383147.jpg"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
                 <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
@@ -216,14 +219,14 @@
           </div>
         </div>
         <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">{{ $t('GOTrain') }}</span>
-          <div class="min-h-96 w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
+          <span class="font-bold text-center pt-4 sm:pb-4 pb-0">{{ $t('GOTrain') }}</span>
+          <div class="min-h-96 w-full flex md:flex-row flex-col flex-nowrap py-4">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
                 v-model="index"
-                class="rounded md:h-full h-72 w-10/12"
+                class="rounded md:h-full h-72 w-full px-3"
               >
-                <q-carousel-slide :name="0" img-src="https://d3d0lqu00lnqvz.cloudfront.net/media/media/a0103c46-7dc7-4df0-b488-fdc41e4de918.jpg"></q-carousel-slide>
+                <q-carousel-slide class="rounded" :name="0" img-src="https://d3d0lqu00lnqvz.cloudfront.net/media/media/a0103c46-7dc7-4df0-b488-fdc41e4de918.jpg"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
                 <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
@@ -231,24 +234,24 @@
                 <span class="pr-2">✅ {{ $t('PRESTO') }}</span>
               </div>
             </div>
-            <div class="w-fit md:max-w-sm flex flex-col items-center justify-center pb-6">
+            <div class="w-fit md:max-w-sm flex flex-col items-center justify-center">
               <span class="px-8 pb-4">{{ $t('GOTrainInfo') }}</span>
               <div class="flex items-center">
                 <span>{{ $t('GOTrainCost') }}</span>
               </div>
-              <a href="https://www.gotransit.com/en/ways-to-pay/fare-information" target="_blank" class="hover:underline cursor-pointer text-sm">{{ $t('SeeMoreHere') }}</a>
+              <a href="https://www.gotransit.com/en/ways-to-pay/fare-information" target="_blank" class="hover:underline cursor-pointer py-1 pb-3">{{ $t('SeeMoreHere') }}</a>
             </div>
           </div>
         </div>
-        <div class="p-6 w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">{{ $t('Bikeshare') }}</span>
-          <div class="w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
+        <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
+          <span class="font-bold text-center pt-4 sm:pb-4 pb-0">{{ $t('Bikeshare') }}</span>
+          <div class="sm:min-h-96 min-h-0 w-full flex md:flex-row flex-col flex-nowrap py-4">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
                 v-model="index"
-                class="rounded md:h-full h-72 w-10/12"
+                class="rounded md:h-full h-72 w-full px-3"
               >
-                <q-carousel-slide :name="0" img-src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/BikeShareToronto_Temperance_St_at_Cloud_Gardens.JPG/260px-BikeShareToronto_Temperance_St_at_Cloud_Gardens.JPG"></q-carousel-slide>
+                <q-carousel-slide class="rounded" :name="0" img-src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/BikeShareToronto_Temperance_St_at_Cloud_Gardens.JPG/260px-BikeShareToronto_Temperance_St_at_Cloud_Gardens.JPG"></q-carousel-slide>
               </q-carousel>
               <div class="text-sm pt-3 pb-6">
                 <span class="pr-2">✅ {{ $t('DebitCredit') }}</span>
@@ -256,17 +259,17 @@
                 <span class="pr-2">✅ {{ $t('PRESTO') }}</span>
               </div>
             </div>
-            <div class="w-fit md:max-w-sm flex flex-col items-center justify-center pb-6">
+            <div class="w-fit md:max-w-sm flex flex-col items-center justify-center pb-4">
               <span class="px-8 pb-4">{{ $t('BikeShareInfo') }}</span>
               <span class="px-8 pb-4">{{ $t('BikeShareKiosk') }} <span @click="handleScroll(6000)" class="underline cursor-pointer">{{ $t('MobileApp') }}</span></span>
               <div class="flex items-center">
-                <div class="flex flex-col items-start">
+                <div class="flex flex-col items-center">
                   <span class="pb-1">{{ $t('ClassicBike') }}</span>
                   <span class="pb-1">{{ $t('EBike') }}</span>
                   <span class="pb-1">{{ $t('DailyRide') }}</span>
                 </div>
               </div>
-              <a href="https://bikesharetoronto.com" target="_blank" class="hover:underline cursor-pointer text-sm">{{ $t('SeeMoreHere') }}</a>
+              <a href="https://bikesharetoronto.com" target="_blank" class="hover:underline cursor-pointer pt-3">{{ $t('SeeMoreHere') }}</a>
             </div>
           </div>
         </div>
@@ -280,25 +283,25 @@
         default-opened
       >
       <div class="flex flex-col items-center justify-center px-4 font-normal text-base py-4">
-        <div class="p-6 w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center py-4">{{ $t('PRESTO') }}</span>
-          <div class="w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
+        <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
+          <span class="font-bold text-center pt-4 sm:pb-4 pb-0">{{ $t('PRESTO') }}</span>
+          <div class="sm:min-h-96 min-h-0 w-full flex md:flex-row flex-col flex-nowrap py-4 pl-2">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
                 v-model="index"
-                class="rounded md:h-full h-72 w-10/12"
+                class="rounded md:h-full h-72 w-full px-3"
               >
-                <q-carousel-slide :name="0" img-src="https://cdn.mobilesyrup.com/wp-content/uploads/2021/10/presto-card-scaled.jpg"></q-carousel-slide>
+                <q-carousel-slide class="rounded" :name="0" img-src="https://cdn.mobilesyrup.com/wp-content/uploads/2021/10/presto-card-scaled.jpg"></q-carousel-slide>
               </q-carousel>
             </div>
-            <div class="pb-6 w-fit md:max-w-sm flex flex-col items-center justify-center">
-              <span class="px-8 py-2">{{ $t('PRESTOInfo') }}</span>
+            <div class="pt-4 pb-6 w-fit md:max-w-sm flex flex-col items-center justify-center">
+              <span class="px-6 py-2">{{ $t('PRESTOInfo') }}</span>
               <div class="flex items-center pb-6">{{ $t('PrestoCost') }}</div>
-              <div class="flex flex-nowrap items-center pb-2">
-                <q-icon name="location_on" class="pr-1"></q-icon>
-                <span>{{ $t('PrestoWhereOne') }}<a target="_blank" href="https://www.prestocard.ca/en/" class="underline cursor-pointer">{{ $t('PrestoWhereTwo') }}</a>{{ $t('PrestoWhereThree') }}<span @click="handleScroll(6000)" class="underline cursor-pointer">{{ $t('PrestoWhereFour') }}</span></span>
+              <div class="flex flex-nowrap items-center px-2 pb-2">
+                <q-icon name="location_on"></q-icon>
+                <span>{{ $t('PrestoWhereOne') }}<a target="_blank" href="https://www.prestocard.ca/en/" class="underline cursor-pointer pr-1">{{ $t('PrestoWhereTwo') }}</a>{{ $t('PrestoWhereThree') }}<span @click="handleScroll(6000)" class="underline cursor-pointer pl-1">{{ $t('PrestoWhereFour') }}</span></span>
               </div>
-              <a href="https://www.prestocard.ca/en/find-an-outlet/customer-service-outlets" target="_blank" class="cursor-pointer">🗺️ <u>{{ $t('PrestoMap') }}</u></a>
+              <a href="https://www.prestocard.ca/en/find-an-outlet/customer-service-outlets" target="_blank" class="cursor-pointer pt-2">🗺️ <u>{{ $t('PrestoMap') }}</u></a>
             </div>
           </div>
         </div>
@@ -314,7 +317,7 @@
       <div class="flex flex-col items-center justify-center px-4 font-normal text-base py-4">
         <div class="flex flex-col items-center justify-evenly sm:w-9/12 w-full flex-row no-wrap py-4 pt-6 bg-white rounded-lg cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
           <span class="font-bold text-center">{{ $t('Maps/GoogleMaps') }}</span>
-          <div class="w-full flex md:flex-row flex-col flex-nowrap px-10 py-2">
+          <div class="w-full flex md:flex-row flex-col flex-nowrap py-2 items-center justify-center">
             <div class="flex flex-row no-wrap justify-center items-center">
               <div style="width: 90px; height: 90px;">
                 <img class="rounded w-full h-full" src="https://www.apple.com/v/maps/d/images/overview/intro_icon__dfyvjc1ohbcm_large.png" alt="Canada">
@@ -323,7 +326,7 @@
                 <img class="rounded w-full h-full" src="https://www.google.com/images/branding/product/2x/maps_96in128dp.png" alt="Canada">
               </div>
             </div>
-            <div class="flex-1 flex flex-col items-center justify-center">
+            <div class="flex-1 flex flex-col items-center justify-center" style="max-width: 400px;">
               <span class="px-8 pb-4">{{ $t('MapsInfo') }}</span>
             </div>
           </div>
@@ -340,7 +343,7 @@
               </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
-              <span class="px-8 py-4">{{ $t('CitymapperInfo') }}</span>
+              <span class="sm:px-8 px-0 py-4">{{ $t('CitymapperInfo') }}</span>
             </div>
           </div>
         </div>
@@ -356,7 +359,7 @@
               </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
-              <span class="px-8 py-4">{{ $t('TransitInfo') }}</span>
+              <span class="sm:px-8 px-0 py-4">{{ $t('TransitInfo') }}</span>
             </div>
           </div>
         </div>
@@ -372,7 +375,7 @@
               </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
-              <span class="px-8 py-4">{{ $t('PrestoInfo') }}</span>
+              <span class="sm:px-8 px-0 py-4">{{ $t('PrestoInfo') }}</span>
             </div>
           </div>
         </div>
@@ -388,7 +391,7 @@
               </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
-              <span class="px-8 py-4">{{ $t('BikeShareAppInfo') }}</span>
+              <span class="sm:px-8 px-0 py-4">{{ $t('BikeShareAppInfo') }}</span>
             </div>
           </div>
         </div>
@@ -404,7 +407,7 @@
               </a>
             </div>
             <div class="flex-1 flex flex-col items-center justify-center">
-              <span class="px-8 py-4">{{ $t('BeckTaxiInfo') }}</span>
+              <span class="sm:px-8 px-0 py-4">{{ $t('BeckTaxiInfo') }}</span>
             </div>
           </div>
         </div>

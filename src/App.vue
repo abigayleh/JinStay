@@ -3,7 +3,7 @@
     <div :class="largeHeader ? 'header-large p-4' : 'header-small p-2 px-4'" class="header">
       <div v-if="largeHeader" class="w-full h-full flex flex-col items-between">
         <div class="w-full flex justify-end items-between font-bold">
-          <q-btn flat color="white" icon="language" label="LANGUAGE">
+          <q-btn flat color="white" icon="language" :label="$t('Langauge')">
             <q-menu>
               <q-list style="min-width: 100px">
                 <q-item v-for="lang in languages" :key="lang.key" clickable v-close-popup @click="language = lang.key">
@@ -94,6 +94,10 @@ export default {
     }
   },
   mounted() {
+    const lang = localStorage.getItem('lang')
+    if (lang !== null) {
+      this.language = lang
+    }
     window.addEventListener('scroll', this.handleScroll);
   },
   beforeUnmount() {
@@ -123,6 +127,7 @@ export default {
   watch: {
     language () {
       this.$i18n.locale = this.language
+      localStorage.setItem('lang', this.language)
     }
   }
 }

@@ -1,58 +1,61 @@
 <template>
-  <div id="home" class="w-full items-center flex flex-col text-lg overflow-hidden" style="background-color: #f6f7f8;">
-    <span class="pt-8 pb-4 sm:text-3xl text-2xl font-bold text-red">{{ $t('Welcome') }} 🏡</span>
-    <div class="relative flex flex-col w-fit p-2 px-4 text-center">
-      <span>{{ $t('HomeInformation') }}</span>
+  <div id="home" class="flex text-lg overflow-hidden text-center" style="background-color: #f6f7f8;">
+    <span class="w-full pt-8 pb-4 sm:text-3xl text-2xl font-bold text-center text-red">{{ $t('Welcome') }} 🏡</span>
+    <div class="w-full items-center flex flex-col w-fit p-2 px-4 text-center">
+      <span class="pb-2">{{ $t('HomeInformation') }}</span>
       <span>{{ $t('HomeLocation') }}</span>
       <span>{{ $t('HaveANiceDay') }}<b @click="startConfetti()" class="hover:underline cursor-pointer">{{ $t('JinStay') }}</b> 🫰</span>
       <canvas ref="confettiCanvas" style="z-index: 5000; position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
     </div>
-    <div class="py-4 w-full flex justify-evenly">
-      <div class="h-fit flex flex-col items-center rounded-2xl p-8 text-center mb-8 bg-white shadow-md hover:shadow-xl cursor-pointer" style="width: 400px">
+    <div class="w-full px-2 flex flex-col items-center justify-center">
+      <div class="mt-4 amenities mx-4 h-fit flex flex-col items-center rounded-2xl pt-6 pb-8 text-center mb-8 bg-white shadow-md hover:shadow-xl cursor-pointer">
         <span class="text-bold pb-1 underline pb-4 text-xl sm:w-fit w-full">{{ $t('QuickFacts') }}</span>
-        <div class="pb-2 pr-4">
-          <q-icon name="hotel" class="pr-2"></q-icon>
-          <span>{{ $t('Sleeps3') }}</span>
-        </div>
-        <div class="flex sm:flex-row flex-col">
-          <div class="pb-2 pr-4">
+        <div class="flex flex-wrap justify-center">
+          <div class="pb-2 px-5">
+            <q-icon name="hotel" class="pr-2"></q-icon>
+            <span>{{ $t('Sleeps3') }}</span>
+          </div>
+          <div class="pb-2 px-5">
             <q-icon name="login" class="pr-2"></q-icon>
             <span>{{ $t('CheckIn') }}</span>
           </div>
-          <div class="pb-2">
+          <div class="pb-2 px-5">
             <q-icon name="logout" class="pr-2"></q-icon>
             <span>{{ $t('CheckOut') }}</span>
           </div>
-        </div>
-        <div class="pr-4 pb-2">
-          <q-icon name="directions_walk" class="pr-2"></q-icon>
-          <span>{{ $t('WalkFromUnionStation') }}</span>
-        </div>
-        <div class="pr-4 pb-2">
-          <q-icon name="local_taxi" class="pr-2"></q-icon>
-          <span>{{ $t('DriveFromAirport') }}</span>
-        </div>
-        <div class="pr-4 pb-2">
-          <q-icon name="subway" class="pr-2"></q-icon>
-          <span>{{ $t('SubwayFromAirport') }}</span>
+          <div class="pb-2 px-5">
+            <q-icon name="directions_walk" class="pr-2"></q-icon>
+            <span>{{ $t('WalkFromUnionStation') }}</span>
+          </div>
+          <div class="pb-2 px-5">
+            <q-icon name="local_taxi" class="pr-2"></q-icon>
+            <span>{{ $t('DriveFromAirport') }}</span>
+          </div>
+          <div class="pb-2 px-5">
+            <q-icon name="subway" class="pr-2"></q-icon>
+            <span>{{ $t('SubwayFromAirport') }}</span>
+          </div>
         </div>
       </div>
-      <div class="amenities w-full mx-4 flex flex-col flex-nowrap rounded-2xl py-8 text-center mb-8 bg-white shadow-md hover:shadow-xl cursor-pointer">
-        <span class="text-bold underline text-xl">{{ $t('Amenities') }}</span>
-        <div class="h-full flex flex-col justify-center items-center flex-wrap text-base">
-          <div class="pl-5 pb-4">
-            <div class="pt-2 pr-12 py-1 flex items-center">
-              <q-icon name="location_city" class="pr-2"></q-icon>
-              <span>{{ $t('DowntownView') }}</span>
-            </div>
-            <div class="pb-2 py-1 text-start">
-              <q-icon name="key" class="pr-2"></q-icon>
-              <span>{{ $t('SelfCheckIn') }}</span>
+      <div :class="amenitiesSeeMore ? 'mb-8 rounded-2xl' : 'rounded-t-2xl'" class="transition-all duration-700 cursor-pointer amenities mx-4 flex flex-col flex-nowrap py-8 text-center bg-white shadow-md hover:shadow-xl cursor-pointer overflow-hidden" @click="amenitiesSeeMore = !amenitiesSeeMore" :style="{ maxHeight: amenitiesSeeMore ? '2000px' : '456px' }">
+        <span class="text-bold underline text-xl pb-4">{{ $t('Amenities') }}</span>
+        <div class="h-full flex justify-center flex-wrap text-base">
+          <div class="flex flex-col m-2" style="width: 266px;">
+            <div class="font-bold border border-2 p-3 mb-2 text-center rounded" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('Apartment') }}</div>
+            <div class="amenities-box border border-2 flex flex-col p-3 pl-4 text-start rounded">
+              <div class="pt-2 py-1 pr-4 flex items-center">
+                <q-icon name="location_city" class="pr-2"></q-icon>
+                <span>{{ $t('DowntownView') }}</span>
+              </div>
+              <div class="py-1 pr-4 flex items-center">
+                <q-icon name="key" class="pr-2"></q-icon>
+                <span>{{ $t('SelfCheckIn') }}</span>
+              </div>
             </div>
           </div>
           <div class="flex flex-col m-2" style="width: 266px;">
             <div class="font-bold border border-2 p-3 mb-2 text-center rounded" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('BedroomLaundry') }}</div>
-            <div class="border border-2 flex flex-col p-3 pl-4 text-start rounded" style="height: 134px;">
+            <div class="amenities-box border border-2 flex flex-col p-3 pl-4 text-start rounded">
               <div class="pt-2 py-1 pr-4 flex items-center">
                 <q-icon name="bed" class="pr-2"></q-icon>
                 <span>{{ $t('QueenBed') }}</span>
@@ -67,9 +70,9 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-col m-2" style="width: 266px;">
-              <div class="font-bold border border-2 p-3 mb-2 text-center rounded" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('Bathroom') }}</div>
-              <div class="border border-2 flex flex-col p-3 pl-4 text-start rounded" style="height: 220px;">
+          <div class="flex flex-col m-2" style="width: 266px">
+            <div class="font-bold border border-2 p-3 mb-2 text-center rounded" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('Bathroom') }}</div>
+              <div class="amenities-box border border-2 flex flex-col p-3 pl-4 text-start rounded">
                 <div class="pt-2 py-1 pb-1 pr-4 flex items-center">
                   <img class="w-6 h-6 mr-1.5" src="@/assets/hair-dryer.png" alt="Canada">
                   <span>{{ $t('HairDryer') }}</span>
@@ -94,7 +97,7 @@
           </div>
           <div class="flex flex-col m-2" style="width: 266px;">
             <div class="font-bold border border-2 p-3 mb-2 text-center rounded" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('KitchenDining') }}</div>
-            <div class="border border-2 flex flex-col p-3 pl-4 text-start text-center rounded" style="height: 300px;">
+            <div class="amenities-box border border-2 flex flex-col p-3 pl-4 text-start text-center rounded">
               <div class="pt-2 py-1 pb-1 pr-4">
                 <q-icon name="kitchen" class="pr-2"></q-icon>
                 <span>{{ $t('Refrigerator') }}</span>
@@ -131,7 +134,7 @@
           </div>
           <div class="flex flex-col m-2" style="width: 266px;">
             <div class="font-bold border border-2 p-3 mb-2 text-center rounded" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('Outdoor') }}</div>
-            <div class="border border-2 flex flex-col p-3 pl-4 text-start rounded" style="height: 200px;">
+            <div class="amenities-box border border-2 flex flex-col p-3 pl-4 text-start rounded">
               <div class="pt-2 pb-1 pr-4">
                 <q-icon name="local_taxi" class="pr-2"></q-icon>
                 <span>{{ $t('PaidParking') }}</span>
@@ -156,7 +159,7 @@
           </div>
           <div class="flex flex-col m-2" style="width: 266px;">
             <div class="font-bold border border-2 p-3 mb-2 text-center rounded" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('Entertainment') }}</div>
-            <div class="border border-2 flex flex-col p-3 pl-4 text-start rounded" style="height: 160px;">
+            <div class="amenities-box border border-2 flex flex-col p-3 pl-4 text-start rounded">
               <div class="pt-2 pb-1 pr-4">
                 <q-icon name="tv" class="pr-2"></q-icon>
                 <span>{{ $t('TV') }}</span>
@@ -171,7 +174,7 @@
           </div>
           <div class="flex flex-col m-2" style="width: 266px;">
             <div class="font-bold border border-2 p-3 mb-2 text-center rounded" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('Internet') }}</div>
-            <div class="border border-2 flex flex-col p-3 pl-4 text-start rounded" style="height: 105px;">
+            <div class="amenities-box border border-2 flex flex-col p-3 pl-4 text-start rounded">
               <div class="pt-2 pb-1 pr-4">
                 <q-icon name="wifi" class="pr-2"></q-icon>
                 <span>{{ $t('WiFi') }}</span>
@@ -184,7 +187,7 @@
           </div>
           <div class="flex flex-col m-2" style="width: 266px;">
             <div class="font-bold border border-2 p-3 mb-2 text-center rounded" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('HomeSafety') }}</div>
-            <div class="border border-2 flex flex-col p-3 pl-4 rounded text-start" style="height: 105px;">
+            <div class="amenities-box border border-2 flex flex-col p-3 pl-4 rounded text-start">
               <div class="pt-2 pb-1 pr-4 flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M440-120v-200h80v200h-80Zm323-101L621-362l57-57 141 142-56 56Zm-566 0-56-56 141-142 57 57-142 141Zm3-539v40h560v-40H200Zm124 120 12 40h288l12-40H324Zm12 120q-26 0-47-15.5T260-576l-20-64h-40q-33 0-56.5-23.5T120-720v-120h720v120q0 33-23.5 56.5T760-640h-40l-26 68q-9 23-29 37.5T620-520H336ZM200-760v40-40Z"/></svg>
                 <span class="pl-1">{{ $t('SmokeAlarm') }}</span>
@@ -197,10 +200,13 @@
           </div>
         </div>
       </div>
-      <div class="w-fit flex flex-col items-center rounded-2xl mx-4 py-8 text-center mb-4 bg-white shadow-md hover:shadow-xl cursor-pointer">
+      <div @click="amenitiesSeeMore = !amenitiesSeeMore" v-if="!amenitiesSeeMore" class="amenities w-full text-base pb-4 mb-4 cursor-pointer">
+        <div class="sm:mx-0 mx-4 py-2 hover:underline bg-white rounded-b-2xl cursor-pointer">Click to see full list 📋</div>
+      </div>
+      <div @click="cleaningSeeMore = !cleaningSeeMore" :class="cleaningSeeMore ? 'mb-4 rounded-2xl py-8' : 'rounded-t-2xl pt-8'" class="w-fit flex flex-col items-center mx-4 text-center bg-white shadow-md hover:shadow-xl cursor-pointer">
         <span class="text-bold pb-1 text-xl underline pb-4">{{ $t('CleaningProcedure') }}</span>
         <span class="w-full px-10" style="max-width: 1200px;">{{ $t('Cleanliness') }}</span>
-        <div class="flex justify-center text-base">
+        <div class="transition-all duration-700 overflow-hidden flex justify-center text-base" :style="{ maxHeight: cleaningSeeMore ? '2000px' : '330px' }">
           <div class="flex flex-col m-4" style="width: 300px;">
             <div class="border border-2 p-3 mb-2 font-bold rounded" style="background-color: rgba(255, 0, 0, 0.4); height: 50px;">{{ $t('Kitchen') }}</div>
             <div class="border border-2 flex flex-col p-4 rounded text-start" style="height: 230px;">
@@ -237,6 +243,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div @click="cleaningSeeMore = !cleaningSeeMore" v-if="!cleaningSeeMore" class="amenities w-full text-base pb-4 mb-4 cursor-pointer">
+        <div class="mx-4 py-2 hover:underline bg-white rounded-b-2xl cursor-pointer">Click to see full list 📋</div>
       </div>
     </div>
     <span class="w-full text-center text-3xl">{{ $t('TakeALook') }}</span>
@@ -449,7 +458,9 @@ export default {
       interiorSlide: 1,
       interiorFullscreen: false,
       exteriorSlide: 1,
-      exteriorFullscreen: false
+      exteriorFullscreen: false,
+      amenitiesSeeMore: false,
+      cleaningSeeMore: false
     }
   },
   methods: {
@@ -478,14 +489,17 @@ export default {
     height: 100%;
     pointer-events: none;
   }
+
   .amenities {
-    max-width: 900px;
-    height: 1940px;
-    @media (min-width: 640px) {
-      height: 1060px;
+    max-width: 1330px;
+  }
+  .amenities-box {
+      height: fit-content;
     }
-    @media (min-width: 860px) {
-      height: 760px;
+
+  @media (min-width: 500px) {
+    .amenities-box {
+      height: 300px;
     }
   }
 </style>
