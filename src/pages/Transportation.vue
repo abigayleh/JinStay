@@ -58,12 +58,15 @@
               </div>
               <div class="flex flex-nowrap justify-center items-start px-6 pb-1">
                 <q-icon name="location_on" class="pr-1"></q-icon>
-                <div class="flex flex-col">
-                  <span>{{ $t('UPExpressWhere') }}</span>
-                  <span>Get off at Union Station</span>
-                </div>
+                <span>{{ $t('UPExpressWhere') }}</span>
               </div>
-              <a href="https://www.upexpress.com/en/up-express-stations/union-station" target="_blank" class="hover:underline cursor-pointer py-4">{{ $t('SeeMoreHere') }}</a>
+              <div class="pt-4">
+                <div class="flex items-center">
+                  <q-icon name="map" class="pr-2"></q-icon>
+                  <a class="hover:underline" target="_blank" href="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Pearson+Airport+Terminal+1+Parking,+Mississauga,+ON,+Canada/@43.6607843,-79.5782461,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x12009d7e29d56021:0x618a3696f25b1356!2m2!1d-79.6132084!2d43.6829?entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D">{{ $t('Directions') }}</a>
+                </div>              
+                <a href="https://www.upexpress.com/en/up-express-stations/union-station" target="_blank" class="hover:underline cursor-pointer py-4">{{ $t('SeeMoreHere') }}</a>
+              </div>
             </div>
           </div>
         </div>

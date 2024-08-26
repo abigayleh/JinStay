@@ -19,12 +19,12 @@
       <div :class="$q.screen.lt.md ? 'hidden' : 'flex'" class="cursor-pointer flex-nowrap justify-center items-center">
         <span class="text-lg text-red font-bold pr-2">{{ $t('FilterBy') }}</span>
         <span :class="sortByDistance ? 'bg-red text-white font-bold' : 'bg-grey text-zinc-600 opacity-75'" @click="sortByDistance = true" class="p-2 pl-4 rounded-l-2xl">{{ $t('Distance') }}</span>
-        <span :class="!sortByDistance ? 'bg-red text-white font-bold' : 'bg-grey text-zinc-600 opacity-75'" @click="sortByDistance = false" class="p-2 pl-4 rounded-r-2xl">{{ $t('Cuisine') }}</span>
+        <span :class="!sortByDistance ? 'bg-red text-white font-bold' : 'bg-grey text-zinc-600 opacity-75'" @click="sortByDistance = false" class="p-2 pl-4 px-2 rounded-r-2xl">{{ $t('Cuisine') }}</span>
       </div>
     </div>
     <div v-if="selected === 'restaurants'" class="px-8 flex w-full" :class="$q.screen.lt.sm ? 'flex-col items-center' : 'justify-between'">
       <div class="flex flex-col" style="max-width: 370px;">
-        <span>💡 <b class="text-red">{{ $t('ProTip') }}</b> {{ $t('CanadaTipOne') }}. {{ $t('CanadaTipTwo') }}</span>
+        <span>💡 <b class="text-red">{{ $t('ProTip') }}</b> {{ $t('CanadaTipOne') }}. <span v-if="$i18n.locale === 'en'">{{ $t('CanadaTipTwo') }}</span></span>
       </div>
       <div :class="$q.screen.lt.md ? 'flex' : 'hidden'"  class="pt-2 cursor-pointer flex-nowrap justify-center items-center">
         <span class="text-lg text-red font-bold pr-2">{{ $t('FilterBy') }}</span>
