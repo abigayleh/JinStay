@@ -162,4 +162,8 @@ export default {
     height: 256px;
   }
 
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
 </style>

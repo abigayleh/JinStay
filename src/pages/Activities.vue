@@ -1158,3 +1158,9 @@ export default {
 }
 </script>
 
+<style>
+  body::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
