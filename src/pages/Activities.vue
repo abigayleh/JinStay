@@ -64,8 +64,8 @@
       </div>
       <div v-if="selected === 'all' || selected === 'restaurants'">
         <span @click="selected ='restaurants'" class="cursor-pointer text-bold text-3xl flex justify-center text-red pt-2">{{ $t('RestaurantsTitle') }}</span>
-        <div class="flex no-wrap overflow-scroll" :class="selected === 'restaurants' ? 'flex flex-col' : ''">
-          <div class="px-1 w-full" v-for="rest in sortedThingsToDo" :key="rest.id">
+        <div class="flex no-wrap overflow-scroll snap-x snap-mandatory" :class="selected === 'restaurants' ? 'flex flex-col' : ''">
+          <div class="px-1 w-full snap-center" v-for="rest in sortedThingsToDo" :key="rest.id">
             <RestaurantSquare
               :id="rest.id"
               @clickMoreInfo="rest.clickMoreInfo"
@@ -92,7 +92,7 @@
       </div>
       <div v-if="selected === 'all' || selected === 'shopping'">
         <span @click="selected ='shopping'" class="text-bold cursor-pointer text-3xl flex justify-center text-red pt-2">{{ $t('Shopping') }} 🛍️</span>
-        <div class="px-1 flex no-wrap overflow-scroll" :class="selected === 'shopping' ? 'flex flex-col' : ''">
+        <div class="px-1 flex no-wrap overflow-scroll snap-x snap-mandatory" :class="selected === 'shopping' ? 'flex flex-col' : ''">
           <ShoppingSquare
             id="eaton"  
             @clickMoreInfo="() => {selected = 'shopping'; clickMoreInfo('eaton')}"  
@@ -181,7 +181,7 @@
       </div>
       <div v-if="selected === 'all' || selected === 'cafe'">
         <span @click="selected ='cafe'" class="text-bold cursor-pointer text-3xl flex justify-center text-red pt-2">Cafes ☕️</span>
-        <div class="px-1 flex no-wrap overflow-scroll" :class="selected === 'cafe' ? 'flex flex-col' : ''">
+        <div class="px-1 flex no-wrap overflow-scroll snap-x snap-mandatory" :class="selected === 'cafe' ? 'flex flex-col' : ''">
           <CafeSquare
             id="tims" 
             @clickMoreInfo="() => {selected = 'cafe'; clickMoreInfo('tims')}"  
@@ -286,7 +286,7 @@
       </div>
       <div v-if="selected === 'all' || selected === 'market'">
         <span @click="selected ='market'" class="text-bold cursor-pointer text-3xl flex justify-center text-red pt-2">Supermarkets 🛒</span>
-        <div class="px-1 flex no-wrap overflow-scroll" :class="selected === 'market' ? 'flex flex-col' : ''">
+        <div class="px-1 flex no-wrap overflow-scroll snap-x snap-mandatory" :class="selected === 'market' ? 'flex flex-col' : ''">
           <MarketSquare
             id="insMarket"  
             @clickMoreInfo="() => {selected = 'market'; clickMoreInfo('insMarket')}"  
@@ -389,7 +389,7 @@
       </div>
       <div v-if="selected === 'all' || selected === 'seasonal'">
         <span @click="selected ='seasonal'" class="text-bold cursor-pointer text-3xl flex justify-center text-red pt-2">Seasonal ❄️</span>
-        <div class="px-1 flex no-wrap overflow-scroll" :class="selected === 'seasonal' ? 'flex flex-col' : ''">
+        <div class="px-1 flex no-wrap overflow-scroll snap-x snap-mandatory" :class="selected === 'seasonal' ? 'flex flex-col' : ''">
           <SeasonalSquare
             id="santaClause"  
             @clickMoreInfo="() => {selected = 'seasonal'; clickMoreInfo('santaClause')}"  

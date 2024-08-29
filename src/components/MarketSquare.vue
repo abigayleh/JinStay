@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" class="w-full py-5 p-2 flex justify-center">
+  <div :id="id" class="w-full py-5 p-2 flex justify-center snap-center">
     <div v-if="largeView" class="w-full flex flex-col items-center justify-center py-4 mx-3 bg-white rounded-xl shadow-md" style="max-width: 1000px;">
       <span class="font-bold text-xl py-2 sm:pb-4 pb-2">{{ title }}</span>
       <div class="w-full flex md:flex-row flex-col items-center justify-evenly flex-nowrap py-4">
