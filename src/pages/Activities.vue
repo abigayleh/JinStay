@@ -8,13 +8,13 @@
     </div>
     <div class="w-full flex justify-between flex-nowrap overflow-x-scroll text-nowrap px-6 py-3">
       <div class="flex flex-nowrap">
-        <q-btn class="rounded-3xl mr-2" :class="selected === 'all' ? 'brightness-75' : ''" @click="selected = 'all'" color="indigo" text-color="white" label="All"></q-btn>
-        <q-btn style="min-width: 136px;" class="rounded-3xl mr-2" :class="selected === 'toDo' ? 'brightness-75' : ''" @click="selected = 'toDo'" color="red" text-color="white" label="Things to do"></q-btn>
-        <q-btn class="rounded-3xl mr-2" :class="selected === 'restaurants' ? 'brightness-75' : ''" @click="selected = 'restaurants'" color="blue-10" text-color="white" label="Restaurants"></q-btn>
-        <q-btn class="rounded-3xl mr-2" :class="selected === 'cafe' ? 'brightness-75' : ''" @click="selected = 'cafe'" color="orange" text-color="white" label="Cafes"></q-btn>
-        <q-btn class="rounded-3xl mr-2" :class="selected === 'shopping' ? 'brightness-75' : ''" @click="selected = 'shopping'" color="purple" text-color="white" label="Shopping"></q-btn>
-        <q-btn class="rounded-3xl mr-2 " :class="selected === 'market' ? 'brightness-75' : ''" @click="selected = 'market'" color="green" text-color="white" label="Supermarket"></q-btn>
-        <q-btn class="rounded-3xl mr-2 " :class="selected === 'seasonal' ? 'brightness-75' : ''" @click="selected = 'seasonal'" color="cyan" text-color="white" label="Seasonal"></q-btn>
+        <q-btn class="rounded-3xl mr-2" :class="selected === 'all' ? 'brightness-75' : ''" @click="selected = 'all'" color="indigo" text-color="white" :label="$t('All')"></q-btn>
+        <q-btn style="min-width: fit-content;" class="rounded-3xl mr-2" :class="selected === 'toDo' ? 'brightness-75' : ''" @click="selected = 'toDo'" color="red" text-color="white" :label="$t('ThingsToDo')"></q-btn>
+        <q-btn class="rounded-3xl mr-2" :class="selected === 'restaurants' ? 'brightness-75' : ''" @click="selected = 'restaurants'" color="blue-10" text-color="white" :label="$t('Restaurants')"></q-btn>
+        <q-btn class="rounded-3xl mr-2" :class="selected === 'cafe' ? 'brightness-75' : ''" @click="selected = 'cafe'" color="orange" text-color="white" :label="$t('Cafe')"></q-btn>
+        <q-btn class="rounded-3xl mr-2" :class="selected === 'shopping' ? 'brightness-75' : ''" @click="selected = 'shopping'" color="purple" text-color="white" :label="$t('Shopping')"></q-btn>
+        <q-btn class="rounded-3xl mr-2 " :class="selected === 'market' ? 'brightness-75' : ''" @click="selected = 'market'" color="green" text-color="white" :label="$t('Market')"></q-btn>
+        <q-btn class="rounded-3xl mr-2 " :class="selected === 'seasonal' ? 'brightness-75' : ''" @click="selected = 'seasonal'" color="cyan" text-color="white" :label="$t('Seasonal')"></q-btn>
       </div>
       <div :class="$q.screen.lt.md ? 'hidden' : 'flex'" class="cursor-pointer flex-nowrap justify-center items-center">
         <span class="text-lg text-red font-bold pr-2">{{ $t('FilterBy') }}</span>
@@ -106,10 +106,10 @@
             ]"
             :title="$t('EatonCentre')"
             :address="$t('EatonCentreAddress')"
-            :stores="'255 ' + $t('minutes')"
-            :walk="'15 ' + $t('minutes')"
+            :stores="'255 ' + $t('Stores')"
+            :walk="'15 ' + $t('Minutes')"
             subway=""
-            :uber="'4 ' + $t('minutes')"
+            :uber="'4 ' + $t('Minutes')"
             website="https://shops.cadillacfairview.com/property/cf-toronto-eaton-centre"
             phone="+1 416-598-8560"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Eaton+Centre,+Yonge+Street,+Toronto,+ON,+Canada/@43.650139,-79.3904687,15z/data=!3m2!4b1!5s0x882b31b95f52582d:0x20b5c47effb49f3d!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b34cb510746bd:0x8b89147b8cbbc837!2m2!1d-79.3806994!2d43.6544382?entry=ttu"
@@ -180,7 +180,7 @@
         </div>
       </div>
       <div v-if="selected === 'all' || selected === 'cafe'">
-        <span @click="selected ='cafe'" class="text-bold cursor-pointer text-3xl flex justify-center text-red pt-2">Cafes ☕️</span>
+        <span @click="selected ='cafe'" class="text-bold cursor-pointer text-3xl flex justify-center text-red pt-2">{{ $t('Cafe') }} ☕️</span>
         <div class="px-1 flex no-wrap overflow-scroll snap-x snap-mandatory" :class="selected === 'cafe' ? 'flex flex-col' : ''">
           <CafeSquare
             id="tims" 
@@ -195,7 +195,7 @@
             ]"
             :title="$t('TimHortons')"
             :address="$t('TimHortonsAddress')"
-            :walk="'5 ' + $t('minutes')"
+            :walk="'5 ' + $t('Minutes')"
             subway=""
             uber=""
             website="https://www.timhortons.com/store-locator/store/109436/65-front-str-w---bay-concourse--toronto--ontario--m5j-1e3"
@@ -285,7 +285,7 @@
         </div>
       </div>
       <div v-if="selected === 'all' || selected === 'market'">
-        <span @click="selected ='market'" class="text-bold cursor-pointer text-3xl flex justify-center text-red pt-2">Supermarkets 🛒</span>
+        <span @click="selected ='market'" class="text-bold cursor-pointer text-3xl flex justify-center text-red pt-2">{{ $t('Market') }} 🛒</span>
         <div class="px-1 flex no-wrap overflow-scroll snap-x snap-mandatory" :class="selected === 'market' ? 'flex flex-col' : ''">
           <MarketSquare
             id="insMarket"  
@@ -388,7 +388,7 @@
         </div>
       </div>
       <div v-if="selected === 'all' || selected === 'seasonal'">
-        <span @click="selected ='seasonal'" class="text-bold cursor-pointer text-3xl flex justify-center text-red pt-2">Seasonal ❄️</span>
+        <span @click="selected ='seasonal'" class="text-bold cursor-pointer text-3xl flex justify-center text-red pt-2">{{ $t('Seasonal') }} ❄️</span>
         <div class="px-1 flex no-wrap overflow-scroll snap-x snap-mandatory" :class="selected === 'seasonal' ? 'flex flex-col' : ''">
           <SeasonalSquare
             id="santaClause"  
@@ -406,8 +406,8 @@
             :walk="'10 ' + $t('Minutes')"
             subway=""
             uber=""
-            dates="Nov 24th"
-            type="Parade"
+            :dates="$t('ParadeDate')"
+            :type="$t('Parade')"
             typeIcon="festival"
             website="https://www.thesantaclausparade.com/"
             directions="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Bloor+St+W,+Toronto,+ON,+Canada/@43.6581525,-79.3835769,15z/data=!3m2!4b1!5s0x882b34d819a55ff7:0xad7cf7bcaf4e239b!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x882b36627c2c9c4b:0x21f142e1e86531e2!2m2!1d-79.3867779!2d43.6702395?entry=ttu"

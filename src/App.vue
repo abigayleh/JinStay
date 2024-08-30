@@ -3,7 +3,7 @@
     <div :class="largeHeader ? 'header-large p-4' : 'header-small p-2 px-4'" class="header">
       <div v-if="largeHeader" class="w-full h-full flex flex-col items-between">
         <div class="w-full flex justify-end items-between font-bold">
-          <q-btn flat color="white" icon="language" :label="$t('Langauge')">
+          <q-btn flat color="white" icon="language" :label="$t('Language')">
             <q-menu>
               <q-list style="min-width: 100px">
                 <q-item v-for="lang in languages" :key="lang.key" clickable v-close-popup @click="language = lang.key">
@@ -44,7 +44,7 @@
             <img class="w-6 h-6" src="@/assets/mapleLeaf.png" alt="Canada">
           </div>
           <div class="flex font-bold">
-            <q-btn flat color="white" icon="language" label="LANGUAGE">
+            <q-btn flat color="white" icon="language" :label="$t('Language')">
               <q-menu>
                 <q-list style="min-width: 100px">
                   <q-item v-for="lang in languages" :key="lang.key" clickable v-close-popup @click="language = lang.key">

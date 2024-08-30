@@ -271,6 +271,8 @@
   "TorontoChristmasAddress": "55 Mill St",
   "ChristmasMarketDates": "Nov 13th-Dec 31st",
   "Market": "Market",
+  "Seasonal": "Seasonal",
+  "Cafe": "Cafe",
   "AquariumAddress": "288 Bremner Blvd",
   "Museum": "Museum",
   "AquariumChild": "Child (3-5) - $13.50",
@@ -333,5 +335,8 @@
   "ChodangRecOne": "Chodang soft tofu ($18)",
   "ChodangRecTwo": "Stone bowl bulgogi ($23)",
   "Apartment": "Apartment",
-  "Language": "LANGUAGE"
+  "Language": "LANGUAGE",
+  "ClickToSeeList": "Click to see full list",
+  "All": "All",
+  "ParadeDate": "Nov 24th"
 }
