@@ -27,7 +27,7 @@
           </div>
           <span class="font-bold sm:text-3xl text-2xl">{{ $t('WelcomeToToronto') }} 👋</span>
         </div>
-        <div class="flex flex-nowrap max-w-full overflow-scroll text-base font-bold">
+        <div class="list flex flex-nowrap max-w-full overflow-scroll text-base font-bold">
           <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="() => { $router.push('/home'); changeView('home') }">{{ $t('OurHome') }}</span>
           <span class="pl-2 pr-3">|</span>
           <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="() => { $router.push('/activities'); changeView('activities') }">{{ $t('ThingsToDo') }}</span>
@@ -56,7 +56,7 @@
             </q-btn>
           </div>
         </div>
-        <div class="flex flex-nowrap overflow-scroll text-base font-bold">
+        <div class="list flex flex-nowrap overflow-scroll text-base font-bold">
           <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="() => { $router.push('/home'); changeView('home') }">{{ $t('OurHome') }}</span>
           <span class="pl-2 pr-3">|</span>
           <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="() => { $router.push('/activities'); changeView('activities') }">{{ $t('ThingsToDo') }}</span>
@@ -162,8 +162,11 @@ export default {
     height: 256px;
   }
 
-  body::-webkit-scrollbar {
+  .list::-webkit-scrollbar {
     display: none;
+  }
+  .list {
+    scrollbar-width: none;
   }
 
 </style>
