@@ -566,8 +566,8 @@ export default {
             smallPhoto: "https://s3-media0.fl.yelpcdn.com/bphoto/EsoNZxUsO5qRSvHmvnTnxg/348s.jpg",
             photos: [
               "https://seeyousoon.ca/wp-content/uploads/2020/07/Ripleys-Aquarium-of-Canada.jpg",
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Toronto_-_ON_-_St_Lawrence_Market.jpg/2560px-Toronto_-_ON_-_St_Lawrence_Market.jpg",
-              "https://facts.net/wp-content/uploads/2023/09/14-intriguing-facts-about-st-lawrence-market-toronto-1694436206.jpg"
+              "https://www.familyfuncanada.com/toronto/files/2020/08/shoreline-gallery-ripley-aquarium-e1722612149124.jpg",
+              "https://divertrek.com/wp-content/uploads/2014/11/Ripleys_Aquarium_Toronto-16.jpg"
             ],
             clickMoreInfo: () => {
               this.selected = 'toDo';
@@ -575,9 +575,9 @@ export default {
             },
             data: this.activityList,
             title: this.$t('Aquarium'),
-            type: this.$t('AquariumAddress'),
+            type: this.$t('Museum'),
             typeIcon: "museum",
-            location: this.$t('Museum'),
+            location: this.$t('AquariumAddress'),
             walk: "12 " + this.$t('Minutes'),
             subway: "",
             uber: "4 " + this.$t('Minutes'),
@@ -632,8 +632,8 @@ export default {
             largeView: this.selected === 'toDo',
             data: this.activityList,
             title: this.$t('Distillery'),
-            type: this.$t('Historical'),
-            typeIcon: "historical",
+            type: this.$t('Market'),
+            typeIcon: "store_front",
             location: this.$t('DistilleryAddress'),
             walk: "",
             subway: "21 " + this.$t('Minutes'),
@@ -713,8 +713,8 @@ export default {
             smallPhoto: "https://aws-tiqets-cdn.imgix.net/images/content/b065d37d00074c9caa3ead75b94f275f.jpg?auto=format&fit=crop&h=800&ixlib=python-3.2.1&q=70&w=800&s=6b3882d4c732bb1efa3cafdaa3f3512a",
             photos: [
               "https://www.rom.on.ca/sites/default/files/imce/ROM_strategic_plan_highlight.png",
-              "https://www.sixteen-nine.net/wp-content/uploads/2021/08/MomentFactory_ROM_CentennialBall-scaled.jpg",
-              "https://www.rom.on.ca/sites/default/files/imce/ROMGallery_F1_Rotunda_Website_DC.jpg"
+              "https://www.rom.on.ca/sites/default/files/romsep2pm125_6_7_8_9-three.jpg",
+              "https://www.cp24.com/polopoly_fs/1.6863523.1714157957!/httpImage/image.jpg_gen/derivatives/landscape_1020/image.jpg"
             ],
             largeView: this.selected === 'toDo',
             data: this.activityList,
@@ -810,7 +810,7 @@ export default {
             typeIcon: "nature",
             location: this.$t('EdwardsGardenAddress'),
             walk: "",
-            subway: "1" + this.$t('Hour'),
+            subway: "1 " + this.$t('Hour'),
             uber: "45 " + this.$t('Minutes'),
             child: "",
             youth: "",

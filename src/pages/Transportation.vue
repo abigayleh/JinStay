@@ -64,8 +64,11 @@
                 <div class="flex items-center">
                   <q-icon name="map" class="pr-2"></q-icon>
                   <a class="hover:underline" target="_blank" href="https://www.google.com/maps/dir/Union+Station+Toronto,+Front+Street+West,+Toronto,+ON,+Canada/Pearson+Airport+Terminal+1+Parking,+Mississauga,+ON,+Canada/@43.6607843,-79.5782461,12z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x882b350e38f30029:0xddf7c32c7703346a!2m2!1d-79.3804062!2d43.6453197!1m5!1m1!1s0x12009d7e29d56021:0x618a3696f25b1356!2m2!1d-79.6132084!2d43.6829?entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D">{{ $t('Directions') }}</a>
-                </div>              
-                <a href="https://www.upexpress.com/en/up-express-stations/union-station" target="_blank" class="hover:underline cursor-pointer py-4">{{ $t('SeeMoreHere') }}</a>
+                </div>      
+                <div class="pt-8 flex justify-center items-center">
+                  <q-icon name="info" class="pr-2"></q-icon>
+                  <a href="https://www.upexpress.com/en/up-express-stations/union-station" target="_blank" class="hover:underline cursor-pointer">{{ $t('SeeMoreHere') }}</a>
+                </div>       
               </div>
             </div>
           </div>
@@ -169,7 +172,10 @@
               <div class="flex items-center">
                 <span>{{ $t('SubwayCost') }}</span>
               </div>
-              <a href="https://www.ttc.ca/riding-the-ttc/Updates/New-TTC-fares" target="_blank" class="hover:underline cursor-pointer pt-2 pb-4">{{ $t('SeeMoreHere') }}</a>
+              <div class="pt-12 flex justify-center items-center">
+                <q-icon name="info" class="pr-1"></q-icon>
+                <a href="https://www.ttc.ca/riding-the-ttc/Updates/New-TTC-fares" target="_blank" class="hover:underline cursor-pointer">{{ $t('SeeMoreHere') }}</a>
+              </div>
             </div>
           </div>
         </div>
@@ -242,7 +248,10 @@
               <div class="flex items-center">
                 <span>{{ $t('GOTrainCost') }}</span>
               </div>
-              <a href="https://www.gotransit.com/en/ways-to-pay/fare-information" target="_blank" class="hover:underline cursor-pointer py-1 pb-3">{{ $t('SeeMoreHere') }}</a>
+              <div class="pt-10 flex justify-center items-center">
+                <q-icon name="info" class="pr-1"></q-icon>
+                <a href="https://www.gotransit.com/en/ways-to-pay/fare-information" target="_blank" class="hover:underline cursor-pointer">{{ $t('SeeMoreHere') }}</a>
+              </div>
             </div>
           </div>
         </div>
@@ -272,8 +281,11 @@
                   <span class="pb-1">{{ $t('DailyRide') }}</span>
                 </div>
               </div>
-              <a href="https://bikesharetoronto.com" target="_blank" class="hover:underline cursor-pointer pt-3">{{ $t('SeeMoreHere') }}</a>
-            </div>
+              <div class="pt-6 flex justify-center items-center">
+                <q-icon name="info" class="pr-1"></q-icon>
+                <a href="https://bikesharetoronto.com" target="_blank" class="hover:underline cursor-pointer">{{ $t('SeeMoreHere') }}</a>
+              </div>
+              </div>
           </div>
         </div>
       </div>

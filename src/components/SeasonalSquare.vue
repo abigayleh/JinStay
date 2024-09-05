@@ -7,7 +7,7 @@
           class="md:h-full md:w-1/2 mb-6 h-72 w-full px-3"
           swipeable
           animated
-          thumbnails
+          arrows
           v-model="slideIndex"
           infinite
         >
@@ -18,11 +18,11 @@
         <div class="w-fit flex flex-col justify-center items-center">
           <div class="w-full flex flex-col justify-center pb-2">
             <div class="pb-2 flex items-center justify-center sm:flex-row flex-col">
-              <div>
+              <div class="flex items-center">
                 <q-icon name="location_on" class="pr-2"></q-icon>
                 <span>{{ address }}</span>
               </div>
-              <div class="pt-2">
+              <div>
                 <q-icon name="calendar_month" class="pl-4 pr-2"></q-icon>
                 <span>{{ dates }}</span>
               </div>

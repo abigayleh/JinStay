@@ -7,7 +7,7 @@
           class="rounded md:h-full md:w-1/2 mb-6 h-72 w-full px-3"
           swipeable
           animated
-          thumbnails
+          arrows
           v-model="slideIndex"
           infinite
         >

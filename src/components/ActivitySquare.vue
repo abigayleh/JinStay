@@ -59,8 +59,8 @@
         <q-carousel
           class="md:h-full md:w-1/2 mb-6 h-72 px-2 w-full"
           swipeable
+          arrows
           animated
-          thumbnails
           v-model="slideIndex"
           infinite
         >
@@ -92,6 +92,17 @@
                 <div v-if="uber !== ''" class="flex items-center justify-center">
                   <q-icon name="local_taxi" class="pr-2"></q-icon>
                   <span>{{ uber }}</span>
+                </div>
+              </div>
+              <div class="flex justify-end items-center pb-2" v-if="adult !== ''">
+                <div>
+                  <q-icon name="local_activity" class="pr-3"></q-icon>
+                </div>
+                <div class="flex flex-col items-end">
+                  <div v-if="child !== ''" class="flex items-center justify-center">{{ child }}</div>
+                  <div v-if="youth !== ''" class="flex items-center justify-center">{{ youth }}</div>
+                  <div v-if="adult !== ''" class="flex items-center justify-center">{{ adult }}</div>
+                  <div v-if="senior !== ''" class="flex items-center justify-center">{{ senior }}</div>
                 </div>
               </div>
             </div>
