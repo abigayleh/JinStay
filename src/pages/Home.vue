@@ -201,7 +201,7 @@
         </div>
       </div>
       <div @click="amenitiesSeeMore = !amenitiesSeeMore" v-if="!amenitiesSeeMore" class="amenities w-full text-base pb-4 mb-4 cursor-pointer">
-        <div class="sm:mx-0 mx-4 py-2 hover:underline bg-white rounded-b-2xl cursor-pointer">{{ $t('ClickToSeeList') }} 📋</div>
+        <div class="xl:mx-0 mx-4 py-2 hover:underline bg-white rounded-b-2xl cursor-pointer">{{ $t('ClickToSeeList') }} 📋</div>
       </div>
       <div @click="cleaningSeeMore = !cleaningSeeMore" :class="cleaningSeeMore ? 'mb-4 rounded-2xl py-8' : 'rounded-t-2xl pt-8'" class="w-fit flex flex-col items-center mx-4 text-center bg-white shadow-md hover:shadow-xl cursor-pointer">
         <span class="text-bold pb-1 text-xl underline pb-4">{{ $t('CleaningProcedure') }}</span>
@@ -245,7 +245,7 @@
         </div>
       </div>
       <div @click="cleaningSeeMore = !cleaningSeeMore" v-if="!cleaningSeeMore" class="amenities w-full text-base pb-4 mb-4 cursor-pointer">
-        <div class="mx-4 py-2 hover:underline bg-white rounded-b-2xl cursor-pointer">{{ $t('ClickToSeeList') }} 📋</div>
+        <div class="xl:mx-0 mx-4 py-2 hover:underline bg-white rounded-b-2xl cursor-pointer">{{ $t('ClickToSeeList') }} 📋</div>
       </div>
     </div>
     <span class="w-full text-center text-3xl">{{ $t('TakeALook') }}</span>
