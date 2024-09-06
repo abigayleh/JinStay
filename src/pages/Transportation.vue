@@ -256,7 +256,7 @@
           </div>
         </div>
         <div class="w-full h-full flex flex-col items-center justify-evenly flex-row no-wrap py-2 bg-white rounded-xl cursor-pointer shadow-md hover:shadow-xl mb-6" style="max-width: 1000px;">
-          <span class="font-bold text-center pt-4 sm:pb-4 pb-0">{{ $t('Bikeshare') }}</span>
+          <span class="font-bold text-center pt-4 sm:pb-4 pb-0">{{ $t('BikeShare') }}</span>
           <div class="sm:min-h-96 min-h-0 w-full flex md:flex-row flex-col flex-nowrap py-4">
             <div class="flex-1 flex flex-nowrap flex-col items-center">
               <q-carousel
