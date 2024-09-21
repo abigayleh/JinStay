@@ -1,5 +1,8 @@
 <template>
   <div id="activities" class="px-1 relative" style="background-color: #f6f7f8;">
+    <div v-if="showToTop" class="fixed right-0 bottom-0">
+      <q-btn dense class="z-50 rounded-full" color="white" text-color="red" size="lg" @click="clickMoreInfo('cntower')" icon="arrow_circle_up"></q-btn>
+    </div>
     <div class="flex w-full justify-center pt-8 pb-4">
       <span class="sm:text-3xl text-2xl font-bold text-red">{{ $t('PlanTrip') }} </span>
     </div>
@@ -526,10 +529,12 @@ export default {
       sortByDistance: true,
       sortedThingsToDo: [],
       thingsToDoList: [],
-      restaurantsList: []
+      restaurantsList: [],
+      showToTop: false
     }
   },
   mounted () {
+    window.addEventListener('scroll', this.handleScroll);
     fetch(`https://x8ki-letl-twmt.n7.xano.io/api:yY6Cv1ke/activitylikes`)
       .then(response => response.json())
       .then(data => {
@@ -1126,6 +1131,13 @@ export default {
       })
   },
   methods: {
+    handleScroll() {
+      if (window.scrollY < 1280) {
+        this.showToTop = false
+      } else {
+        this.showToTop  =true
+      }
+    },
     clickMoreInfo (el) {
       setTimeout(() => {
         var element = document.getElementById(el);
