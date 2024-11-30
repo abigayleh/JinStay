@@ -890,7 +890,7 @@ export default {
               this.clickMoreInfo('leeChen');
             },
             largeView: this.selected === 'restaurants',
-            smallPhoto: 'https://scontent-gmp1-1.xx.fbcdn.net/v/t1.6435-9/42867079_2106360159396047_8322875076017913856_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0327a3&_nc_ohc=dIp3qQs1Rx4Q7kNvgH7rMFx&_nc_ht=scontent-gmp1-1.xx&oh=00_AYBwCa9Yrw1GFh1py3bEqcqhTW_CaA8FJmklDmS5ywXGiw&oe=66E7F922',
+            smallPhoto: 'https://leechenbistro.com/wp-content/uploads/8131.jpg',
             photos: [
               'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/47/80/ce/lee-chen-on-214-king.jpg?w=1200&h=-1&s=1',
               'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/f0/1c/1f/photo1jpg.jpg?w=1200&h=-1&s=1',
