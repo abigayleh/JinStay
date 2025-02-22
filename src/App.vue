@@ -33,8 +33,8 @@
           <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="() => { $router.push('/activities'); changeView('activities') }">{{ $t('ThingsToDo') }}</span>
           <span class="pl-2 pr-3">|</span>
           <span class="cursor-pointer mr-2 hover:underline" @click="() => { $router.push('/transportation'); changeView('transportation') }">{{ $t('TransportationTitle') }}</span>
-          <span class="pl-2 pr-3">|</span>
-          <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="() => { $router.push('/host'); changeView('host') }">{{ $t('AboutTheHost') }}</span>
+          <!-- <span class="pl-2 pr-3">|</span>
+          <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="() => { $router.push('/host'); changeView('host') }">{{ $t('AboutTheHost') }}</span> -->
         </div>
       </div>
       <div v-else class="w-full h-full flex flex-col items-between justify-between">
@@ -62,8 +62,8 @@
           <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="() => { $router.push('/activities'); changeView('activities') }">{{ $t('ThingsToDo') }}</span>
           <span class="pl-2 pr-3">|</span>
           <span class="cursor-pointer mr-2 hover:underline" @click="() => { $router.push('/transportation'); changeView('transportation') }">{{ $t('TransportationTitle') }}</span>
-          <span class="pl-2 pr-3">|</span>
-          <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="() => { $router.push('/host'); changeView('host') }">{{ $t('AboutTheHost') }}</span>
+          <!-- <span class="pl-2 pr-3">|</span>
+          <span style="min-width: max-content" class="cursor-pointer mr-2 hover:underline" @click="() => { $router.push('/host'); changeView('host') }">{{ $t('AboutTheHost') }}</span> -->
         </div>
       </div>
     </div>
